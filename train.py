@@ -24,10 +24,10 @@ import datasets.imagenet_a
 import datasets.imagenet_r
 
 import trainers.coop
+import trainers.mlpt
 import trainers.cocoop
 import trainers.maple
 import trainers.rmaple
-import trainers.zsclip
 
 
 def print_args(args, cfg):
@@ -89,6 +89,7 @@ def extend_cfg(cfg, args):
     """
     from yacs.config import CfgNode as CN
 
+    # Config for COOP
     cfg.TRAINER.COOP = CN()
     cfg.TRAINER.COOP.N_CTX = 16  # number of context vectors
     cfg.TRAINER.COOP.CSC = False  # class-specific context
@@ -96,6 +97,7 @@ def extend_cfg(cfg, args):
     cfg.TRAINER.COOP.PREC = "fp16"  # fp16, fp32, amp
     cfg.TRAINER.COOP.CLASS_TOKEN_POSITION = "end"  # 'middle' or 'end' or 'front'
 
+    # Config for COCOOP
     cfg.TRAINER.COCOOP = CN()
     cfg.TRAINER.COCOOP.N_CTX = 16  # number of context vectors
     cfg.TRAINER.COCOOP.CTX_INIT = ""  # initialization words
@@ -115,6 +117,23 @@ def extend_cfg(cfg, args):
     cfg.TRAINER.RMAPLE.PREC = "fp16"  # fp16, fp32, amp
     cfg.TRAINER.RMAPLE.PROMPT_DEPTH = args.prompt_depth # Max 12, minimum 0, for 1 it will act as shallow MaPLe (J=1)
 
+    # Config for warmup
+    cfg.WARMUP = CN()
+    cfg.WARMUP.EPOCH = 10
+    cfg.WARMUP.THRESHOLD = 0.5
+
+    # Config for MLPT
+    cfg.TRAINER.MLPT = CN()
+    cfg.TRAINER.MLPT.N_CTX = 16  # number of context vectors
+    cfg.TRAINER.MLPT.CSC = False  # class-specific context
+    cfg.TRAINER.MLPT.CTX_INIT = ""  # initialization words
+    cfg.TRAINER.MLPT.PREC = "fp16"  # fp16, fp32, amp
+    cfg.TRAINER.MLPT.CLASS_TOKEN_POSITION = "end"  # 'middle' or 'end' or 'front'
+    cfg.TRAINER.MLPT.TEM = 0.5
+    cfg.TRAINER.MLPT.ALPHA = 4
+
+    # Config for dataset
+    cfg.DATASET.NUM_EXPAND = 5
     cfg.DATASET.SUBSAMPLE_CLASSES = "all"  # all, base or new
     cfg.DATASET.NUM_FP = args.num_fp  # the number of false positive samples per class
     cfg.DATASET.USE_ROBUSTLOSS = args.use_robustloss  # use robust loss (GCE)
@@ -161,7 +180,7 @@ def main(args):
 
     if args.eval_only:
         trainer.load_model(args.model_dir, epoch=args.load_epoch)
-        trainer.test()
+        trainer.test_clips()
         return
 
     if not args.no_train:

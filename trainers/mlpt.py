@@ -40,7 +40,7 @@ def load_clip_to_cpu(cfg):
 
     except RuntimeError:
         state_dict = torch.load(model_path, map_location="cpu")
-    design_details = {"trainer": 'RCoOp',
+    design_details = {"trainer": 'MLPT',
                       "vision_depth": 0,
                       "language_depth": 0, "vision_ctx": 0,
                       "language_ctx": 0}
@@ -105,8 +105,8 @@ class PromptLearner(nn.Module):
     def __init__(self, cfg, classnames, clip_model):
         super().__init__()
         n_cls = len(classnames)
-        n_ctx = cfg.TRAINER.RCOOP.N_CTX
-        ctx_init = cfg.TRAINER.RCOOP.CTX_INIT
+        n_ctx = cfg.TRAINER.MLPT.N_CTX
+        ctx_init = cfg.TRAINER.MLPT.CTX_INIT
         dtype = clip_model.dtype
         ctx_dim = clip_model.ln_final.weight.shape[0]
         clip_imsize = clip_model.visual.input_resolution
@@ -125,7 +125,7 @@ class PromptLearner(nn.Module):
 
         else:
             # random initialization
-            if cfg.TRAINER.RCOOP.CSC:
+            if cfg.TRAINER.MLPT.CSC:
                 print("Initializing class-specific contexts")
                 ctx_vectors = torch.empty(n_cls, n_ctx, ctx_dim, dtype=dtype)
             else:
@@ -157,7 +157,7 @@ class PromptLearner(nn.Module):
         self.n_ctx = n_ctx
         self.tokenized_prompts = tokenized_prompts  # torch.Tensor
         self.name_lens = name_lens
-        self.class_token_position = cfg.TRAINER.RCOOP.CLASS_TOKEN_POSITION
+        self.class_token_position = cfg.TRAINER.MLPT.CLASS_TOKEN_POSITION
 
     def forward(self):
         ctx = self.ctx
@@ -254,15 +254,15 @@ class CustomCLIP(nn.Module):
 
 
 @TRAINER_REGISTRY.register()
-class RCoOp(TrainerX):
-    """Context Optimization (RCoOp).
+class MLPT(TrainerX):
+    """Context Optimization (MLPT).
 
     Learning to Prompt for Vision-Language Models
     https://arxiv.org/abs/2109.01134
     """
 
     def check_cfg(self, cfg):
-        assert cfg.TRAINER.RCOOP.PREC in ["fp16", "fp32", "amp"]
+        assert cfg.TRAINER.MLPT.PREC in ["fp16", "fp32", "amp"]
 
     def build_model(self):
         cfg = self.cfg
@@ -271,7 +271,7 @@ class RCoOp(TrainerX):
         print(f"Loading CLIP (backbone: {cfg.MODEL.BACKBONE.NAME})")
         clip_model = load_clip_to_cpu(cfg)
         
-        if cfg.TRAINER.RCOOP.PREC == "fp32" or cfg.TRAINER.RCOOP.PREC == "amp":
+        if cfg.TRAINER.MLPT.PREC == "fp32" or cfg.TRAINER.MLPT.PREC == "amp":
             # CLIP's default precision is fp16
             clip_model.float()
 
@@ -304,8 +304,8 @@ class RCoOp(TrainerX):
         self.sched2 = build_lr_scheduler(self.optim2, cfg.OPTIM)
         self.register_model("prompt_learner2", self.model2.prompt_learner, self.optim2, self.sched2)
 
-        self.scaler1 = GradScaler() if cfg.TRAINER.RCOOP.PREC == "amp" else None
-        self.scaler2 = GradScaler() if cfg.TRAINER.RCOOP.PREC == "amp" else None
+        self.scaler1 = GradScaler() if cfg.TRAINER.MLPT.PREC == "amp" else None
+        self.scaler2 = GradScaler() if cfg.TRAINER.MLPT.PREC == "amp" else None
 
         # Note that multi-gpu training could be slow because CLIP's size is
         # big, which slows down the copy operation in DataParallel
@@ -319,7 +319,7 @@ class RCoOp(TrainerX):
         image, label, _ = self.parse_batch_train(batch)
         
         #print([image.shape, label.shape])
-        prec = self.cfg.TRAINER.RCOOP.PREC
+        prec = self.cfg.TRAINER.MLPT.PREC
         if prec == "amp":
             with autocast():
                 output = model(image)
@@ -351,7 +351,7 @@ class RCoOp(TrainerX):
         image_u, label_u, _ = self.parse_batch_train(batch_u)
         
         #print([image.shape, label.shape])
-        prec = self.cfg.TRAINER.RCOOP.PREC
+        prec = self.cfg.TRAINER.MLPT.PREC
         if prec == "amp":
             with autocast():
                 output_x, output_u = model(image_x), model(image_u)
@@ -576,7 +576,7 @@ class RCoOp(TrainerX):
                 # no label refinement
                 # px = labels_x.to(self.device)
 
-                ptx = px**(1 / self.cfg.TRAINER.RCOOP.TEM) # temparature sharpening 
+                ptx = px**(1 / self.cfg.TRAINER.MLPT.TEM) # temparature sharpening 
                         
                 targets_x = ptx / ptx.sum(dim=1, keepdim=True) # normalize           
                 targets_x = targets_x.detach()  
@@ -586,13 +586,13 @@ class RCoOp(TrainerX):
                 outputs_u2 = eval_model(inputs_u)
 
                 pu = (torch.softmax(outputs_u1, dim=1) + torch.softmax(outputs_u2, dim=1)) / 2       
-                ptu = pu**(1 / self.cfg.TRAINER.RCOOP.TEM)    # temparature sharpening
+                ptu = pu**(1 / self.cfg.TRAINER.MLPT.TEM)    # temparature sharpening
 
                 targets_u = ptu / ptu.sum(dim=1, keepdim=True)   # normalize
                 targets_u = targets_u.detach()
 
             # mixmatch
-            l = np.random.beta(self.cfg.TRAINER.RCOOP.ALPHA, self.cfg.TRAINER.RCOOP.ALPHA)        
+            l = np.random.beta(self.cfg.TRAINER.MLPT.ALPHA, self.cfg.TRAINER.MLPT.ALPHA)        
             l = max(l, 1-l)
                     
             #all_inputs = torch.cat([inputs_x, inputs_u], dim=0)
@@ -618,13 +618,14 @@ class RCoOp(TrainerX):
             all_inputs_labels = {'img': all_inputs, 'label': all_target_id, 'wx': None}     
             loss_summary = self.forward_backward(all_inputs_labels, train_model, optim, scaler, train_model_name)
             '''
+            '''
             _, targets_x_id = torch.max(targets_x, 1)
             _, targets_u_id = torch.max(targets_u, 1)
             targets_x_onehot = torch.zeros(targets_x_id.size(0), self.num_classes).scatter_(1, targets_x_id.view(-1,1).cpu(), 1)
             targets_u_onehot = torch.zeros(targets_u_id.size(0), self.num_classes).scatter_(1, targets_u_id.view(-1,1).cpu(), 1)
-
-            inputs_labels_x = {'img': inputs_x, 'label': targets_x_onehot, 'wx': None}
-            inputs_labels_u = {'img': inputs_u, 'label': targets_u_onehot, 'wx': None}
+            '''
+            inputs_labels_x = {'img': inputs_x, 'label': targets_x, 'wx': None}
+            inputs_labels_u = {'img': inputs_u, 'label': targets_u, 'wx': None}
 
             loss_summary = self.training_forward_backward(inputs_labels_x, inputs_labels_u, train_model, optim, scaler, train_model_name)
 
@@ -786,7 +787,7 @@ class RCoOp(TrainerX):
             # label refinement
             px = wx * labels_x.to(self.device) + (1 - wx) * px
 
-            ptx = px**(1 / self.cfg.TRAINER.RCOOP.TEM) # temparature sharpening
+            ptx = px**(1 / self.cfg.TRAINER.MLPT.TEM) # temparature sharpening
             targets_x = ptx / ptx.sum(dim=1, keepdim=True) # normalize           
             targets_x = targets_x.detach()
     

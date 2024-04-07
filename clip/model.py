@@ -433,7 +433,7 @@ class Transformer(nn.Module):
                   for i in range(layers)])
         else:
             # Corresponds to default CoOp or CoCoOp
-            assert current_trainer == 'CoOp' or current_trainer == 'RCoOp' or current_trainer == 'CoCoOp'
+            assert current_trainer == 'CoOp' or current_trainer == 'MLPT' or current_trainer == 'CoCoOp'
             self.resblocks = nn.Sequential(*[ResidualAttentionBlock(width, heads, attn_mask) for _ in range(layers)])
 
     def forward(self, x: torch.Tensor):
