@@ -1,0 +1,128 @@
+Parsing files in output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/seed1/log.txt. accuracy: 95.10%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/seed2/log.txt. accuracy: 95.20%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/seed3/log.txt. accuracy: 95.10%. 
+===
+Summary of directory: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/
+* accuracy: 95.13% +- 0.05%
+===
+Parsing files in output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/seed1/log.txt. accuracy: 88.40%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/seed2/log.txt. accuracy: 91.40%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/seed3/log.txt. accuracy: 92.30%. 
+===
+Summary of directory: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/
+* accuracy: 90.70% +- 1.67%
+===
+Parsing files in output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/seed1/log.txt. accuracy: 87.40%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/seed2/log.txt. accuracy: 90.20%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/seed3/log.txt. accuracy: 89.70%. 
+===
+Summary of directory: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/
+* accuracy: 89.10% +- 1.22%
+===
+Parsing files in output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/seed1/log.txt. accuracy: 84.70%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/seed2/log.txt. accuracy: 78.20%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/seed3/log.txt. accuracy: 80.90%. 
+===
+Summary of directory: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/
+* accuracy: 81.27% +- 2.67%
+===
+Parsing files in output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/seed1/log.txt. accuracy: 93.30%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/seed2/log.txt. accuracy: 94.10%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/seed3/log.txt. accuracy: 94.00%. 
+===
+Summary of directory: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/
+* accuracy: 93.80% +- 0.36%
+===
+Parsing files in output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/seed1/log.txt. accuracy: 81.50%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/seed2/log.txt. accuracy: 81.30%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/seed3/log.txt. accuracy: 80.50%. 
+===
+Summary of directory: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/
+* accuracy: 81.10% +- 0.43%
+===
+Parsing files in output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/seed1/log.txt. accuracy: 70.10%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/seed2/log.txt. accuracy: 71.10%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/seed3/log.txt. accuracy: 70.50%. 
+===
+Summary of directory: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/
+* accuracy: 70.57% +- 0.41%
+===
+Parsing files in output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/seed1/log.txt. accuracy: 51.80%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/seed2/log.txt. accuracy: 52.30%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/seed3/log.txt. accuracy: 52.00%. 
+===
+Summary of directory: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/
+* accuracy: 52.03% +- 0.21%
+===
+Parsing files in output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/seed1/log.txt. accuracy: 95.20%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/seed2/log.txt. accuracy: 95.40%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/seed3/log.txt. accuracy: 95.50%. 
+===
+Summary of directory: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/
+* accuracy: 95.37% +- 0.12%
+===
+Parsing files in output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/seed1/log.txt. accuracy: 94.70%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/seed2/log.txt. accuracy: 94.20%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/seed3/log.txt. accuracy: 95.30%. 
+===
+Summary of directory: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/
+* accuracy: 94.73% +- 0.45%
+===
+Parsing files in output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/seed1/log.txt. accuracy: 94.00%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/seed2/log.txt. accuracy: 94.60%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/seed3/log.txt. accuracy: 95.00%. 
+===
+Summary of directory: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/
+* accuracy: 94.53% +- 0.41%
+===
+Parsing files in output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/seed1/log.txt. accuracy: 93.30%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/seed2/log.txt. accuracy: 89.70%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/seed3/log.txt. accuracy: 90.40%. 
+===
+Summary of directory: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/
+* accuracy: 91.13% +- 1.56%
+===
+Parsing files in output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/seed1/log.txt. accuracy: 94.00%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/seed2/log.txt. accuracy: 94.20%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/seed3/log.txt. accuracy: 93.40%. 
+===
+Summary of directory: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/
+* accuracy: 93.87% +- 0.34%
+===
+Parsing files in output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/seed1/log.txt. accuracy: 91.70%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/seed2/log.txt. accuracy: 93.30%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/seed3/log.txt. accuracy: 92.10%. 
+===
+Summary of directory: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/
+* accuracy: 92.37% +- 0.68%
+===
+Parsing files in output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/seed1/log.txt. accuracy: 84.60%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/seed2/log.txt. accuracy: 85.60%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/seed3/log.txt. accuracy: 89.70%. 
+===
+Summary of directory: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/
+* accuracy: 86.63% +- 2.21%
+===
+Parsing files in output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/seed1/log.txt. accuracy: 70.30%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/seed2/log.txt. accuracy: 71.70%. 
+file: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/seed3/log.txt. accuracy: 71.80%. 
+===
+Summary of directory: output/caltech101/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/
+* accuracy: 71.27% +- 0.68%
+===

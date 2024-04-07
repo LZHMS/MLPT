@@ -1,0 +1,1391 @@
+***************
+** Arguments **
+***************
+backbone: 
+config_file: configs/trainers/RCoOp/rn50_ep50.yaml
+dataset_config_file: configs/datasets/ucf101.yaml
+eval_only: False
+head: 
+load_epoch: None
+model_dir: 
+no_train: False
+num_fp: 0
+opts: ['TRAINER.RCOOP.N_CTX', '16', 'TRAINER.RCOOP.CSC', 'False', 'TRAINER.RCOOP.CLASS_TOKEN_POSITION', 'end', 'DATASET.NUM_SHOTS', '16']
+output_dir: output/ucf101/RCoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCEFalse_FactorBiLoss/16shots_0noise/seed1
+prompt_depth: 9
+resume: 
+root: data
+seed: 1
+source_domains: None
+target_domains: None
+trainer: RCoOp
+transforms: None
+use_robustloss: False
+************
+** Config **
+************
+DATALOADER:
+  K_TRANSFORMS: 1
+  NUM_WORKERS: 8
+  RETURN_IMG0: False
+  TEST:
+    BATCH_SIZE: 100
+    SAMPLER: SequentialSampler
+  TRAIN_U:
+    BATCH_SIZE: 32
+    N_DOMAIN: 0
+    N_INS: 16
+    SAME_AS_X: True
+    SAMPLER: RandomSampler
+  TRAIN_X:
+    BATCH_SIZE: 32
+    N_DOMAIN: 0
+    N_INS: 16
+    SAMPLER: RandomSampler
+DATASET:
+  ALL_AS_UNLABELED: False
+  CIFAR_C_LEVEL: 1
+  CIFAR_C_TYPE: 
+  NAME: UCF101
+  NUM_EXPAND: 5
+  NUM_FP: 0
+  NUM_LABELED: -1
+  NUM_SHOTS: 16
+  ROOT: data
+  SOURCE_DOMAINS: ()
+  STL10_FOLD: -1
+  SUBSAMPLE_CLASSES: all
+  TARGET_DOMAINS: ()
+  USE_ROBUSTLOSS: False
+  VAL_PERCENT: 0.1
+INPUT:
+  COLORJITTER_B: 0.4
+  COLORJITTER_C: 0.4
+  COLORJITTER_H: 0.1
+  COLORJITTER_S: 0.4
+  CROP_PADDING: 4
+  CUTOUT_LEN: 16
+  CUTOUT_N: 1
+  GB_K: 21
+  GB_P: 0.5
+  GN_MEAN: 0.0
+  GN_STD: 0.15
+  INTERPOLATION: bicubic
+  NO_TRANSFORM: False
+  PIXEL_MEAN: [0.48145466, 0.4578275, 0.40821073]
+  PIXEL_STD: [0.26862954, 0.26130258, 0.27577711]
+  RANDAUGMENT_M: 10
+  RANDAUGMENT_N: 2
+  RGS_P: 0.2
+  RRCROP_SCALE: (0.08, 1.0)
+  SIZE: (224, 224)
+  TRANSFORMS: ('random_resized_crop', 'random_flip', 'normalize')
+MODEL:
+  BACKBONE:
+    NAME: RN50
+    PRETRAINED: True
+  HEAD:
+    ACTIVATION: relu
+    BN: True
+    DROPOUT: 0.0
+    HIDDEN_LAYERS: ()
+    NAME: 
+  INIT_WEIGHTS: 
+OPTIM:
+  ADAM_BETA1: 0.9
+  ADAM_BETA2: 0.999
+  BASE_LR_MULT: 0.1
+  GAMMA: 0.1
+  LR: 0.002
+  LR_SCHEDULER: cosine
+  MAX_EPOCH: 50
+  MOMENTUM: 0.9
+  NAME: sgd
+  NEW_LAYERS: ()
+  RMSPROP_ALPHA: 0.99
+  SGD_DAMPNING: 0
+  SGD_NESTEROV: False
+  STAGED_LR: False
+  STEPSIZE: (-1,)
+  WARMUP_CONS_LR: 1e-05
+  WARMUP_EPOCH: 1
+  WARMUP_MIN_LR: 1e-05
+  WARMUP_RECOUNT: True
+  WARMUP_TYPE: constant
+  WEIGHT_DECAY: 0.0005
+OUTPUT_DIR: output/ucf101/RCoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCEFalse_FactorBiLoss/16shots_0noise/seed1
+RESUME: 
+SEED: 1
+TEST:
+  COMPUTE_CMAT: False
+  EVALUATOR: Classification
+  FINAL_MODEL: last_step
+  NO_TEST: False
+  PER_CLASS_RESULT: False
+  SPLIT: test
+TRAIN:
+  CHECKPOINT_FREQ: 0
+  COUNT_ITER: train_x
+  PRINT_FREQ: 5
+TRAINER:
+  CDAC:
+    CLASS_LR_MULTI: 10
+    P_THRESH: 0.95
+    RAMPUP_COEF: 30
+    RAMPUP_ITRS: 1000
+    STRONG_TRANSFORMS: ()
+    TOPK_MATCH: 5
+  COCOOP:
+    CTX_INIT: 
+    N_CTX: 16
+    PREC: fp16
+  COOP:
+    CLASS_TOKEN_POSITION: end
+    CSC: False
+    CTX_INIT: 
+    N_CTX: 16
+    PREC: fp16
+  CROSSGRAD:
+    ALPHA_D: 0.5
+    ALPHA_F: 0.5
+    EPS_D: 1.0
+    EPS_F: 1.0
+  DAEL:
+    CONF_THRE: 0.95
+    STRONG_TRANSFORMS: ()
+    WEIGHT_U: 0.5
+  DAELDG:
+    CONF_THRE: 0.95
+    STRONG_TRANSFORMS: ()
+    WEIGHT_U: 0.5
+  DDAIG:
+    ALPHA: 0.5
+    CLAMP: False
+    CLAMP_MAX: 1.0
+    CLAMP_MIN: -1.0
+    G_ARCH: 
+    LMDA: 0.3
+    WARMUP: 0
+  DOMAINMIX:
+    ALPHA: 1.0
+    BETA: 1.0
+    TYPE: crossdomain
+  ENTMIN:
+    LMDA: 0.001
+  FIXMATCH:
+    CONF_THRE: 0.95
+    STRONG_TRANSFORMS: ()
+    WEIGHT_U: 1.0
+  M3SDA:
+    LMDA: 0.5
+    N_STEP_F: 4
+  MAPLE:
+    CTX_INIT: a photo of a
+    N_CTX: 2
+    PREC: fp16
+    PROMPT_DEPTH: 9
+  MCD:
+    N_STEP_F: 4
+  MEANTEACHER:
+    EMA_ALPHA: 0.999
+    RAMPUP: 5
+    WEIGHT_U: 1.0
+  MIXMATCH:
+    MIXUP_BETA: 0.75
+    RAMPUP: 20000
+    TEMP: 2.0
+    WEIGHT_U: 100.0
+  MME:
+    LMDA: 0.1
+  NAME: RCoOp
+  RCOOP:
+    ALPHA: 4
+    CLASS_TOKEN_POSITION: end
+    CSC: False
+    CTX_INIT: 
+    N_CTX: 16
+    PREC: fp16
+    TEM: 0.5
+  RMAPLE:
+    CTX_INIT: a photo of a
+    N_CTX: 2
+    PREC: fp16
+    PROMPT_DEPTH: 9
+  SE:
+    CONF_THRE: 0.95
+    EMA_ALPHA: 0.999
+    RAMPUP: 300
+USE_CUDA: True
+VERBOSE: True
+VERSION: 1
+WARMUP:
+  EPOCH: 10
+  THRESHOLD: 0.5
+Collecting env info ...
+** System info **
+PyTorch version: 1.11.0
+Is debug build: False
+CUDA used to build PyTorch: 11.3
+ROCM used to build PyTorch: N/A
+
+OS: Ubuntu 20.04.6 LTS (x86_64)
+GCC version: (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+Clang version: Could not collect
+CMake version: Could not collect
+Libc version: glibc-2.31
+
+Python version: 3.8.18 (default, Sep 11 2023, 13:40:15)  [GCC 11.2.0] (64-bit runtime)
+Python platform: Linux-5.15.0-97-generic-x86_64-with-glibc2.17
+Is CUDA available: True
+CUDA runtime version: Could not collect
+GPU models and configuration: 
+GPU 0: NVIDIA GeForce RTX 2080 Ti
+GPU 1: NVIDIA GeForce RTX 2080 Ti
+
+Nvidia driver version: 470.86
+cuDNN version: Could not collect
+HIP runtime version: N/A
+MIOpen runtime version: N/A
+
+Versions of relevant libraries:
+[pip3] numpy==1.24.3
+[pip3] torch==1.11.0
+[pip3] torchvision==0.12.0
+[conda] blas                      1.0                         mkl    defaults
+[conda] cudatoolkit               11.3.1               h2bc3f7f_2    defaults
+[conda] ffmpeg                    4.3                  hf484d3e_0    pytorch
+[conda] mkl                       2021.4.0           h06a4308_640    defaults
+[conda] mkl-service               2.4.0            py38h7f8727e_0    defaults
+[conda] mkl_fft                   1.3.1            py38hd3c417c_0    defaults
+[conda] mkl_random                1.2.2            py38h51133e4_0    defaults
+[conda] numpy                     1.24.3           py38h14f4228_0    defaults
+[conda] numpy-base                1.24.3           py38h31eccc5_0    defaults
+[conda] pytorch                   1.11.0          py3.8_cuda11.3_cudnn8.2.0_0    https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch
+[conda] pytorch-mutex             1.0                        cuda    pytorch
+[conda] torchvision               0.12.0               py38_cu113    https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch
+        Pillow (9.4.0)
+
+Loading trainer: RCoOp
+Loading dataset: UCF101
+Reading split from /home/zhli/projects/RMaPLe/data/ucf101/split_zhou_UCF101.json
+Loading preprocessed noisy few-shot data from /home/zhli/projects/RMaPLe/data/ucf101/split_fewshot/shot_16-numfp_0-seed_1.pkl
+Loading preprocessed noisy expand data from /home/zhli/projects/RMaPLe/data/ucf101/split_expand/shot_80-numfp_0-seed_1.pkl
+Building transform_train
++ random resized crop (size=(224, 224), scale=(0.08, 1.0))
++ random flip
++ to torch tensor of range [0, 1]
++ normalization (mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])
+Building transform_test
++ resize the smaller edge to 224
++ 224x224 center crop
++ to torch tensor of range [0, 1]
++ normalization (mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])
+---------  ------
+Dataset    UCF101
+# classes  101
+# train_x  1,616
+# val      1,616
+# test     3,783
+---------  ------
+Building transform_train
++ random resized crop (size=(224, 224), scale=(0.08, 1.0))
++ random flip
++ to torch tensor of range [0, 1]
++ normalization (mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])
+Loading CLIP (backbone: RN50)
+Building custom CLIP (Two CLIP models)
+Initializing a generic context
+Initial context: "X X X X X X X X X X X X X X X X"
+Number of context words (tokens): 16
+Initializing a generic context
+Initial context: "X X X X X X X X X X X X X X X X"
+Number of context words (tokens): 16
+Turning off gradients in both the image and the text encoder
+Loading evaluator: Classification
+No checkpoint found, train from scratch
+Initialize tensorboard (log_dir=output/ucf101/RCoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCEFalse_FactorBiLoss/16shots_0noise/seed1/tensorboard)
+Warmup CLIP1
+epoch [1/50] batch [5/50] time 0.100 (0.355) data 0.000 (0.061) loss 3.3965 (3.5520) acc 28.1250 (21.2500) lr 1.0000e-05 eta 0:14:46
+epoch [1/50] batch [10/50] time 0.100 (0.227) data 0.000 (0.031) loss 3.4941 (3.4807) acc 31.2500 (25.6250) lr 1.0000e-05 eta 0:09:26
+epoch [1/50] batch [15/50] time 0.100 (0.185) data 0.000 (0.020) loss 3.3848 (3.3438) acc 21.8750 (26.8750) lr 1.0000e-05 eta 0:07:39
+epoch [1/50] batch [20/50] time 0.099 (0.163) data 0.000 (0.015) loss 3.0059 (3.2759) acc 34.3750 (28.4375) lr 1.0000e-05 eta 0:06:45
+epoch [1/50] batch [25/50] time 0.100 (0.151) data 0.000 (0.012) loss 3.1582 (3.2106) acc 31.2500 (29.3750) lr 1.0000e-05 eta 0:06:13
+epoch [1/50] batch [30/50] time 0.099 (0.142) data 0.000 (0.010) loss 2.4395 (3.1201) acc 37.5000 (30.7292) lr 1.0000e-05 eta 0:05:51
+epoch [1/50] batch [35/50] time 0.100 (0.136) data 0.000 (0.009) loss 2.5762 (3.0387) acc 40.6250 (32.4107) lr 1.0000e-05 eta 0:05:35
+epoch [1/50] batch [40/50] time 0.100 (0.132) data 0.000 (0.008) loss 2.8477 (2.9658) acc 34.3750 (33.7500) lr 1.0000e-05 eta 0:05:23
+epoch [1/50] batch [45/50] time 0.099 (0.128) data 0.000 (0.007) loss 2.2871 (2.9151) acc 50.0000 (34.7917) lr 1.0000e-05 eta 0:05:14
+epoch [1/50] batch [50/50] time 0.100 (0.125) data 0.000 (0.006) loss 2.3438 (2.8671) acc 43.7500 (35.3125) lr 2.0000e-03 eta 0:05:06
+Warmup CLIP2
+epoch [1/50] batch [5/50] time 0.100 (0.165) data 0.000 (0.065) loss 2.9883 (3.2059) acc 31.2500 (27.5000) lr 2.0000e-03 eta 0:06:51
+epoch [1/50] batch [10/50] time 0.100 (0.132) data 0.000 (0.032) loss 2.8633 (3.2377) acc 31.2500 (25.0000) lr 2.0000e-03 eta 0:05:29
+epoch [1/50] batch [15/50] time 0.100 (0.122) data 0.000 (0.022) loss 2.5176 (3.0635) acc 43.7500 (29.3750) lr 2.0000e-03 eta 0:05:02
+epoch [1/50] batch [20/50] time 0.100 (0.116) data 0.000 (0.016) loss 2.5977 (2.9477) acc 43.7500 (31.0938) lr 2.0000e-03 eta 0:04:48
+epoch [1/50] batch [25/50] time 0.100 (0.113) data 0.000 (0.013) loss 2.6133 (2.8796) acc 28.1250 (31.1250) lr 2.0000e-03 eta 0:04:39
+epoch [1/50] batch [30/50] time 0.100 (0.111) data 0.000 (0.011) loss 2.1699 (2.7972) acc 53.1250 (32.8125) lr 2.0000e-03 eta 0:04:33
+epoch [1/50] batch [35/50] time 0.100 (0.109) data 0.000 (0.009) loss 1.8301 (2.6735) acc 53.1250 (35.8036) lr 2.0000e-03 eta 0:04:29
+epoch [1/50] batch [40/50] time 0.100 (0.108) data 0.000 (0.008) loss 2.2676 (2.6334) acc 50.0000 (36.5625) lr 2.0000e-03 eta 0:04:25
+epoch [1/50] batch [45/50] time 0.100 (0.107) data 0.000 (0.007) loss 2.3613 (2.6081) acc 37.5000 (36.8056) lr 2.0000e-03 eta 0:04:22
+epoch [1/50] batch [50/50] time 0.100 (0.106) data 0.000 (0.007) loss 3.1113 (2.5514) acc 21.8750 (38.2500) lr 2.0000e-03 eta 0:04:20
+Warmup CLIP1
+epoch [2/50] batch [5/50] time 0.100 (0.167) data 0.000 (0.067) loss 2.6895 (2.5426) acc 34.3750 (35.6250) lr 2.0000e-03 eta 0:06:48
+epoch [2/50] batch [10/50] time 0.100 (0.134) data 0.000 (0.034) loss 1.7842 (2.3428) acc 56.2500 (39.6875) lr 2.0000e-03 eta 0:05:26
+epoch [2/50] batch [15/50] time 0.100 (0.122) data 0.000 (0.022) loss 2.1953 (2.2764) acc 40.6250 (42.7083) lr 2.0000e-03 eta 0:04:58
+epoch [2/50] batch [20/50] time 0.100 (0.117) data 0.000 (0.017) loss 2.8867 (2.2327) acc 31.2500 (42.9688) lr 2.0000e-03 eta 0:04:43
+epoch [2/50] batch [25/50] time 0.100 (0.113) data 0.000 (0.014) loss 1.3945 (2.1541) acc 53.1250 (44.5000) lr 2.0000e-03 eta 0:04:35
+epoch [2/50] batch [30/50] time 0.100 (0.111) data 0.000 (0.011) loss 2.2891 (2.1169) acc 34.3750 (44.3750) lr 2.0000e-03 eta 0:04:29
+epoch [2/50] batch [35/50] time 0.100 (0.110) data 0.000 (0.010) loss 1.7090 (2.0602) acc 53.1250 (45.7143) lr 2.0000e-03 eta 0:04:24
+epoch [2/50] batch [40/50] time 0.099 (0.108) data 0.000 (0.009) loss 2.2031 (2.0709) acc 43.7500 (45.7031) lr 2.0000e-03 eta 0:04:21
+epoch [2/50] batch [45/50] time 0.099 (0.107) data 0.000 (0.008) loss 1.8896 (2.0525) acc 50.0000 (46.3889) lr 2.0000e-03 eta 0:04:18
+epoch [2/50] batch [50/50] time 0.100 (0.107) data 0.000 (0.007) loss 1.8389 (2.0427) acc 56.2500 (46.3750) lr 1.9980e-03 eta 0:04:15
+Warmup CLIP2
+epoch [2/50] batch [5/50] time 0.099 (0.182) data 0.000 (0.077) loss 2.6016 (2.3764) acc 28.1250 (40.6250) lr 1.9980e-03 eta 0:07:24
+epoch [2/50] batch [10/50] time 0.100 (0.141) data 0.000 (0.039) loss 2.1035 (2.2582) acc 43.7500 (42.1875) lr 1.9980e-03 eta 0:05:43
+epoch [2/50] batch [15/50] time 0.100 (0.127) data 0.000 (0.026) loss 2.2070 (2.1868) acc 53.1250 (44.1667) lr 1.9980e-03 eta 0:05:09
+epoch [2/50] batch [20/50] time 0.099 (0.120) data 0.000 (0.019) loss 1.6133 (2.1625) acc 62.5000 (44.2188) lr 1.9980e-03 eta 0:04:52
+epoch [2/50] batch [25/50] time 0.100 (0.116) data 0.000 (0.016) loss 1.7461 (2.0587) acc 59.3750 (46.6250) lr 1.9980e-03 eta 0:04:41
+epoch [2/50] batch [30/50] time 0.100 (0.114) data 0.000 (0.013) loss 1.4668 (1.9901) acc 53.1250 (47.7083) lr 1.9980e-03 eta 0:04:34
+epoch [2/50] batch [35/50] time 0.100 (0.112) data 0.000 (0.011) loss 2.0566 (1.9801) acc 46.8750 (48.3036) lr 1.9980e-03 eta 0:04:29
+epoch [2/50] batch [40/50] time 0.100 (0.110) data 0.000 (0.010) loss 1.8428 (1.9699) acc 56.2500 (48.8281) lr 1.9980e-03 eta 0:04:25
+epoch [2/50] batch [45/50] time 0.099 (0.109) data 0.000 (0.009) loss 1.1348 (1.9612) acc 65.6250 (48.5417) lr 1.9980e-03 eta 0:04:21
+epoch [2/50] batch [50/50] time 0.100 (0.108) data 0.000 (0.008) loss 2.2070 (1.9741) acc 46.8750 (48.3125) lr 1.9980e-03 eta 0:04:19
+Warmup CLIP1
+epoch [3/50] batch [5/50] time 0.100 (0.153) data 0.000 (0.052) loss 2.3105 (1.8330) acc 43.7500 (52.5000) lr 1.9980e-03 eta 0:06:05
+epoch [3/50] batch [10/50] time 0.100 (0.126) data 0.000 (0.026) loss 2.0586 (1.8611) acc 50.0000 (49.3750) lr 1.9980e-03 eta 0:05:01
+epoch [3/50] batch [15/50] time 0.100 (0.117) data 0.000 (0.018) loss 1.7891 (1.8349) acc 50.0000 (48.9583) lr 1.9980e-03 eta 0:04:40
+epoch [3/50] batch [20/50] time 0.100 (0.113) data 0.000 (0.013) loss 1.6162 (1.8505) acc 53.1250 (48.7500) lr 1.9980e-03 eta 0:04:29
+epoch [3/50] batch [25/50] time 0.100 (0.111) data 0.000 (0.011) loss 1.5410 (1.8002) acc 62.5000 (50.7500) lr 1.9980e-03 eta 0:04:22
+epoch [3/50] batch [30/50] time 0.100 (0.109) data 0.000 (0.009) loss 1.9561 (1.8314) acc 40.6250 (49.8958) lr 1.9980e-03 eta 0:04:17
+epoch [3/50] batch [35/50] time 0.100 (0.107) data 0.000 (0.008) loss 1.9541 (1.8208) acc 50.0000 (49.8214) lr 1.9980e-03 eta 0:04:14
+epoch [3/50] batch [40/50] time 0.100 (0.107) data 0.000 (0.007) loss 1.3506 (1.7948) acc 59.3750 (50.7812) lr 1.9980e-03 eta 0:04:11
+epoch [3/50] batch [45/50] time 0.100 (0.106) data 0.000 (0.006) loss 2.2109 (1.7938) acc 46.8750 (51.0417) lr 1.9980e-03 eta 0:04:09
+epoch [3/50] batch [50/50] time 0.099 (0.105) data 0.000 (0.005) loss 1.7891 (1.7976) acc 56.2500 (51.0625) lr 1.9921e-03 eta 0:04:07
+Warmup CLIP2
+epoch [3/50] batch [5/50] time 0.104 (0.157) data 0.004 (0.057) loss 1.8115 (1.6494) acc 56.2500 (55.0000) lr 1.9921e-03 eta 0:06:16
+epoch [3/50] batch [10/50] time 0.100 (0.129) data 0.000 (0.029) loss 1.4639 (1.7119) acc 56.2500 (51.2500) lr 1.9921e-03 eta 0:05:07
+epoch [3/50] batch [15/50] time 0.100 (0.119) data 0.000 (0.019) loss 2.2578 (1.7782) acc 37.5000 (50.4167) lr 1.9921e-03 eta 0:04:44
+epoch [3/50] batch [20/50] time 0.100 (0.114) data 0.000 (0.014) loss 2.0938 (1.8240) acc 53.1250 (50.4688) lr 1.9921e-03 eta 0:04:32
+epoch [3/50] batch [25/50] time 0.100 (0.111) data 0.000 (0.012) loss 1.8916 (1.8353) acc 53.1250 (50.0000) lr 1.9921e-03 eta 0:04:24
+epoch [3/50] batch [30/50] time 0.100 (0.110) data 0.000 (0.010) loss 1.8613 (1.8123) acc 43.7500 (49.8958) lr 1.9921e-03 eta 0:04:19
+epoch [3/50] batch [35/50] time 0.100 (0.108) data 0.000 (0.008) loss 2.1504 (1.8366) acc 40.6250 (49.5536) lr 1.9921e-03 eta 0:04:15
+epoch [3/50] batch [40/50] time 0.100 (0.107) data 0.000 (0.007) loss 1.6074 (1.8102) acc 59.3750 (50.7812) lr 1.9921e-03 eta 0:04:12
+epoch [3/50] batch [45/50] time 0.099 (0.106) data 0.000 (0.006) loss 2.1035 (1.8032) acc 46.8750 (51.6667) lr 1.9921e-03 eta 0:04:10
+epoch [3/50] batch [50/50] time 0.099 (0.106) data 0.000 (0.006) loss 1.9297 (1.7855) acc 56.2500 (52.6250) lr 1.9921e-03 eta 0:04:08
+Warmup CLIP1
+epoch [4/50] batch [5/50] time 0.100 (0.154) data 0.000 (0.054) loss 1.8057 (1.6494) acc 50.0000 (56.2500) lr 1.9921e-03 eta 0:06:01
+epoch [4/50] batch [10/50] time 0.100 (0.127) data 0.000 (0.027) loss 1.0312 (1.4860) acc 65.6250 (60.0000) lr 1.9921e-03 eta 0:04:57
+epoch [4/50] batch [15/50] time 0.100 (0.118) data 0.000 (0.018) loss 1.3857 (1.5364) acc 59.3750 (59.1667) lr 1.9921e-03 eta 0:04:35
+epoch [4/50] batch [20/50] time 0.100 (0.114) data 0.000 (0.014) loss 1.5879 (1.5685) acc 56.2500 (57.5000) lr 1.9921e-03 eta 0:04:24
+epoch [4/50] batch [25/50] time 0.100 (0.111) data 0.000 (0.011) loss 2.2109 (1.6108) acc 43.7500 (56.7500) lr 1.9921e-03 eta 0:04:17
+epoch [4/50] batch [30/50] time 0.100 (0.109) data 0.000 (0.009) loss 2.1582 (1.6240) acc 43.7500 (56.7708) lr 1.9921e-03 eta 0:04:12
+epoch [4/50] batch [35/50] time 0.100 (0.108) data 0.000 (0.008) loss 1.4062 (1.6345) acc 56.2500 (55.8036) lr 1.9921e-03 eta 0:04:09
+epoch [4/50] batch [40/50] time 0.100 (0.107) data 0.000 (0.007) loss 1.4033 (1.6542) acc 75.0000 (55.7812) lr 1.9921e-03 eta 0:04:06
+epoch [4/50] batch [45/50] time 0.100 (0.106) data 0.000 (0.006) loss 2.1289 (1.6826) acc 40.6250 (55.1389) lr 1.9921e-03 eta 0:04:04
+epoch [4/50] batch [50/50] time 0.100 (0.105) data 0.000 (0.005) loss 1.7500 (1.6897) acc 59.3750 (54.9375) lr 1.9823e-03 eta 0:04:02
+Warmup CLIP2
+epoch [4/50] batch [5/50] time 0.100 (0.152) data 0.000 (0.052) loss 1.6865 (1.5428) acc 56.2500 (55.6250) lr 1.9823e-03 eta 0:05:57
+epoch [4/50] batch [10/50] time 0.100 (0.126) data 0.000 (0.026) loss 2.3027 (1.6679) acc 43.7500 (53.7500) lr 1.9823e-03 eta 0:04:55
+epoch [4/50] batch [15/50] time 0.100 (0.117) data 0.000 (0.017) loss 1.2061 (1.6325) acc 56.2500 (53.1250) lr 1.9823e-03 eta 0:04:34
+epoch [4/50] batch [20/50] time 0.100 (0.113) data 0.000 (0.013) loss 1.5947 (1.7197) acc 53.1250 (50.4688) lr 1.9823e-03 eta 0:04:23
+epoch [4/50] batch [25/50] time 0.100 (0.110) data 0.000 (0.010) loss 0.9331 (1.6557) acc 75.0000 (53.0000) lr 1.9823e-03 eta 0:04:16
+epoch [4/50] batch [30/50] time 0.100 (0.109) data 0.000 (0.009) loss 1.5146 (1.6792) acc 65.6250 (53.1250) lr 1.9823e-03 eta 0:04:12
+epoch [4/50] batch [35/50] time 0.100 (0.107) data 0.000 (0.008) loss 1.8604 (1.6665) acc 43.7500 (53.3929) lr 1.9823e-03 eta 0:04:08
+epoch [4/50] batch [40/50] time 0.099 (0.106) data 0.000 (0.007) loss 1.1650 (1.6760) acc 71.8750 (53.7500) lr 1.9823e-03 eta 0:04:05
+epoch [4/50] batch [45/50] time 0.099 (0.106) data 0.000 (0.006) loss 1.6523 (1.6717) acc 56.2500 (54.0278) lr 1.9823e-03 eta 0:04:03
+epoch [4/50] batch [50/50] time 0.100 (0.105) data 0.000 (0.005) loss 1.8359 (1.6668) acc 56.2500 (54.5625) lr 1.9823e-03 eta 0:04:01
+Warmup CLIP1
+epoch [5/50] batch [5/50] time 0.100 (0.154) data 0.000 (0.054) loss 1.9531 (1.7219) acc 43.7500 (51.8750) lr 1.9823e-03 eta 0:05:53
+epoch [5/50] batch [10/50] time 0.100 (0.127) data 0.000 (0.027) loss 1.1084 (1.6139) acc 78.1250 (55.9375) lr 1.9823e-03 eta 0:04:51
+epoch [5/50] batch [15/50] time 0.100 (0.118) data 0.000 (0.018) loss 1.8398 (1.6503) acc 53.1250 (56.8750) lr 1.9823e-03 eta 0:04:29
+epoch [5/50] batch [20/50] time 0.100 (0.114) data 0.000 (0.014) loss 1.5967 (1.6445) acc 62.5000 (56.7188) lr 1.9823e-03 eta 0:04:18
+epoch [5/50] batch [25/50] time 0.101 (0.111) data 0.000 (0.011) loss 1.7783 (1.6758) acc 50.0000 (56.8750) lr 1.9823e-03 eta 0:04:12
+epoch [5/50] batch [30/50] time 0.100 (0.109) data 0.000 (0.009) loss 1.7979 (1.6507) acc 40.6250 (56.8750) lr 1.9823e-03 eta 0:04:07
+epoch [5/50] batch [35/50] time 0.101 (0.108) data 0.000 (0.008) loss 1.3975 (1.6409) acc 62.5000 (57.4107) lr 1.9823e-03 eta 0:04:04
+epoch [5/50] batch [40/50] time 0.100 (0.107) data 0.000 (0.007) loss 1.6846 (1.6142) acc 53.1250 (57.7344) lr 1.9823e-03 eta 0:04:01
+epoch [5/50] batch [45/50] time 0.100 (0.106) data 0.000 (0.006) loss 1.4668 (1.6163) acc 62.5000 (57.7083) lr 1.9823e-03 eta 0:03:59
+epoch [5/50] batch [50/50] time 0.100 (0.105) data 0.000 (0.006) loss 1.2715 (1.6237) acc 65.6250 (57.2500) lr 1.9686e-03 eta 0:03:57
+Warmup CLIP2
+epoch [5/50] batch [5/50] time 0.100 (0.152) data 0.000 (0.052) loss 1.6055 (1.4016) acc 56.2500 (65.0000) lr 1.9686e-03 eta 0:05:49
+epoch [5/50] batch [10/50] time 0.100 (0.126) data 0.000 (0.026) loss 1.2988 (1.4044) acc 62.5000 (62.1875) lr 1.9686e-03 eta 0:04:48
+epoch [5/50] batch [15/50] time 0.100 (0.118) data 0.000 (0.017) loss 1.2041 (1.4520) acc 75.0000 (61.8750) lr 1.9686e-03 eta 0:04:28
+epoch [5/50] batch [20/50] time 0.100 (0.113) data 0.000 (0.013) loss 1.7061 (1.5010) acc 53.1250 (59.6875) lr 1.9686e-03 eta 0:04:18
+epoch [5/50] batch [25/50] time 0.100 (0.111) data 0.000 (0.010) loss 2.2480 (1.5384) acc 31.2500 (57.8750) lr 1.9686e-03 eta 0:04:11
+epoch [5/50] batch [30/50] time 0.100 (0.109) data 0.000 (0.009) loss 1.6562 (1.5760) acc 53.1250 (56.7708) lr 1.9686e-03 eta 0:04:06
+epoch [5/50] batch [35/50] time 0.100 (0.108) data 0.000 (0.007) loss 1.7627 (1.5767) acc 56.2500 (56.6964) lr 1.9686e-03 eta 0:04:03
+epoch [5/50] batch [40/50] time 0.100 (0.107) data 0.000 (0.007) loss 1.7822 (1.5979) acc 53.1250 (56.3281) lr 1.9686e-03 eta 0:04:00
+epoch [5/50] batch [45/50] time 0.100 (0.106) data 0.000 (0.006) loss 1.2676 (1.5781) acc 62.5000 (56.7361) lr 1.9686e-03 eta 0:03:58
+epoch [5/50] batch [50/50] time 0.100 (0.105) data 0.000 (0.005) loss 1.4883 (1.5794) acc 46.8750 (56.5000) lr 1.9686e-03 eta 0:03:56
+Warmup CLIP1
+epoch [6/50] batch [5/50] time 0.100 (0.154) data 0.000 (0.054) loss 1.2334 (1.3363) acc 65.6250 (64.3750) lr 1.9686e-03 eta 0:05:46
+epoch [6/50] batch [10/50] time 0.100 (0.127) data 0.000 (0.027) loss 1.7432 (1.4853) acc 46.8750 (60.6250) lr 1.9686e-03 eta 0:04:44
+epoch [6/50] batch [15/50] time 0.100 (0.118) data 0.000 (0.018) loss 1.6748 (1.5697) acc 56.2500 (58.1250) lr 1.9686e-03 eta 0:04:24
+epoch [6/50] batch [20/50] time 0.100 (0.114) data 0.000 (0.014) loss 1.9746 (1.5605) acc 50.0000 (58.4375) lr 1.9686e-03 eta 0:04:13
+epoch [6/50] batch [25/50] time 0.100 (0.111) data 0.000 (0.011) loss 1.5977 (1.5747) acc 56.2500 (58.1250) lr 1.9686e-03 eta 0:04:06
+epoch [6/50] batch [30/50] time 0.100 (0.109) data 0.000 (0.009) loss 1.5938 (1.5598) acc 56.2500 (58.1250) lr 1.9686e-03 eta 0:04:02
+epoch [6/50] batch [35/50] time 0.100 (0.108) data 0.000 (0.008) loss 1.2861 (1.5310) acc 68.7500 (58.8393) lr 1.9686e-03 eta 0:03:58
+epoch [6/50] batch [40/50] time 0.100 (0.107) data 0.000 (0.007) loss 1.7070 (1.5702) acc 46.8750 (57.7344) lr 1.9686e-03 eta 0:03:55
+epoch [6/50] batch [45/50] time 0.100 (0.106) data 0.000 (0.006) loss 1.7646 (1.5872) acc 40.6250 (57.1528) lr 1.9686e-03 eta 0:03:53
+epoch [6/50] batch [50/50] time 0.100 (0.105) data 0.000 (0.005) loss 1.2852 (1.5847) acc 65.6250 (57.0625) lr 1.9511e-03 eta 0:03:51
+Warmup CLIP2
+epoch [6/50] batch [5/50] time 0.100 (0.154) data 0.000 (0.054) loss 1.5430 (1.4130) acc 62.5000 (61.2500) lr 1.9511e-03 eta 0:05:46
+epoch [6/50] batch [10/50] time 0.100 (0.127) data 0.000 (0.027) loss 1.8262 (1.5537) acc 56.2500 (57.1875) lr 1.9511e-03 eta 0:04:44
+epoch [6/50] batch [15/50] time 0.100 (0.118) data 0.000 (0.018) loss 1.8242 (1.5744) acc 53.1250 (56.4583) lr 1.9511e-03 eta 0:04:23
+epoch [6/50] batch [20/50] time 0.100 (0.114) data 0.000 (0.014) loss 1.8027 (1.5260) acc 56.2500 (58.1250) lr 1.9511e-03 eta 0:04:13
+epoch [6/50] batch [25/50] time 0.100 (0.111) data 0.000 (0.011) loss 0.7349 (1.4904) acc 71.8750 (59.1250) lr 1.9511e-03 eta 0:04:06
+epoch [6/50] batch [30/50] time 0.100 (0.109) data 0.000 (0.009) loss 1.3623 (1.5054) acc 68.7500 (58.9583) lr 1.9511e-03 eta 0:04:02
+epoch [6/50] batch [35/50] time 0.100 (0.108) data 0.000 (0.008) loss 1.2012 (1.5018) acc 75.0000 (59.5536) lr 1.9511e-03 eta 0:03:58
+epoch [6/50] batch [40/50] time 0.099 (0.107) data 0.000 (0.007) loss 1.1611 (1.5111) acc 68.7500 (59.6094) lr 1.9511e-03 eta 0:03:55
+epoch [6/50] batch [45/50] time 0.100 (0.106) data 0.000 (0.006) loss 1.7676 (1.5157) acc 53.1250 (59.3750) lr 1.9511e-03 eta 0:03:53
+epoch [6/50] batch [50/50] time 0.100 (0.105) data 0.000 (0.006) loss 1.8555 (1.5005) acc 50.0000 (59.4375) lr 1.9511e-03 eta 0:03:51
+Warmup CLIP1
+epoch [7/50] batch [5/50] time 0.100 (0.159) data 0.000 (0.059) loss 1.3535 (1.5717) acc 50.0000 (48.1250) lr 1.9511e-03 eta 0:05:49
+epoch [7/50] batch [10/50] time 0.100 (0.129) data 0.000 (0.030) loss 1.6982 (1.5800) acc 50.0000 (53.4375) lr 1.9511e-03 eta 0:04:43
+epoch [7/50] batch [15/50] time 0.099 (0.119) data 0.000 (0.020) loss 1.9404 (1.5637) acc 56.2500 (55.8333) lr 1.9511e-03 eta 0:04:20
+epoch [7/50] batch [20/50] time 0.100 (0.114) data 0.000 (0.015) loss 0.9077 (1.5061) acc 71.8750 (57.8125) lr 1.9511e-03 eta 0:04:09
+epoch [7/50] batch [25/50] time 0.100 (0.112) data 0.000 (0.012) loss 1.6553 (1.5359) acc 62.5000 (57.7500) lr 1.9511e-03 eta 0:04:02
+epoch [7/50] batch [30/50] time 0.100 (0.110) data 0.000 (0.010) loss 1.4893 (1.5228) acc 59.3750 (58.4375) lr 1.9511e-03 eta 0:03:57
+epoch [7/50] batch [35/50] time 0.099 (0.108) data 0.000 (0.009) loss 2.1484 (1.5485) acc 40.6250 (57.4107) lr 1.9511e-03 eta 0:03:54
+epoch [7/50] batch [40/50] time 0.100 (0.107) data 0.000 (0.007) loss 1.6543 (1.5467) acc 68.7500 (57.5781) lr 1.9511e-03 eta 0:03:51
+epoch [7/50] batch [45/50] time 0.100 (0.106) data 0.000 (0.007) loss 1.1953 (1.5455) acc 62.5000 (57.6389) lr 1.9511e-03 eta 0:03:48
+epoch [7/50] batch [50/50] time 0.100 (0.106) data 0.000 (0.006) loss 1.1367 (1.5373) acc 71.8750 (58.0625) lr 1.9298e-03 eta 0:03:46
+Warmup CLIP2
+epoch [7/50] batch [5/50] time 0.100 (0.143) data 0.000 (0.042) loss 1.9062 (1.8438) acc 43.7500 (50.6250) lr 1.9298e-03 eta 0:05:14
+epoch [7/50] batch [10/50] time 0.100 (0.122) data 0.000 (0.021) loss 1.3457 (1.6560) acc 65.6250 (56.8750) lr 1.9298e-03 eta 0:04:26
+epoch [7/50] batch [15/50] time 0.100 (0.114) data 0.000 (0.014) loss 1.5381 (1.6899) acc 62.5000 (55.8333) lr 1.9298e-03 eta 0:04:09
+epoch [7/50] batch [20/50] time 0.100 (0.111) data 0.000 (0.011) loss 1.8154 (1.6914) acc 59.3750 (56.7188) lr 1.9298e-03 eta 0:04:01
+epoch [7/50] batch [25/50] time 0.100 (0.109) data 0.000 (0.009) loss 0.8892 (1.5838) acc 75.0000 (59.6250) lr 1.9298e-03 eta 0:03:56
+epoch [7/50] batch [30/50] time 0.100 (0.107) data 0.000 (0.007) loss 1.3174 (1.5760) acc 65.6250 (60.5208) lr 1.9298e-03 eta 0:03:52
+epoch [7/50] batch [35/50] time 0.100 (0.106) data 0.000 (0.006) loss 1.5205 (1.5652) acc 56.2500 (59.5536) lr 1.9298e-03 eta 0:03:49
+epoch [7/50] batch [40/50] time 0.100 (0.105) data 0.000 (0.005) loss 0.9790 (1.5409) acc 65.6250 (59.6094) lr 1.9298e-03 eta 0:03:47
+epoch [7/50] batch [45/50] time 0.100 (0.105) data 0.000 (0.005) loss 1.0596 (1.5238) acc 65.6250 (59.5139) lr 1.9298e-03 eta 0:03:45
+epoch [7/50] batch [50/50] time 0.100 (0.104) data 0.000 (0.004) loss 1.5605 (1.5073) acc 56.2500 (59.6250) lr 1.9298e-03 eta 0:03:44
+Warmup CLIP1
+epoch [8/50] batch [5/50] time 0.100 (0.153) data 0.000 (0.052) loss 1.1914 (1.1809) acc 65.6250 (66.2500) lr 1.9298e-03 eta 0:05:28
+epoch [8/50] batch [10/50] time 0.100 (0.127) data 0.000 (0.026) loss 1.6162 (1.3471) acc 62.5000 (63.7500) lr 1.9298e-03 eta 0:04:31
+epoch [8/50] batch [15/50] time 0.100 (0.118) data 0.000 (0.018) loss 1.1484 (1.3607) acc 71.8750 (62.5000) lr 1.9298e-03 eta 0:04:11
+epoch [8/50] batch [20/50] time 0.100 (0.114) data 0.000 (0.013) loss 1.4043 (1.3580) acc 56.2500 (62.5000) lr 1.9298e-03 eta 0:04:01
+epoch [8/50] batch [25/50] time 0.101 (0.111) data 0.000 (0.011) loss 1.6699 (1.4350) acc 56.2500 (59.7500) lr 1.9298e-03 eta 0:03:55
+epoch [8/50] batch [30/50] time 0.100 (0.109) data 0.000 (0.009) loss 0.8696 (1.4441) acc 71.8750 (58.9583) lr 1.9298e-03 eta 0:03:51
+epoch [8/50] batch [35/50] time 0.101 (0.108) data 0.000 (0.008) loss 1.4912 (1.4627) acc 59.3750 (58.7500) lr 1.9298e-03 eta 0:03:48
+epoch [8/50] batch [40/50] time 0.100 (0.107) data 0.000 (0.007) loss 1.5186 (1.4592) acc 59.3750 (59.2188) lr 1.9298e-03 eta 0:03:45
+epoch [8/50] batch [45/50] time 0.100 (0.106) data 0.000 (0.006) loss 0.9868 (1.4572) acc 75.0000 (59.4444) lr 1.9298e-03 eta 0:03:43
+epoch [8/50] batch [50/50] time 0.100 (0.105) data 0.000 (0.005) loss 1.4707 (1.4536) acc 62.5000 (59.2500) lr 1.9048e-03 eta 0:03:41
+Warmup CLIP2
+epoch [8/50] batch [5/50] time 0.100 (0.154) data 0.000 (0.054) loss 1.4570 (1.4820) acc 65.6250 (63.1250) lr 1.9048e-03 eta 0:05:31
+epoch [8/50] batch [10/50] time 0.100 (0.127) data 0.000 (0.027) loss 0.9702 (1.3905) acc 68.7500 (63.7500) lr 1.9048e-03 eta 0:04:32
+epoch [8/50] batch [15/50] time 0.101 (0.118) data 0.000 (0.018) loss 1.1875 (1.3199) acc 59.3750 (64.7917) lr 1.9048e-03 eta 0:04:12
+epoch [8/50] batch [20/50] time 0.100 (0.114) data 0.000 (0.014) loss 2.1465 (1.3159) acc 46.8750 (64.8438) lr 1.9048e-03 eta 0:04:02
+epoch [8/50] batch [25/50] time 0.101 (0.111) data 0.000 (0.011) loss 1.0410 (1.3322) acc 68.7500 (63.7500) lr 1.9048e-03 eta 0:03:56
+epoch [8/50] batch [30/50] time 0.100 (0.109) data 0.000 (0.009) loss 0.9741 (1.3191) acc 75.0000 (64.0625) lr 1.9048e-03 eta 0:03:51
+epoch [8/50] batch [35/50] time 0.100 (0.108) data 0.000 (0.008) loss 1.3389 (1.3114) acc 56.2500 (63.9286) lr 1.9048e-03 eta 0:03:48
+epoch [8/50] batch [40/50] time 0.100 (0.107) data 0.000 (0.007) loss 1.3027 (1.3427) acc 53.1250 (62.9688) lr 1.9048e-03 eta 0:03:45
+epoch [8/50] batch [45/50] time 0.100 (0.106) data 0.000 (0.006) loss 1.4609 (1.3795) acc 62.5000 (62.2917) lr 1.9048e-03 eta 0:03:43
+epoch [8/50] batch [50/50] time 0.100 (0.106) data 0.000 (0.005) loss 2.0605 (1.3919) acc 46.8750 (62.3125) lr 1.9048e-03 eta 0:03:41
+Warmup CLIP1
+epoch [9/50] batch [5/50] time 0.101 (0.156) data 0.000 (0.055) loss 1.3760 (1.6236) acc 50.0000 (56.2500) lr 1.9048e-03 eta 0:05:27
+epoch [9/50] batch [10/50] time 0.100 (0.128) data 0.000 (0.028) loss 1.8535 (1.5401) acc 50.0000 (59.3750) lr 1.9048e-03 eta 0:04:28
+epoch [9/50] batch [15/50] time 0.101 (0.119) data 0.000 (0.019) loss 1.1357 (1.4594) acc 71.8750 (61.2500) lr 1.9048e-03 eta 0:04:08
+epoch [9/50] batch [20/50] time 0.101 (0.114) data 0.000 (0.014) loss 1.7783 (1.5159) acc 43.7500 (58.2812) lr 1.9048e-03 eta 0:03:57
+epoch [9/50] batch [25/50] time 0.101 (0.112) data 0.000 (0.011) loss 1.1299 (1.4807) acc 65.6250 (59.2500) lr 1.9048e-03 eta 0:03:51
+epoch [9/50] batch [30/50] time 0.100 (0.110) data 0.000 (0.009) loss 1.2598 (1.4768) acc 68.7500 (58.5417) lr 1.9048e-03 eta 0:03:47
+epoch [9/50] batch [35/50] time 0.100 (0.108) data 0.000 (0.008) loss 1.8506 (1.4488) acc 59.3750 (60.0000) lr 1.9048e-03 eta 0:03:43
+epoch [9/50] batch [40/50] time 0.100 (0.107) data 0.000 (0.007) loss 1.2598 (1.4654) acc 71.8750 (60.0000) lr 1.9048e-03 eta 0:03:41
+epoch [9/50] batch [45/50] time 0.100 (0.107) data 0.000 (0.006) loss 1.6475 (1.4309) acc 59.3750 (60.8333) lr 1.9048e-03 eta 0:03:38
+epoch [9/50] batch [50/50] time 0.100 (0.106) data 0.000 (0.006) loss 1.1328 (1.4050) acc 65.6250 (61.1875) lr 1.8763e-03 eta 0:03:37
+Warmup CLIP2
+epoch [9/50] batch [5/50] time 0.100 (0.160) data 0.000 (0.060) loss 1.2520 (1.4814) acc 62.5000 (59.3750) lr 1.8763e-03 eta 0:05:35
+epoch [9/50] batch [10/50] time 0.100 (0.130) data 0.000 (0.030) loss 1.2432 (1.4419) acc 56.2500 (59.0625) lr 1.8763e-03 eta 0:04:32
+epoch [9/50] batch [15/50] time 0.100 (0.120) data 0.000 (0.020) loss 1.4766 (1.4266) acc 56.2500 (59.7917) lr 1.8763e-03 eta 0:04:10
+epoch [9/50] batch [20/50] time 0.100 (0.115) data 0.000 (0.015) loss 1.5820 (1.4514) acc 56.2500 (59.3750) lr 1.8763e-03 eta 0:03:59
+epoch [9/50] batch [25/50] time 0.100 (0.112) data 0.000 (0.012) loss 1.6924 (1.4693) acc 59.3750 (59.3750) lr 1.8763e-03 eta 0:03:52
+epoch [9/50] batch [30/50] time 0.100 (0.110) data 0.000 (0.010) loss 1.1357 (1.4343) acc 65.6250 (60.3125) lr 1.8763e-03 eta 0:03:48
+epoch [9/50] batch [35/50] time 0.100 (0.109) data 0.000 (0.009) loss 1.0576 (1.4472) acc 71.8750 (60.0893) lr 1.8763e-03 eta 0:03:44
+epoch [9/50] batch [40/50] time 0.100 (0.108) data 0.000 (0.008) loss 1.9043 (1.4543) acc 50.0000 (60.0000) lr 1.8763e-03 eta 0:03:41
+epoch [9/50] batch [45/50] time 0.100 (0.107) data 0.000 (0.007) loss 1.3096 (1.4494) acc 65.6250 (60.1389) lr 1.8763e-03 eta 0:03:39
+epoch [9/50] batch [50/50] time 0.100 (0.106) data 0.000 (0.006) loss 1.3867 (1.4594) acc 62.5000 (60.1250) lr 1.8763e-03 eta 0:03:37
+Warmup CLIP1
+epoch [10/50] batch [5/50] time 0.101 (0.160) data 0.000 (0.059) loss 1.2705 (1.4059) acc 62.5000 (60.0000) lr 1.8763e-03 eta 0:05:26
+epoch [10/50] batch [10/50] time 0.100 (0.130) data 0.000 (0.030) loss 1.3477 (1.3780) acc 56.2500 (59.6875) lr 1.8763e-03 eta 0:04:25
+epoch [10/50] batch [15/50] time 0.100 (0.120) data 0.000 (0.020) loss 1.0322 (1.4113) acc 71.8750 (60.2083) lr 1.8763e-03 eta 0:04:04
+epoch [10/50] batch [20/50] time 0.100 (0.115) data 0.000 (0.015) loss 1.4082 (1.4170) acc 65.6250 (60.7812) lr 1.8763e-03 eta 0:03:53
+epoch [10/50] batch [25/50] time 0.100 (0.112) data 0.000 (0.012) loss 1.8076 (1.4707) acc 59.3750 (59.8750) lr 1.8763e-03 eta 0:03:47
+epoch [10/50] batch [30/50] time 0.100 (0.110) data 0.000 (0.010) loss 1.2402 (1.4597) acc 59.3750 (59.7917) lr 1.8763e-03 eta 0:03:42
+epoch [10/50] batch [35/50] time 0.100 (0.109) data 0.000 (0.009) loss 1.6455 (1.4512) acc 46.8750 (59.8214) lr 1.8763e-03 eta 0:03:39
+epoch [10/50] batch [40/50] time 0.100 (0.108) data 0.000 (0.007) loss 1.4658 (1.4494) acc 59.3750 (60.0000) lr 1.8763e-03 eta 0:03:36
+epoch [10/50] batch [45/50] time 0.100 (0.107) data 0.000 (0.007) loss 1.7021 (1.4530) acc 62.5000 (59.8611) lr 1.8763e-03 eta 0:03:34
+epoch [10/50] batch [50/50] time 0.100 (0.106) data 0.000 (0.006) loss 1.5098 (1.4543) acc 53.1250 (59.5000) lr 1.8443e-03 eta 0:03:32
+Warmup CLIP2
+epoch [10/50] batch [5/50] time 0.100 (0.159) data 0.000 (0.059) loss 1.3105 (1.4045) acc 59.3750 (61.2500) lr 1.8443e-03 eta 0:05:25
+epoch [10/50] batch [10/50] time 0.100 (0.130) data 0.000 (0.029) loss 1.4746 (1.3426) acc 62.5000 (64.0625) lr 1.8443e-03 eta 0:04:24
+epoch [10/50] batch [15/50] time 0.100 (0.120) data 0.000 (0.020) loss 1.2529 (1.2971) acc 65.6250 (65.0000) lr 1.8443e-03 eta 0:04:04
+epoch [10/50] batch [20/50] time 0.100 (0.115) data 0.000 (0.015) loss 1.7871 (1.3541) acc 56.2500 (64.5312) lr 1.8443e-03 eta 0:03:53
+epoch [10/50] batch [25/50] time 0.100 (0.112) data 0.000 (0.012) loss 1.5078 (1.4112) acc 59.3750 (63.0000) lr 1.8443e-03 eta 0:03:47
+epoch [10/50] batch [30/50] time 0.100 (0.110) data 0.000 (0.010) loss 1.1396 (1.4140) acc 62.5000 (62.7083) lr 1.8443e-03 eta 0:03:42
+epoch [10/50] batch [35/50] time 0.101 (0.109) data 0.000 (0.008) loss 1.5957 (1.3940) acc 56.2500 (63.0357) lr 1.8443e-03 eta 0:03:39
+epoch [10/50] batch [40/50] time 0.100 (0.108) data 0.000 (0.007) loss 1.1533 (1.3829) acc 71.8750 (63.2812) lr 1.8443e-03 eta 0:03:36
+epoch [10/50] batch [45/50] time 0.100 (0.107) data 0.000 (0.007) loss 1.5947 (1.3963) acc 56.2500 (62.4306) lr 1.8443e-03 eta 0:03:34
+epoch [10/50] batch [50/50] time 0.100 (0.106) data 0.000 (0.006) loss 1.2764 (1.3785) acc 53.1250 (62.6250) lr 1.8443e-03 eta 0:03:32
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [11/50] batch [5/37] time 0.425 (0.515) data 0.000 (0.089) loss 1.0400 (1.0317) acc 68.7500 (76.2500) lr 1.8443e-03 eta 0:12:39
+epoch [11/50] batch [10/37] time 0.425 (0.470) data 0.000 (0.045) loss 1.1517 (0.9877) acc 68.7500 (75.9375) lr 1.8443e-03 eta 0:11:31
+epoch [11/50] batch [15/37] time 0.425 (0.476) data 0.000 (0.030) loss 0.7837 (1.0042) acc 81.2500 (75.0000) lr 1.8443e-03 eta 0:11:36
+epoch [11/50] batch [20/37] time 0.425 (0.463) data 0.000 (0.022) loss 0.7161 (0.9309) acc 75.0000 (76.5625) lr 1.8443e-03 eta 0:11:16
+epoch [11/50] batch [25/37] time 0.749 (0.468) data 0.000 (0.018) loss 0.7284 (0.9408) acc 87.5000 (76.5000) lr 1.8443e-03 eta 0:11:21
+epoch [11/50] batch [30/37] time 0.425 (0.461) data 0.000 (0.015) loss 0.8854 (0.9999) acc 75.0000 (74.1667) lr 1.8443e-03 eta 0:11:08
+epoch [11/50] batch [35/37] time 0.426 (0.456) data 0.000 (0.013) loss 0.6329 (0.9960) acc 81.2500 (74.1964) lr 1.8443e-03 eta 0:10:59
+Train CLIP2
+Creating a 16-shot dataset
+epoch [11/50] batch [5/41] time 0.426 (0.518) data 0.000 (0.092) loss 1.5782 (1.1682) acc 46.8750 (66.2500) lr 1.8090e-03 eta 0:14:06
+epoch [11/50] batch [10/41] time 0.743 (0.503) data 0.000 (0.046) loss 1.0367 (1.1194) acc 71.8750 (67.1875) lr 1.8090e-03 eta 0:13:40
+epoch [11/50] batch [15/41] time 0.426 (0.477) data 0.000 (0.031) loss 1.7477 (1.1726) acc 56.2500 (66.6667) lr 1.8090e-03 eta 0:12:55
+epoch [11/50] batch [20/41] time 0.425 (0.481) data 0.000 (0.023) loss 0.6548 (1.0854) acc 84.3750 (69.5312) lr 1.8090e-03 eta 0:12:59
+epoch [11/50] batch [25/41] time 0.426 (0.470) data 0.000 (0.018) loss 0.7319 (1.0536) acc 87.5000 (71.0000) lr 1.8090e-03 eta 0:12:38
+epoch [11/50] batch [30/41] time 0.425 (0.473) data 0.000 (0.015) loss 0.7045 (1.0428) acc 78.1250 (70.6250) lr 1.8090e-03 eta 0:12:40
+epoch [11/50] batch [35/41] time 0.426 (0.466) data 0.000 (0.013) loss 0.9698 (1.0727) acc 62.5000 (69.8214) lr 1.8090e-03 eta 0:12:27
+epoch [11/50] batch [40/41] time 0.424 (0.468) data 0.000 (0.012) loss 0.8902 (1.0628) acc 68.7500 (69.6094) lr 1.8090e-03 eta 0:12:29
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [12/50] batch [5/39] time 0.426 (0.525) data 0.000 (0.099) loss 1.1873 (1.1060) acc 68.7500 (70.0000) lr 1.8090e-03 eta 0:13:16
+epoch [12/50] batch [10/39] time 0.426 (0.475) data 0.000 (0.050) loss 1.3163 (1.0977) acc 68.7500 (69.3750) lr 1.8090e-03 eta 0:11:58
+epoch [12/50] batch [15/39] time 0.426 (0.480) data 0.000 (0.033) loss 0.9689 (1.0847) acc 81.2500 (71.2500) lr 1.8090e-03 eta 0:12:03
+epoch [12/50] batch [20/39] time 0.425 (0.466) data 0.000 (0.025) loss 1.0171 (1.0492) acc 81.2500 (71.8750) lr 1.8090e-03 eta 0:11:40
+epoch [12/50] batch [25/39] time 0.425 (0.470) data 0.000 (0.020) loss 1.1848 (1.0465) acc 68.7500 (72.1250) lr 1.8090e-03 eta 0:11:43
+epoch [12/50] batch [30/39] time 0.425 (0.463) data 0.000 (0.017) loss 0.7003 (1.0346) acc 81.2500 (72.3958) lr 1.8090e-03 eta 0:11:30
+epoch [12/50] batch [35/39] time 0.426 (0.468) data 0.000 (0.014) loss 0.7272 (1.0104) acc 81.2500 (72.5893) lr 1.8090e-03 eta 0:11:35
+Train CLIP2
+Creating a 16-shot dataset
+epoch [12/50] batch [5/40] time 0.426 (0.522) data 0.000 (0.095) loss 1.3503 (1.2412) acc 65.6250 (63.7500) lr 1.7705e-03 eta 0:13:31
+epoch [12/50] batch [10/40] time 0.738 (0.505) data 0.000 (0.048) loss 0.8263 (1.0253) acc 84.3750 (71.2500) lr 1.7705e-03 eta 0:13:02
+epoch [12/50] batch [15/40] time 0.426 (0.479) data 0.000 (0.032) loss 0.9586 (0.9954) acc 68.7500 (71.4583) lr 1.7705e-03 eta 0:12:19
+epoch [12/50] batch [20/40] time 0.426 (0.482) data 0.000 (0.024) loss 0.8793 (0.9954) acc 65.6250 (70.7812) lr 1.7705e-03 eta 0:12:22
+epoch [12/50] batch [25/40] time 0.427 (0.471) data 0.000 (0.019) loss 1.2153 (1.0031) acc 71.8750 (71.8750) lr 1.7705e-03 eta 0:12:02
+epoch [12/50] batch [30/40] time 0.427 (0.475) data 0.000 (0.016) loss 1.0103 (0.9941) acc 68.7500 (71.8750) lr 1.7705e-03 eta 0:12:06
+epoch [12/50] batch [35/40] time 0.428 (0.468) data 0.000 (0.014) loss 0.9676 (0.9868) acc 65.6250 (71.9643) lr 1.7705e-03 eta 0:11:53
+epoch [12/50] batch [40/40] time 0.426 (0.471) data 0.000 (0.012) loss 1.1030 (1.0065) acc 68.7500 (71.7188) lr 1.7705e-03 eta 0:11:55
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [13/50] batch [5/39] time 0.426 (0.528) data 0.000 (0.102) loss 0.6746 (0.7731) acc 75.0000 (76.8750) lr 1.7705e-03 eta 0:12:59
+epoch [13/50] batch [10/39] time 0.426 (0.477) data 0.000 (0.051) loss 0.7064 (0.8386) acc 75.0000 (75.6250) lr 1.7705e-03 eta 0:11:41
+epoch [13/50] batch [15/39] time 0.426 (0.481) data 0.000 (0.034) loss 1.0026 (0.9270) acc 71.8750 (73.1250) lr 1.7705e-03 eta 0:11:45
+epoch [13/50] batch [20/39] time 0.425 (0.467) data 0.000 (0.026) loss 1.0644 (0.9016) acc 78.1250 (74.5312) lr 1.7705e-03 eta 0:11:22
+epoch [13/50] batch [25/39] time 0.426 (0.471) data 0.000 (0.020) loss 0.9096 (0.9130) acc 71.8750 (74.3750) lr 1.7705e-03 eta 0:11:26
+epoch [13/50] batch [30/39] time 0.425 (0.463) data 0.000 (0.017) loss 1.0795 (0.8927) acc 75.0000 (75.1042) lr 1.7705e-03 eta 0:11:12
+epoch [13/50] batch [35/39] time 0.425 (0.467) data 0.000 (0.015) loss 0.5086 (0.9029) acc 87.5000 (75.3571) lr 1.7705e-03 eta 0:11:16
+Train CLIP2
+Creating a 16-shot dataset
+epoch [13/50] batch [5/39] time 0.425 (0.519) data 0.000 (0.094) loss 0.7680 (1.1484) acc 87.5000 (73.7500) lr 1.7290e-03 eta 0:12:46
+epoch [13/50] batch [10/39] time 0.426 (0.472) data 0.000 (0.047) loss 1.0553 (1.0427) acc 78.1250 (74.6875) lr 1.7290e-03 eta 0:11:35
+epoch [13/50] batch [15/39] time 0.427 (0.480) data 0.000 (0.032) loss 0.7680 (0.9752) acc 81.2500 (74.7917) lr 1.7290e-03 eta 0:11:44
+epoch [13/50] batch [20/39] time 0.427 (0.467) data 0.000 (0.024) loss 1.3198 (0.9767) acc 65.6250 (74.5312) lr 1.7290e-03 eta 0:11:22
+epoch [13/50] batch [25/39] time 0.426 (0.472) data 0.000 (0.019) loss 1.1722 (0.9815) acc 71.8750 (74.1250) lr 1.7290e-03 eta 0:11:27
+epoch [13/50] batch [30/39] time 0.426 (0.465) data 0.000 (0.016) loss 1.6100 (0.9618) acc 65.6250 (74.7917) lr 1.7290e-03 eta 0:11:14
+epoch [13/50] batch [35/39] time 0.428 (0.468) data 0.000 (0.014) loss 1.2517 (0.9696) acc 65.6250 (74.3750) lr 1.7290e-03 eta 0:11:17
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [14/50] batch [5/38] time 0.426 (0.524) data 0.000 (0.097) loss 0.6383 (0.9727) acc 90.6250 (73.1250) lr 1.7290e-03 eta 0:12:13
+epoch [14/50] batch [10/38] time 0.426 (0.475) data 0.000 (0.049) loss 0.8331 (0.9815) acc 71.8750 (73.7500) lr 1.7290e-03 eta 0:11:03
+epoch [14/50] batch [15/38] time 0.426 (0.482) data 0.000 (0.033) loss 0.7380 (0.9148) acc 81.2500 (75.6250) lr 1.7290e-03 eta 0:11:10
+epoch [14/50] batch [20/38] time 0.426 (0.468) data 0.000 (0.024) loss 1.0262 (0.8812) acc 75.0000 (76.8750) lr 1.7290e-03 eta 0:10:48
+epoch [14/50] batch [25/38] time 0.425 (0.472) data 0.000 (0.020) loss 0.7462 (0.8618) acc 78.1250 (77.1250) lr 1.7290e-03 eta 0:10:51
+epoch [14/50] batch [30/38] time 0.425 (0.464) data 0.000 (0.016) loss 0.9914 (0.8753) acc 68.7500 (76.7708) lr 1.7290e-03 eta 0:10:38
+epoch [14/50] batch [35/38] time 0.428 (0.468) data 0.000 (0.014) loss 0.9542 (0.8758) acc 68.7500 (76.5179) lr 1.7290e-03 eta 0:10:41
+Train CLIP2
+Creating a 16-shot dataset
+epoch [14/50] batch [5/38] time 0.427 (0.526) data 0.000 (0.098) loss 0.7968 (0.8857) acc 71.8750 (73.7500) lr 1.6845e-03 eta 0:12:16
+epoch [14/50] batch [10/38] time 0.427 (0.476) data 0.000 (0.049) loss 1.4643 (1.0478) acc 65.6250 (72.1875) lr 1.6845e-03 eta 0:11:05
+epoch [14/50] batch [15/38] time 0.428 (0.481) data 0.000 (0.033) loss 1.1883 (1.0304) acc 65.6250 (71.2500) lr 1.6845e-03 eta 0:11:08
+epoch [14/50] batch [20/38] time 0.428 (0.467) data 0.000 (0.025) loss 1.2950 (1.0261) acc 65.6250 (71.8750) lr 1.6845e-03 eta 0:10:47
+epoch [14/50] batch [25/38] time 0.427 (0.472) data 0.000 (0.020) loss 0.5558 (0.9885) acc 81.2500 (73.1250) lr 1.6845e-03 eta 0:10:52
+epoch [14/50] batch [30/38] time 0.427 (0.465) data 0.000 (0.017) loss 0.4884 (0.9234) acc 90.6250 (75.8333) lr 1.6845e-03 eta 0:10:39
+epoch [14/50] batch [35/38] time 0.427 (0.468) data 0.000 (0.014) loss 0.9788 (0.9307) acc 71.8750 (75.8036) lr 1.6845e-03 eta 0:10:41
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [15/50] batch [5/39] time 0.427 (0.529) data 0.000 (0.102) loss 0.6116 (0.9693) acc 81.2500 (73.7500) lr 1.6845e-03 eta 0:12:20
+epoch [15/50] batch [10/39] time 0.428 (0.478) data 0.000 (0.051) loss 0.9075 (0.9880) acc 71.8750 (72.5000) lr 1.6845e-03 eta 0:11:06
+epoch [15/50] batch [15/39] time 0.427 (0.484) data 0.000 (0.034) loss 0.9836 (1.0170) acc 81.2500 (73.3333) lr 1.6845e-03 eta 0:11:12
+epoch [15/50] batch [20/39] time 0.427 (0.470) data 0.000 (0.026) loss 1.1105 (0.9425) acc 71.8750 (75.4688) lr 1.6845e-03 eta 0:10:50
+epoch [15/50] batch [25/39] time 0.426 (0.473) data 0.000 (0.021) loss 0.7935 (0.9385) acc 84.3750 (76.0000) lr 1.6845e-03 eta 0:10:52
+epoch [15/50] batch [30/39] time 0.426 (0.466) data 0.000 (0.017) loss 0.9965 (0.9230) acc 78.1250 (76.2500) lr 1.6845e-03 eta 0:10:39
+epoch [15/50] batch [35/39] time 0.427 (0.469) data 0.000 (0.015) loss 1.0703 (0.9328) acc 62.5000 (75.4464) lr 1.6845e-03 eta 0:10:42
+Train CLIP2
+Creating a 16-shot dataset
+epoch [15/50] batch [5/38] time 0.428 (0.528) data 0.000 (0.099) loss 1.0944 (0.9990) acc 78.1250 (77.5000) lr 1.6374e-03 eta 0:11:59
+epoch [15/50] batch [10/38] time 0.428 (0.478) data 0.000 (0.050) loss 0.5527 (0.9234) acc 87.5000 (77.8125) lr 1.6374e-03 eta 0:10:48
+epoch [15/50] batch [15/38] time 0.427 (0.484) data 0.000 (0.033) loss 1.0111 (0.9814) acc 81.2500 (76.4583) lr 1.6374e-03 eta 0:10:54
+epoch [15/50] batch [20/38] time 0.427 (0.470) data 0.000 (0.025) loss 0.7294 (0.9741) acc 81.2500 (75.3125) lr 1.6374e-03 eta 0:10:33
+epoch [15/50] batch [25/38] time 0.426 (0.473) data 0.000 (0.020) loss 1.2038 (0.9733) acc 71.8750 (75.1250) lr 1.6374e-03 eta 0:10:35
+epoch [15/50] batch [30/38] time 0.426 (0.466) data 0.000 (0.017) loss 0.6914 (0.9546) acc 75.0000 (75.0000) lr 1.6374e-03 eta 0:10:23
+epoch [15/50] batch [35/38] time 0.428 (0.470) data 0.000 (0.014) loss 0.9355 (0.9198) acc 68.7500 (75.6250) lr 1.6374e-03 eta 0:10:26
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [16/50] batch [5/39] time 0.426 (0.515) data 0.000 (0.089) loss 0.9701 (0.7208) acc 78.1250 (83.1250) lr 1.6374e-03 eta 0:11:40
+epoch [16/50] batch [10/39] time 0.426 (0.470) data 0.000 (0.045) loss 1.0239 (0.7364) acc 71.8750 (81.5625) lr 1.6374e-03 eta 0:10:37
+epoch [16/50] batch [15/39] time 0.427 (0.477) data 0.000 (0.030) loss 1.1894 (0.7589) acc 68.7500 (81.0417) lr 1.6374e-03 eta 0:10:43
+epoch [16/50] batch [20/39] time 0.427 (0.465) data 0.000 (0.022) loss 0.9166 (0.7563) acc 81.2500 (80.9375) lr 1.6374e-03 eta 0:10:24
+epoch [16/50] batch [25/39] time 0.426 (0.471) data 0.000 (0.018) loss 1.0986 (0.8157) acc 65.6250 (78.5000) lr 1.6374e-03 eta 0:10:30
+epoch [16/50] batch [30/39] time 0.426 (0.463) data 0.000 (0.015) loss 0.5310 (0.8231) acc 81.2500 (79.0625) lr 1.6374e-03 eta 0:10:18
+epoch [16/50] batch [35/39] time 0.427 (0.467) data 0.000 (0.013) loss 1.2863 (0.8350) acc 71.8750 (78.1250) lr 1.6374e-03 eta 0:10:21
+Train CLIP2
+Creating a 16-shot dataset
+epoch [16/50] batch [5/39] time 0.429 (0.535) data 0.000 (0.107) loss 0.8684 (0.7989) acc 84.3750 (78.1250) lr 1.5878e-03 eta 0:12:07
+epoch [16/50] batch [10/39] time 0.427 (0.481) data 0.000 (0.054) loss 1.0746 (0.8498) acc 75.0000 (77.8125) lr 1.5878e-03 eta 0:10:51
+epoch [16/50] batch [15/39] time 0.427 (0.485) data 0.000 (0.036) loss 0.9248 (0.8432) acc 75.0000 (77.7083) lr 1.5878e-03 eta 0:10:54
+epoch [16/50] batch [20/39] time 0.427 (0.471) data 0.000 (0.027) loss 0.9346 (0.8234) acc 65.6250 (77.3438) lr 1.5878e-03 eta 0:10:32
+epoch [16/50] batch [25/39] time 0.427 (0.475) data 0.000 (0.022) loss 0.8657 (0.8194) acc 75.0000 (77.3750) lr 1.5878e-03 eta 0:10:36
+epoch [16/50] batch [30/39] time 0.426 (0.467) data 0.000 (0.018) loss 0.6148 (0.8240) acc 75.0000 (77.5000) lr 1.5878e-03 eta 0:10:23
+epoch [16/50] batch [35/39] time 0.427 (0.470) data 0.000 (0.015) loss 0.7484 (0.8042) acc 75.0000 (78.1250) lr 1.5878e-03 eta 0:10:25
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [17/50] batch [5/39] time 0.428 (0.534) data 0.000 (0.106) loss 1.0913 (0.9648) acc 71.8750 (73.1250) lr 1.5878e-03 eta 0:11:44
+epoch [17/50] batch [10/39] time 0.427 (0.481) data 0.000 (0.053) loss 1.0359 (0.9037) acc 75.0000 (75.0000) lr 1.5878e-03 eta 0:10:32
+epoch [17/50] batch [15/39] time 0.428 (0.485) data 0.000 (0.035) loss 0.9695 (0.9071) acc 75.0000 (76.0417) lr 1.5878e-03 eta 0:10:36
+epoch [17/50] batch [20/39] time 0.428 (0.471) data 0.000 (0.027) loss 0.8266 (0.9073) acc 84.3750 (77.3438) lr 1.5878e-03 eta 0:10:15
+epoch [17/50] batch [25/39] time 0.427 (0.475) data 0.000 (0.021) loss 0.9311 (0.9410) acc 65.6250 (75.8750) lr 1.5878e-03 eta 0:10:17
+epoch [17/50] batch [30/39] time 0.426 (0.467) data 0.000 (0.018) loss 1.0243 (0.9487) acc 68.7500 (75.2083) lr 1.5878e-03 eta 0:10:05
+epoch [17/50] batch [35/39] time 0.426 (0.471) data 0.000 (0.015) loss 0.7664 (0.9539) acc 84.3750 (75.1786) lr 1.5878e-03 eta 0:10:07
+Train CLIP2
+Creating a 16-shot dataset
+epoch [17/50] batch [5/39] time 0.427 (0.522) data 0.000 (0.095) loss 0.8859 (0.8229) acc 75.0000 (79.3750) lr 1.5358e-03 eta 0:11:30
+epoch [17/50] batch [10/39] time 0.428 (0.475) data 0.000 (0.047) loss 1.0423 (0.8513) acc 68.7500 (76.8750) lr 1.5358e-03 eta 0:10:25
+epoch [17/50] batch [15/39] time 0.427 (0.483) data 0.000 (0.032) loss 0.8567 (0.8088) acc 75.0000 (77.9167) lr 1.5358e-03 eta 0:10:32
+epoch [17/50] batch [20/39] time 0.427 (0.469) data 0.000 (0.024) loss 0.6530 (0.7911) acc 78.1250 (76.7188) lr 1.5358e-03 eta 0:10:12
+epoch [17/50] batch [25/39] time 0.427 (0.473) data 0.000 (0.019) loss 1.0159 (0.8430) acc 75.0000 (75.8750) lr 1.5358e-03 eta 0:10:15
+epoch [17/50] batch [30/39] time 0.426 (0.465) data 0.000 (0.016) loss 0.7898 (0.8519) acc 84.3750 (75.9375) lr 1.5358e-03 eta 0:10:02
+epoch [17/50] batch [35/39] time 0.427 (0.469) data 0.000 (0.014) loss 1.1801 (0.8355) acc 62.5000 (76.3393) lr 1.5358e-03 eta 0:10:05
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [18/50] batch [5/39] time 0.427 (0.506) data 0.000 (0.080) loss 0.9893 (0.9332) acc 71.8750 (76.2500) lr 1.5358e-03 eta 0:10:49
+epoch [18/50] batch [10/39] time 0.426 (0.466) data 0.000 (0.040) loss 1.2129 (0.8744) acc 62.5000 (76.8750) lr 1.5358e-03 eta 0:09:55
+epoch [18/50] batch [15/39] time 0.425 (0.476) data 0.000 (0.027) loss 0.8993 (0.8869) acc 78.1250 (77.2917) lr 1.5358e-03 eta 0:10:04
+epoch [18/50] batch [20/39] time 0.426 (0.463) data 0.000 (0.020) loss 0.8089 (0.8667) acc 71.8750 (76.7188) lr 1.5358e-03 eta 0:09:46
+epoch [18/50] batch [25/39] time 0.426 (0.468) data 0.000 (0.016) loss 1.0962 (0.8890) acc 75.0000 (76.6250) lr 1.5358e-03 eta 0:09:50
+epoch [18/50] batch [30/39] time 0.426 (0.461) data 0.000 (0.013) loss 0.5868 (0.8798) acc 84.3750 (77.1875) lr 1.5358e-03 eta 0:09:39
+epoch [18/50] batch [35/39] time 0.426 (0.465) data 0.000 (0.011) loss 0.7772 (0.8847) acc 78.1250 (76.6964) lr 1.5358e-03 eta 0:09:41
+Train CLIP2
+Creating a 16-shot dataset
+epoch [18/50] batch [5/38] time 0.426 (0.531) data 0.000 (0.105) loss 0.9650 (0.7451) acc 78.1250 (82.5000) lr 1.4818e-03 eta 0:11:02
+epoch [18/50] batch [10/38] time 0.426 (0.478) data 0.000 (0.052) loss 0.8639 (0.8038) acc 75.0000 (77.8125) lr 1.4818e-03 eta 0:09:54
+epoch [18/50] batch [15/38] time 0.425 (0.484) data 0.000 (0.035) loss 1.2936 (0.8300) acc 65.6250 (77.2917) lr 1.4818e-03 eta 0:10:00
+epoch [18/50] batch [20/38] time 0.426 (0.470) data 0.000 (0.026) loss 0.7221 (0.7941) acc 78.1250 (78.2812) lr 1.4818e-03 eta 0:09:39
+epoch [18/50] batch [25/38] time 0.426 (0.474) data 0.000 (0.021) loss 0.9354 (0.7797) acc 75.0000 (78.5000) lr 1.4818e-03 eta 0:09:42
+epoch [18/50] batch [30/38] time 0.426 (0.466) data 0.000 (0.018) loss 0.9257 (0.8260) acc 75.0000 (77.3958) lr 1.4818e-03 eta 0:09:30
+epoch [18/50] batch [35/38] time 0.426 (0.469) data 0.000 (0.015) loss 0.9339 (0.8483) acc 87.5000 (77.3214) lr 1.4818e-03 eta 0:09:32
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [19/50] batch [5/39] time 0.427 (0.516) data 0.000 (0.090) loss 0.7160 (1.0089) acc 87.5000 (75.6250) lr 1.4818e-03 eta 0:10:41
+epoch [19/50] batch [10/39] time 0.427 (0.471) data 0.000 (0.045) loss 0.9271 (0.9104) acc 68.7500 (76.8750) lr 1.4818e-03 eta 0:09:43
+epoch [19/50] batch [15/39] time 0.426 (0.477) data 0.000 (0.030) loss 1.0797 (0.8986) acc 75.0000 (76.2500) lr 1.4818e-03 eta 0:09:48
+epoch [19/50] batch [20/39] time 0.425 (0.464) data 0.000 (0.023) loss 0.8758 (0.8883) acc 78.1250 (76.7188) lr 1.4818e-03 eta 0:09:30
+epoch [19/50] batch [25/39] time 0.426 (0.470) data 0.000 (0.018) loss 0.9130 (0.8910) acc 81.2500 (76.7500) lr 1.4818e-03 eta 0:09:34
+epoch [19/50] batch [30/39] time 0.425 (0.462) data 0.000 (0.015) loss 0.8730 (0.9008) acc 75.0000 (76.7708) lr 1.4818e-03 eta 0:09:23
+epoch [19/50] batch [35/39] time 0.426 (0.467) data 0.000 (0.013) loss 1.0832 (0.9150) acc 71.8750 (76.1607) lr 1.4818e-03 eta 0:09:25
+Train CLIP2
+Creating a 16-shot dataset
+epoch [19/50] batch [5/40] time 0.427 (0.528) data 0.000 (0.102) loss 0.7226 (0.7077) acc 78.1250 (79.3750) lr 1.4258e-03 eta 0:11:13
+epoch [19/50] batch [10/40] time 0.427 (0.477) data 0.000 (0.051) loss 0.9904 (0.8357) acc 68.7500 (76.8750) lr 1.4258e-03 eta 0:10:05
+epoch [19/50] batch [15/40] time 0.426 (0.482) data 0.000 (0.034) loss 0.6100 (0.8174) acc 81.2500 (77.5000) lr 1.4258e-03 eta 0:10:09
+epoch [19/50] batch [20/40] time 0.426 (0.468) data 0.000 (0.026) loss 0.6922 (0.8203) acc 84.3750 (78.1250) lr 1.4258e-03 eta 0:09:49
+epoch [19/50] batch [25/40] time 0.426 (0.473) data 0.000 (0.021) loss 0.9649 (0.8244) acc 78.1250 (78.5000) lr 1.4258e-03 eta 0:09:53
+epoch [19/50] batch [30/40] time 0.425 (0.465) data 0.000 (0.017) loss 1.1305 (0.8558) acc 68.7500 (77.0833) lr 1.4258e-03 eta 0:09:41
+epoch [19/50] batch [35/40] time 0.427 (0.469) data 0.000 (0.015) loss 0.9204 (0.8684) acc 68.7500 (76.7857) lr 1.4258e-03 eta 0:09:43
+epoch [19/50] batch [40/40] time 0.427 (0.463) data 0.000 (0.013) loss 1.0553 (0.8614) acc 75.0000 (76.7188) lr 1.4258e-03 eta 0:09:34
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [20/50] batch [5/39] time 0.426 (0.525) data 0.000 (0.099) loss 0.4841 (0.8598) acc 87.5000 (78.1250) lr 1.4258e-03 eta 0:10:31
+epoch [20/50] batch [10/39] time 0.425 (0.475) data 0.000 (0.049) loss 0.7187 (0.8630) acc 87.5000 (78.1250) lr 1.4258e-03 eta 0:09:29
+epoch [20/50] batch [15/39] time 0.425 (0.479) data 0.000 (0.033) loss 0.6371 (0.8246) acc 87.5000 (79.1667) lr 1.4258e-03 eta 0:09:31
+epoch [20/50] batch [20/39] time 0.424 (0.465) data 0.000 (0.025) loss 0.6742 (0.7970) acc 84.3750 (79.8438) lr 1.4258e-03 eta 0:09:13
+epoch [20/50] batch [25/39] time 0.424 (0.468) data 0.000 (0.020) loss 0.6507 (0.7988) acc 78.1250 (79.3750) lr 1.4258e-03 eta 0:09:14
+epoch [20/50] batch [30/39] time 0.424 (0.461) data 0.000 (0.017) loss 0.6826 (0.7957) acc 81.2500 (79.5833) lr 1.4258e-03 eta 0:09:03
+epoch [20/50] batch [35/39] time 0.427 (0.464) data 0.000 (0.014) loss 0.7581 (0.7908) acc 71.8750 (79.2857) lr 1.4258e-03 eta 0:09:04
+Train CLIP2
+Creating a 16-shot dataset
+epoch [20/50] batch [5/39] time 0.428 (0.525) data 0.000 (0.098) loss 0.9710 (0.8284) acc 65.6250 (76.8750) lr 1.3681e-03 eta 0:10:31
+epoch [20/50] batch [10/39] time 0.428 (0.476) data 0.000 (0.049) loss 1.0257 (0.8319) acc 75.0000 (76.8750) lr 1.3681e-03 eta 0:09:30
+epoch [20/50] batch [15/39] time 0.427 (0.480) data 0.000 (0.033) loss 0.5495 (0.8656) acc 84.3750 (77.0833) lr 1.3681e-03 eta 0:09:33
+epoch [20/50] batch [20/39] time 0.428 (0.467) data 0.000 (0.025) loss 1.1609 (0.8491) acc 59.3750 (75.7812) lr 1.3681e-03 eta 0:09:15
+epoch [20/50] batch [25/39] time 0.426 (0.473) data 0.000 (0.020) loss 1.0993 (0.8393) acc 78.1250 (77.1250) lr 1.3681e-03 eta 0:09:20
+epoch [20/50] batch [30/39] time 0.426 (0.465) data 0.000 (0.016) loss 0.5729 (0.8153) acc 84.3750 (78.1250) lr 1.3681e-03 eta 0:09:08
+epoch [20/50] batch [35/39] time 0.427 (0.470) data 0.000 (0.014) loss 0.9374 (0.8383) acc 75.0000 (78.1250) lr 1.3681e-03 eta 0:09:11
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [21/50] batch [5/39] time 0.425 (0.525) data 0.000 (0.099) loss 0.7806 (0.6995) acc 75.0000 (81.8750) lr 1.3681e-03 eta 0:10:11
+epoch [21/50] batch [10/39] time 0.426 (0.475) data 0.000 (0.050) loss 1.0755 (0.8207) acc 78.1250 (78.7500) lr 1.3681e-03 eta 0:09:11
+epoch [21/50] batch [15/39] time 0.428 (0.484) data 0.000 (0.033) loss 1.3657 (0.8738) acc 62.5000 (77.0833) lr 1.3681e-03 eta 0:09:18
+epoch [21/50] batch [20/39] time 0.428 (0.470) data 0.000 (0.025) loss 0.9758 (0.8591) acc 71.8750 (77.1875) lr 1.3681e-03 eta 0:08:59
+epoch [21/50] batch [25/39] time 0.426 (0.474) data 0.000 (0.020) loss 0.8735 (0.8317) acc 71.8750 (77.5000) lr 1.3681e-03 eta 0:09:02
+epoch [21/50] batch [30/39] time 0.427 (0.466) data 0.000 (0.017) loss 1.0544 (0.8210) acc 75.0000 (77.3958) lr 1.3681e-03 eta 0:08:51
+epoch [21/50] batch [35/39] time 0.428 (0.469) data 0.000 (0.014) loss 1.0993 (0.8142) acc 78.1250 (77.7679) lr 1.3681e-03 eta 0:08:52
+Train CLIP2
+Creating a 16-shot dataset
+epoch [21/50] batch [5/39] time 0.428 (0.535) data 0.000 (0.107) loss 1.0254 (0.7311) acc 78.1250 (79.3750) lr 1.3090e-03 eta 0:10:22
+epoch [21/50] batch [10/39] time 0.428 (0.481) data 0.000 (0.054) loss 0.4766 (0.7197) acc 87.5000 (80.0000) lr 1.3090e-03 eta 0:09:18
+epoch [21/50] batch [15/39] time 0.427 (0.487) data 0.000 (0.036) loss 0.6123 (0.7698) acc 84.3750 (79.7917) lr 1.3090e-03 eta 0:09:22
+epoch [21/50] batch [20/39] time 0.427 (0.472) data 0.000 (0.027) loss 1.1018 (0.7852) acc 65.6250 (78.7500) lr 1.3090e-03 eta 0:09:02
+epoch [21/50] batch [25/39] time 0.427 (0.475) data 0.000 (0.022) loss 0.3808 (0.7665) acc 90.6250 (79.3750) lr 1.3090e-03 eta 0:09:04
+epoch [21/50] batch [30/39] time 0.426 (0.467) data 0.000 (0.018) loss 0.9859 (0.8133) acc 78.1250 (78.2292) lr 1.3090e-03 eta 0:08:52
+epoch [21/50] batch [35/39] time 0.427 (0.471) data 0.000 (0.015) loss 0.8484 (0.8292) acc 78.1250 (78.0357) lr 1.3090e-03 eta 0:08:54
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [22/50] batch [5/39] time 0.425 (0.523) data 0.000 (0.098) loss 0.6569 (0.8197) acc 81.2500 (79.3750) lr 1.3090e-03 eta 0:09:49
+epoch [22/50] batch [10/39] time 0.425 (0.475) data 0.000 (0.049) loss 1.0080 (0.8245) acc 71.8750 (79.0625) lr 1.3090e-03 eta 0:08:52
+epoch [22/50] batch [15/39] time 0.426 (0.482) data 0.000 (0.033) loss 0.6619 (0.8388) acc 78.1250 (78.5417) lr 1.3090e-03 eta 0:08:57
+epoch [22/50] batch [20/39] time 0.426 (0.468) data 0.000 (0.025) loss 0.9865 (0.8596) acc 68.7500 (77.1875) lr 1.3090e-03 eta 0:08:39
+epoch [22/50] batch [25/39] time 0.427 (0.473) data 0.000 (0.020) loss 0.9684 (0.8611) acc 75.0000 (77.7500) lr 1.3090e-03 eta 0:08:43
+epoch [22/50] batch [30/39] time 0.427 (0.465) data 0.000 (0.016) loss 1.0077 (0.8411) acc 71.8750 (78.1250) lr 1.3090e-03 eta 0:08:32
+epoch [22/50] batch [35/39] time 0.426 (0.469) data 0.000 (0.014) loss 0.4392 (0.8337) acc 87.5000 (78.3929) lr 1.3090e-03 eta 0:08:33
+Train CLIP2
+Creating a 16-shot dataset
+epoch [22/50] batch [5/39] time 0.426 (0.523) data 0.000 (0.095) loss 0.7414 (0.8502) acc 84.3750 (75.6250) lr 1.2487e-03 eta 0:09:48
+epoch [22/50] batch [10/39] time 0.427 (0.475) data 0.000 (0.048) loss 0.7064 (0.7368) acc 81.2500 (78.4375) lr 1.2487e-03 eta 0:08:52
+epoch [22/50] batch [15/39] time 0.428 (0.484) data 0.000 (0.032) loss 0.8106 (0.7325) acc 84.3750 (80.4167) lr 1.2487e-03 eta 0:08:59
+epoch [22/50] batch [20/39] time 0.427 (0.469) data 0.000 (0.024) loss 0.6471 (0.7488) acc 78.1250 (79.8438) lr 1.2487e-03 eta 0:08:41
+epoch [22/50] batch [25/39] time 0.428 (0.475) data 0.000 (0.019) loss 0.9815 (0.7765) acc 78.1250 (78.8750) lr 1.2487e-03 eta 0:08:44
+epoch [22/50] batch [30/39] time 0.428 (0.467) data 0.000 (0.016) loss 0.9361 (0.7620) acc 75.0000 (79.5833) lr 1.2487e-03 eta 0:08:33
+epoch [22/50] batch [35/39] time 0.427 (0.470) data 0.000 (0.014) loss 0.9502 (0.7694) acc 78.1250 (79.1071) lr 1.2487e-03 eta 0:08:35
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [23/50] batch [5/39] time 0.426 (0.512) data 0.000 (0.084) loss 0.9030 (0.8316) acc 75.0000 (79.3750) lr 1.2487e-03 eta 0:09:16
+epoch [23/50] batch [10/39] time 0.427 (0.469) data 0.000 (0.042) loss 0.7913 (0.7595) acc 81.2500 (80.6250) lr 1.2487e-03 eta 0:08:27
+epoch [23/50] batch [15/39] time 0.426 (0.476) data 0.000 (0.028) loss 0.4706 (0.7865) acc 90.6250 (79.3750) lr 1.2487e-03 eta 0:08:32
+epoch [23/50] batch [20/39] time 0.426 (0.464) data 0.000 (0.021) loss 0.4093 (0.7947) acc 87.5000 (78.7500) lr 1.2487e-03 eta 0:08:17
+epoch [23/50] batch [25/39] time 0.427 (0.470) data 0.000 (0.017) loss 1.0621 (0.8343) acc 71.8750 (77.5000) lr 1.2487e-03 eta 0:08:21
+epoch [23/50] batch [30/39] time 0.426 (0.463) data 0.000 (0.014) loss 0.8765 (0.8388) acc 78.1250 (77.8125) lr 1.2487e-03 eta 0:08:11
+epoch [23/50] batch [35/39] time 0.426 (0.467) data 0.000 (0.012) loss 0.9156 (0.8515) acc 78.1250 (77.6786) lr 1.2487e-03 eta 0:08:13
+Train CLIP2
+Creating a 16-shot dataset
+epoch [23/50] batch [5/39] time 0.427 (0.529) data 0.000 (0.102) loss 0.5527 (0.7759) acc 75.0000 (77.5000) lr 1.1874e-03 eta 0:09:35
+epoch [23/50] batch [10/39] time 0.427 (0.478) data 0.000 (0.051) loss 1.1236 (0.7561) acc 68.7500 (79.6875) lr 1.1874e-03 eta 0:08:37
+epoch [23/50] batch [15/39] time 0.428 (0.484) data 0.000 (0.034) loss 0.8722 (0.7352) acc 81.2500 (80.4167) lr 1.1874e-03 eta 0:08:41
+epoch [23/50] batch [20/39] time 0.426 (0.470) data 0.000 (0.026) loss 0.7563 (0.7869) acc 81.2500 (79.6875) lr 1.1874e-03 eta 0:08:23
+epoch [23/50] batch [25/39] time 0.426 (0.473) data 0.000 (0.021) loss 0.4746 (0.7804) acc 90.6250 (79.5000) lr 1.1874e-03 eta 0:08:24
+epoch [23/50] batch [30/39] time 0.426 (0.465) data 0.000 (0.017) loss 1.0612 (0.7929) acc 62.5000 (78.6458) lr 1.1874e-03 eta 0:08:13
+epoch [23/50] batch [35/39] time 0.427 (0.467) data 0.000 (0.015) loss 0.4783 (0.7793) acc 87.5000 (79.6429) lr 1.1874e-03 eta 0:08:13
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [24/50] batch [5/39] time 0.427 (0.530) data 0.000 (0.103) loss 0.8220 (0.7881) acc 75.0000 (78.7500) lr 1.1874e-03 eta 0:09:15
+epoch [24/50] batch [10/39] time 0.427 (0.478) data 0.000 (0.052) loss 0.6818 (0.7733) acc 87.5000 (80.0000) lr 1.1874e-03 eta 0:08:18
+epoch [24/50] batch [15/39] time 0.426 (0.484) data 0.000 (0.035) loss 0.7328 (0.7559) acc 84.3750 (79.3750) lr 1.1874e-03 eta 0:08:22
+epoch [24/50] batch [20/39] time 0.426 (0.470) data 0.000 (0.026) loss 0.8090 (0.7836) acc 81.2500 (77.9688) lr 1.1874e-03 eta 0:08:05
+epoch [24/50] batch [25/39] time 0.427 (0.474) data 0.000 (0.021) loss 1.1160 (0.7927) acc 75.0000 (77.7500) lr 1.1874e-03 eta 0:08:07
+epoch [24/50] batch [30/39] time 0.428 (0.466) data 0.000 (0.017) loss 1.0301 (0.8029) acc 78.1250 (78.1250) lr 1.1874e-03 eta 0:07:57
+epoch [24/50] batch [35/39] time 0.428 (0.471) data 0.000 (0.015) loss 0.8523 (0.8210) acc 81.2500 (77.5000) lr 1.1874e-03 eta 0:07:59
+Train CLIP2
+Creating a 16-shot dataset
+epoch [24/50] batch [5/39] time 0.427 (0.530) data 0.000 (0.103) loss 0.5315 (0.7387) acc 87.5000 (82.5000) lr 1.1253e-03 eta 0:09:15
+epoch [24/50] batch [10/39] time 0.427 (0.479) data 0.000 (0.052) loss 0.7924 (0.8215) acc 75.0000 (78.4375) lr 1.1253e-03 eta 0:08:19
+epoch [24/50] batch [15/39] time 0.427 (0.483) data 0.000 (0.034) loss 0.9927 (0.7784) acc 81.2500 (79.5833) lr 1.1253e-03 eta 0:08:20
+epoch [24/50] batch [20/39] time 0.427 (0.469) data 0.000 (0.026) loss 0.8754 (0.7816) acc 68.7500 (78.9062) lr 1.1253e-03 eta 0:08:04
+epoch [24/50] batch [25/39] time 0.426 (0.473) data 0.000 (0.021) loss 0.4628 (0.7484) acc 87.5000 (80.0000) lr 1.1253e-03 eta 0:08:06
+epoch [24/50] batch [30/39] time 0.426 (0.466) data 0.000 (0.017) loss 0.5287 (0.7228) acc 84.3750 (80.4167) lr 1.1253e-03 eta 0:07:56
+epoch [24/50] batch [35/39] time 0.427 (0.470) data 0.000 (0.015) loss 1.0223 (0.7621) acc 71.8750 (79.1964) lr 1.1253e-03 eta 0:07:58
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [25/50] batch [5/40] time 0.427 (0.531) data 0.000 (0.104) loss 0.7376 (0.7605) acc 81.2500 (80.0000) lr 1.1253e-03 eta 0:09:09
+epoch [25/50] batch [10/40] time 0.426 (0.479) data 0.000 (0.052) loss 0.7193 (0.7431) acc 84.3750 (81.2500) lr 1.1253e-03 eta 0:08:13
+epoch [25/50] batch [15/40] time 0.427 (0.484) data 0.000 (0.035) loss 1.2213 (0.7638) acc 71.8750 (81.4583) lr 1.1253e-03 eta 0:08:15
+epoch [25/50] batch [20/40] time 0.427 (0.470) data 0.000 (0.026) loss 0.7072 (0.7700) acc 81.2500 (81.5625) lr 1.1253e-03 eta 0:07:58
+epoch [25/50] batch [25/40] time 0.427 (0.476) data 0.000 (0.021) loss 1.3833 (0.8169) acc 68.7500 (80.2500) lr 1.1253e-03 eta 0:08:02
+epoch [25/50] batch [30/40] time 0.427 (0.467) data 0.000 (0.017) loss 1.4436 (0.8097) acc 65.6250 (80.3125) lr 1.1253e-03 eta 0:07:52
+epoch [25/50] batch [35/40] time 0.428 (0.471) data 0.000 (0.015) loss 0.5612 (0.7934) acc 84.3750 (80.4464) lr 1.1253e-03 eta 0:07:53
+epoch [25/50] batch [40/40] time 0.427 (0.466) data 0.000 (0.013) loss 1.0895 (0.8069) acc 68.7500 (79.8438) lr 1.0628e-03 eta 0:07:45
+Train CLIP2
+Creating a 16-shot dataset
+epoch [25/50] batch [5/39] time 0.427 (0.524) data 0.000 (0.096) loss 0.7238 (0.9364) acc 84.3750 (73.1250) lr 1.0628e-03 eta 0:08:48
+epoch [25/50] batch [10/39] time 0.428 (0.476) data 0.000 (0.048) loss 0.6333 (0.8043) acc 81.2500 (77.1875) lr 1.0628e-03 eta 0:07:57
+epoch [25/50] batch [15/39] time 0.428 (0.482) data 0.000 (0.032) loss 0.8460 (0.7947) acc 71.8750 (77.9167) lr 1.0628e-03 eta 0:08:01
+epoch [25/50] batch [20/39] time 0.428 (0.468) data 0.000 (0.024) loss 0.6783 (0.7777) acc 81.2500 (78.5938) lr 1.0628e-03 eta 0:07:45
+epoch [25/50] batch [25/39] time 0.426 (0.473) data 0.000 (0.019) loss 0.7952 (0.7793) acc 81.2500 (78.8750) lr 1.0628e-03 eta 0:07:47
+epoch [25/50] batch [30/39] time 0.426 (0.465) data 0.000 (0.016) loss 1.0691 (0.7866) acc 71.8750 (78.8542) lr 1.0628e-03 eta 0:07:37
+epoch [25/50] batch [35/39] time 0.426 (0.469) data 0.000 (0.014) loss 1.0656 (0.7779) acc 75.0000 (79.0179) lr 1.0628e-03 eta 0:07:39
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [26/50] batch [5/40] time 0.425 (0.531) data 0.000 (0.105) loss 1.0862 (0.8546) acc 78.1250 (78.7500) lr 1.0628e-03 eta 0:08:48
+epoch [26/50] batch [10/40] time 0.425 (0.478) data 0.000 (0.053) loss 1.1383 (0.8186) acc 68.7500 (80.6250) lr 1.0628e-03 eta 0:07:53
+epoch [26/50] batch [15/40] time 0.426 (0.482) data 0.000 (0.035) loss 0.4324 (0.7398) acc 90.6250 (81.4583) lr 1.0628e-03 eta 0:07:54
+epoch [26/50] batch [20/40] time 0.425 (0.468) data 0.000 (0.026) loss 0.5038 (0.7898) acc 84.3750 (80.3125) lr 1.0628e-03 eta 0:07:38
+epoch [26/50] batch [25/40] time 0.425 (0.474) data 0.000 (0.021) loss 0.8163 (0.7900) acc 84.3750 (80.7500) lr 1.0628e-03 eta 0:07:42
+epoch [26/50] batch [30/40] time 0.426 (0.466) data 0.000 (0.018) loss 0.9170 (0.7976) acc 78.1250 (80.3125) lr 1.0628e-03 eta 0:07:31
+epoch [26/50] batch [35/40] time 0.426 (0.469) data 0.000 (0.015) loss 0.8848 (0.7884) acc 71.8750 (80.2679) lr 1.0628e-03 eta 0:07:32
+epoch [26/50] batch [40/40] time 0.427 (0.464) data 0.000 (0.013) loss 0.6939 (0.8315) acc 81.2500 (78.6719) lr 1.0000e-03 eta 0:07:25
+Train CLIP2
+Creating a 16-shot dataset
+epoch [26/50] batch [5/40] time 0.426 (0.531) data 0.000 (0.104) loss 0.9119 (0.6676) acc 68.7500 (82.5000) lr 1.0000e-03 eta 0:08:48
+epoch [26/50] batch [10/40] time 0.781 (0.514) data 0.000 (0.052) loss 0.7073 (0.7027) acc 78.1250 (81.5625) lr 1.0000e-03 eta 0:08:29
+epoch [26/50] batch [15/40] time 0.427 (0.485) data 0.000 (0.035) loss 0.8928 (0.6730) acc 78.1250 (81.6667) lr 1.0000e-03 eta 0:07:58
+epoch [26/50] batch [20/40] time 0.428 (0.488) data 0.000 (0.026) loss 0.8622 (0.7204) acc 75.0000 (80.7812) lr 1.0000e-03 eta 0:07:58
+epoch [26/50] batch [25/40] time 0.427 (0.476) data 0.000 (0.021) loss 0.3415 (0.7201) acc 87.5000 (80.3750) lr 1.0000e-03 eta 0:07:44
+epoch [26/50] batch [30/40] time 0.427 (0.480) data 0.000 (0.017) loss 0.9455 (0.7417) acc 75.0000 (80.1042) lr 1.0000e-03 eta 0:07:45
+epoch [26/50] batch [35/40] time 0.434 (0.472) data 0.000 (0.015) loss 1.2861 (0.7663) acc 62.5000 (79.0179) lr 1.0000e-03 eta 0:07:35
+epoch [26/50] batch [40/40] time 0.428 (0.475) data 0.000 (0.013) loss 0.7337 (0.7689) acc 84.3750 (79.0625) lr 1.0000e-03 eta 0:07:35
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [27/50] batch [5/39] time 0.426 (0.534) data 0.000 (0.109) loss 0.6998 (0.6905) acc 78.1250 (80.6250) lr 1.0000e-03 eta 0:08:17
+epoch [27/50] batch [10/39] time 0.426 (0.480) data 0.000 (0.054) loss 1.0090 (0.7266) acc 68.7500 (79.3750) lr 1.0000e-03 eta 0:07:24
+epoch [27/50] batch [15/39] time 0.426 (0.484) data 0.000 (0.036) loss 0.6267 (0.7660) acc 78.1250 (78.5417) lr 1.0000e-03 eta 0:07:25
+epoch [27/50] batch [20/39] time 0.426 (0.469) data 0.000 (0.027) loss 1.1845 (0.8003) acc 71.8750 (77.9688) lr 1.0000e-03 eta 0:07:09
+epoch [27/50] batch [25/39] time 0.426 (0.474) data 0.000 (0.022) loss 0.6175 (0.7810) acc 81.2500 (78.5000) lr 1.0000e-03 eta 0:07:11
+epoch [27/50] batch [30/39] time 0.425 (0.466) data 0.000 (0.018) loss 0.9040 (0.7777) acc 68.7500 (78.3333) lr 1.0000e-03 eta 0:07:02
+epoch [27/50] batch [35/39] time 0.426 (0.470) data 0.000 (0.016) loss 0.5045 (0.7538) acc 84.3750 (78.7500) lr 1.0000e-03 eta 0:07:03
+Train CLIP2
+Creating a 16-shot dataset
+epoch [27/50] batch [5/40] time 0.427 (0.515) data 0.000 (0.088) loss 0.6716 (0.7660) acc 84.3750 (81.2500) lr 9.3721e-04 eta 0:08:12
+epoch [27/50] batch [10/40] time 0.768 (0.505) data 0.000 (0.044) loss 1.2050 (0.7488) acc 62.5000 (80.6250) lr 9.3721e-04 eta 0:07:59
+epoch [27/50] batch [15/40] time 0.427 (0.479) data 0.000 (0.029) loss 0.5030 (0.7296) acc 87.5000 (80.8333) lr 9.3721e-04 eta 0:07:32
+epoch [27/50] batch [20/40] time 0.427 (0.482) data 0.000 (0.022) loss 0.6593 (0.7083) acc 84.3750 (81.5625) lr 9.3721e-04 eta 0:07:33
+epoch [27/50] batch [25/40] time 0.426 (0.471) data 0.000 (0.018) loss 0.8542 (0.7498) acc 81.2500 (80.7500) lr 9.3721e-04 eta 0:07:20
+epoch [27/50] batch [30/40] time 0.427 (0.475) data 0.000 (0.015) loss 1.0802 (0.7860) acc 68.7500 (79.8958) lr 9.3721e-04 eta 0:07:22
+epoch [27/50] batch [35/40] time 0.427 (0.468) data 0.000 (0.013) loss 0.9412 (0.7936) acc 71.8750 (79.6429) lr 9.3721e-04 eta 0:07:13
+epoch [27/50] batch [40/40] time 0.426 (0.471) data 0.000 (0.011) loss 0.5895 (0.7789) acc 78.1250 (79.9219) lr 9.3721e-04 eta 0:07:13
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [28/50] batch [5/40] time 0.425 (0.525) data 0.000 (0.099) loss 0.4624 (0.8712) acc 90.6250 (75.0000) lr 9.3721e-04 eta 0:08:00
+epoch [28/50] batch [10/40] time 0.425 (0.475) data 0.000 (0.050) loss 0.9256 (0.8438) acc 84.3750 (76.2500) lr 9.3721e-04 eta 0:07:12
+epoch [28/50] batch [15/40] time 0.426 (0.481) data 0.000 (0.033) loss 0.6445 (0.8133) acc 87.5000 (77.5000) lr 9.3721e-04 eta 0:07:15
+epoch [28/50] batch [20/40] time 0.427 (0.467) data 0.000 (0.025) loss 0.5738 (0.7934) acc 84.3750 (78.4375) lr 9.3721e-04 eta 0:07:00
+epoch [28/50] batch [25/40] time 0.426 (0.472) data 0.000 (0.020) loss 0.7352 (0.7577) acc 78.1250 (79.5000) lr 9.3721e-04 eta 0:07:02
+epoch [28/50] batch [30/40] time 0.427 (0.464) data 0.000 (0.017) loss 0.8804 (0.7709) acc 81.2500 (79.4792) lr 9.3721e-04 eta 0:06:53
+epoch [28/50] batch [35/40] time 0.425 (0.468) data 0.000 (0.014) loss 0.6624 (0.7750) acc 81.2500 (79.1071) lr 9.3721e-04 eta 0:06:54
+epoch [28/50] batch [40/40] time 0.427 (0.463) data 0.000 (0.013) loss 0.5024 (0.7610) acc 84.3750 (79.4531) lr 8.7467e-04 eta 0:06:47
+Train CLIP2
+Creating a 16-shot dataset
+epoch [28/50] batch [5/40] time 0.427 (0.527) data 0.000 (0.100) loss 0.7456 (0.8176) acc 75.0000 (78.7500) lr 8.7467e-04 eta 0:08:02
+epoch [28/50] batch [10/40] time 0.780 (0.512) data 0.000 (0.050) loss 0.9640 (0.8512) acc 68.7500 (75.9375) lr 8.7467e-04 eta 0:07:46
+epoch [28/50] batch [15/40] time 0.426 (0.484) data 0.000 (0.033) loss 0.7279 (0.8231) acc 87.5000 (77.7083) lr 8.7467e-04 eta 0:07:17
+epoch [28/50] batch [20/40] time 0.427 (0.486) data 0.000 (0.025) loss 1.3082 (0.8443) acc 62.5000 (77.1875) lr 8.7467e-04 eta 0:07:17
+epoch [28/50] batch [25/40] time 0.427 (0.474) data 0.000 (0.020) loss 0.7802 (0.8317) acc 78.1250 (77.8750) lr 8.7467e-04 eta 0:07:04
+epoch [28/50] batch [30/40] time 0.427 (0.477) data 0.000 (0.017) loss 0.4323 (0.8212) acc 90.6250 (78.2292) lr 8.7467e-04 eta 0:07:04
+epoch [28/50] batch [35/40] time 0.427 (0.470) data 0.000 (0.014) loss 1.0625 (0.8543) acc 75.0000 (76.8750) lr 8.7467e-04 eta 0:06:55
+epoch [28/50] batch [40/40] time 0.427 (0.472) data 0.000 (0.013) loss 0.7125 (0.8337) acc 81.2500 (77.4219) lr 8.7467e-04 eta 0:06:55
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [29/50] batch [5/40] time 0.427 (0.510) data 0.000 (0.083) loss 0.7882 (0.8040) acc 75.0000 (80.0000) lr 8.7467e-04 eta 0:07:26
+epoch [29/50] batch [10/40] time 0.427 (0.468) data 0.000 (0.042) loss 0.4082 (0.7749) acc 87.5000 (80.6250) lr 8.7467e-04 eta 0:06:47
+epoch [29/50] batch [15/40] time 0.428 (0.478) data 0.000 (0.028) loss 0.8272 (0.7862) acc 78.1250 (80.0000) lr 8.7467e-04 eta 0:06:53
+epoch [29/50] batch [20/40] time 0.429 (0.465) data 0.000 (0.021) loss 0.6092 (0.8030) acc 84.3750 (80.1562) lr 8.7467e-04 eta 0:06:40
+epoch [29/50] batch [25/40] time 0.428 (0.473) data 0.000 (0.017) loss 0.9109 (0.8231) acc 75.0000 (79.3750) lr 8.7467e-04 eta 0:06:44
+epoch [29/50] batch [30/40] time 0.427 (0.465) data 0.000 (0.014) loss 1.0658 (0.8103) acc 75.0000 (79.6875) lr 8.7467e-04 eta 0:06:35
+epoch [29/50] batch [35/40] time 0.428 (0.470) data 0.000 (0.012) loss 1.0455 (0.8110) acc 81.2500 (79.6429) lr 8.7467e-04 eta 0:06:37
+epoch [29/50] batch [40/40] time 0.427 (0.465) data 0.000 (0.011) loss 1.1536 (0.8397) acc 59.3750 (78.7500) lr 8.1262e-04 eta 0:06:30
+Train CLIP2
+Creating a 16-shot dataset
+epoch [29/50] batch [5/40] time 0.427 (0.528) data 0.000 (0.102) loss 0.8067 (0.7943) acc 81.2500 (81.8750) lr 8.1262e-04 eta 0:07:42
+epoch [29/50] batch [10/40] time 0.740 (0.509) data 0.000 (0.051) loss 0.9050 (0.8116) acc 71.8750 (79.3750) lr 8.1262e-04 eta 0:07:22
+epoch [29/50] batch [15/40] time 0.427 (0.482) data 0.000 (0.034) loss 0.5400 (0.7755) acc 84.3750 (80.0000) lr 8.1262e-04 eta 0:06:56
+epoch [29/50] batch [20/40] time 0.427 (0.486) data 0.000 (0.026) loss 1.5593 (0.8544) acc 62.5000 (77.3438) lr 8.1262e-04 eta 0:06:57
+epoch [29/50] batch [25/40] time 0.426 (0.474) data 0.000 (0.020) loss 0.6521 (0.8612) acc 81.2500 (77.0000) lr 8.1262e-04 eta 0:06:45
+epoch [29/50] batch [30/40] time 0.427 (0.477) data 0.000 (0.017) loss 0.6408 (0.8139) acc 84.3750 (78.3333) lr 8.1262e-04 eta 0:06:45
+epoch [29/50] batch [35/40] time 0.427 (0.470) data 0.000 (0.015) loss 0.7964 (0.8201) acc 81.2500 (77.6786) lr 8.1262e-04 eta 0:06:36
+epoch [29/50] batch [40/40] time 0.427 (0.473) data 0.000 (0.013) loss 1.0443 (0.8173) acc 75.0000 (77.9688) lr 8.1262e-04 eta 0:06:37
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [30/50] batch [5/40] time 0.426 (0.516) data 0.000 (0.088) loss 0.6342 (0.5911) acc 81.2500 (85.0000) lr 8.1262e-04 eta 0:07:10
+epoch [30/50] batch [10/40] time 0.426 (0.471) data 0.000 (0.044) loss 0.8097 (0.7707) acc 84.3750 (81.2500) lr 8.1262e-04 eta 0:06:31
+epoch [30/50] batch [15/40] time 0.428 (0.480) data 0.000 (0.030) loss 0.6666 (0.7722) acc 81.2500 (80.8333) lr 8.1262e-04 eta 0:06:36
+epoch [30/50] batch [20/40] time 0.427 (0.467) data 0.000 (0.022) loss 0.7711 (0.7722) acc 71.8750 (79.3750) lr 8.1262e-04 eta 0:06:22
+epoch [30/50] batch [25/40] time 0.426 (0.475) data 0.000 (0.018) loss 1.0726 (0.7635) acc 75.0000 (79.8750) lr 8.1262e-04 eta 0:06:26
+epoch [30/50] batch [30/40] time 0.427 (0.467) data 0.000 (0.015) loss 0.2983 (0.7665) acc 93.7500 (79.8958) lr 8.1262e-04 eta 0:06:18
+epoch [30/50] batch [35/40] time 0.427 (0.473) data 0.000 (0.013) loss 0.7915 (0.7811) acc 90.6250 (79.9107) lr 8.1262e-04 eta 0:06:20
+epoch [30/50] batch [40/40] time 0.427 (0.467) data 0.000 (0.011) loss 0.8666 (0.7960) acc 75.0000 (80.0000) lr 7.5131e-04 eta 0:06:13
+Train CLIP2
+Creating a 16-shot dataset
+epoch [30/50] batch [5/40] time 0.429 (0.526) data 0.000 (0.098) loss 0.6959 (0.8454) acc 75.0000 (75.6250) lr 7.5131e-04 eta 0:07:19
+epoch [30/50] batch [10/40] time 0.429 (0.477) data 0.000 (0.049) loss 0.4849 (0.8098) acc 84.3750 (76.8750) lr 7.5131e-04 eta 0:06:35
+epoch [30/50] batch [15/40] time 0.427 (0.484) data 0.000 (0.033) loss 0.4971 (0.8127) acc 87.5000 (78.1250) lr 7.5131e-04 eta 0:06:39
+epoch [30/50] batch [20/40] time 0.427 (0.470) data 0.000 (0.025) loss 1.0483 (0.8101) acc 75.0000 (78.4375) lr 7.5131e-04 eta 0:06:25
+epoch [30/50] batch [25/40] time 0.427 (0.474) data 0.000 (0.020) loss 0.4321 (0.7877) acc 93.7500 (78.8750) lr 7.5131e-04 eta 0:06:25
+epoch [30/50] batch [30/40] time 0.427 (0.466) data 0.000 (0.016) loss 0.3815 (0.7847) acc 90.6250 (79.1667) lr 7.5131e-04 eta 0:06:17
+epoch [30/50] batch [35/40] time 0.427 (0.469) data 0.000 (0.014) loss 1.1028 (0.7885) acc 68.7500 (78.9286) lr 7.5131e-04 eta 0:06:17
+epoch [30/50] batch [40/40] time 0.427 (0.464) data 0.000 (0.012) loss 0.4959 (0.7680) acc 87.5000 (79.6094) lr 7.5131e-04 eta 0:06:11
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [31/50] batch [5/40] time 0.427 (0.524) data 0.000 (0.097) loss 0.8462 (0.7643) acc 81.2500 (79.3750) lr 7.5131e-04 eta 0:06:56
+epoch [31/50] batch [10/40] time 0.427 (0.475) data 0.000 (0.049) loss 1.0179 (0.8371) acc 81.2500 (79.3750) lr 7.5131e-04 eta 0:06:15
+epoch [31/50] batch [15/40] time 0.427 (0.480) data 0.000 (0.032) loss 0.7732 (0.8165) acc 78.1250 (78.9583) lr 7.5131e-04 eta 0:06:16
+epoch [31/50] batch [20/40] time 0.426 (0.467) data 0.000 (0.024) loss 0.6782 (0.7814) acc 87.5000 (80.0000) lr 7.5131e-04 eta 0:06:04
+epoch [31/50] batch [25/40] time 0.427 (0.473) data 0.000 (0.020) loss 0.8688 (0.7696) acc 75.0000 (79.7500) lr 7.5131e-04 eta 0:06:06
+epoch [31/50] batch [30/40] time 0.428 (0.465) data 0.000 (0.016) loss 0.5755 (0.7512) acc 84.3750 (80.6250) lr 7.5131e-04 eta 0:05:58
+epoch [31/50] batch [35/40] time 0.427 (0.469) data 0.000 (0.014) loss 0.5510 (0.7654) acc 84.3750 (80.2679) lr 7.5131e-04 eta 0:05:58
+epoch [31/50] batch [40/40] time 0.427 (0.464) data 0.000 (0.012) loss 1.0674 (0.7813) acc 71.8750 (79.6094) lr 6.9098e-04 eta 0:05:52
+Train CLIP2
+Creating a 16-shot dataset
+epoch [31/50] batch [5/40] time 0.427 (0.528) data 0.000 (0.101) loss 0.8214 (0.7017) acc 71.8750 (80.6250) lr 6.9098e-04 eta 0:06:59
+epoch [31/50] batch [10/40] time 0.428 (0.478) data 0.000 (0.051) loss 0.7989 (0.6995) acc 81.2500 (80.6250) lr 6.9098e-04 eta 0:06:17
+epoch [31/50] batch [15/40] time 0.427 (0.484) data 0.000 (0.034) loss 0.7495 (0.7165) acc 78.1250 (80.2083) lr 6.9098e-04 eta 0:06:19
+epoch [31/50] batch [20/40] time 0.428 (0.470) data 0.000 (0.025) loss 0.8840 (0.6902) acc 84.3750 (81.7188) lr 6.9098e-04 eta 0:06:06
+epoch [31/50] batch [25/40] time 0.427 (0.475) data 0.000 (0.020) loss 0.9787 (0.7296) acc 78.1250 (80.8750) lr 6.9098e-04 eta 0:06:07
+epoch [31/50] batch [30/40] time 0.426 (0.467) data 0.000 (0.017) loss 0.7083 (0.7143) acc 84.3750 (81.4583) lr 6.9098e-04 eta 0:05:59
+epoch [31/50] batch [35/40] time 0.426 (0.470) data 0.000 (0.015) loss 0.8310 (0.7141) acc 81.2500 (81.6071) lr 6.9098e-04 eta 0:05:59
+epoch [31/50] batch [40/40] time 0.426 (0.465) data 0.000 (0.013) loss 1.2040 (0.7257) acc 71.8750 (81.3281) lr 6.9098e-04 eta 0:05:53
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [32/50] batch [5/40] time 0.426 (0.507) data 0.000 (0.080) loss 0.6651 (0.6903) acc 87.5000 (81.2500) lr 6.9098e-04 eta 0:06:22
+epoch [32/50] batch [10/40] time 0.427 (0.467) data 0.000 (0.040) loss 0.9435 (0.7337) acc 75.0000 (79.6875) lr 6.9098e-04 eta 0:05:50
+epoch [32/50] batch [15/40] time 0.429 (0.474) data 0.000 (0.027) loss 1.0147 (0.8111) acc 75.0000 (78.7500) lr 6.9098e-04 eta 0:05:53
+epoch [32/50] batch [20/40] time 0.427 (0.463) data 0.000 (0.020) loss 0.7453 (0.7997) acc 84.3750 (79.2188) lr 6.9098e-04 eta 0:05:42
+epoch [32/50] batch [25/40] time 0.428 (0.469) data 0.000 (0.016) loss 0.5616 (0.7788) acc 81.2500 (79.7500) lr 6.9098e-04 eta 0:05:44
+epoch [32/50] batch [30/40] time 0.428 (0.462) data 0.000 (0.014) loss 0.4332 (0.7613) acc 93.7500 (80.8333) lr 6.9098e-04 eta 0:05:37
+epoch [32/50] batch [35/40] time 0.427 (0.466) data 0.000 (0.012) loss 1.3240 (0.7685) acc 62.5000 (80.2679) lr 6.9098e-04 eta 0:05:37
+epoch [32/50] batch [40/40] time 0.428 (0.461) data 0.000 (0.010) loss 0.7822 (0.7887) acc 84.3750 (80.3906) lr 6.3188e-04 eta 0:05:31
+Train CLIP2
+Creating a 16-shot dataset
+epoch [32/50] batch [5/40] time 0.427 (0.526) data 0.000 (0.099) loss 0.5435 (0.6400) acc 84.3750 (82.5000) lr 6.3188e-04 eta 0:06:37
+epoch [32/50] batch [10/40] time 0.742 (0.508) data 0.000 (0.050) loss 0.5528 (0.6544) acc 87.5000 (82.8125) lr 6.3188e-04 eta 0:06:21
+epoch [32/50] batch [15/40] time 0.427 (0.481) data 0.000 (0.033) loss 0.6923 (0.7094) acc 81.2500 (81.0417) lr 6.3188e-04 eta 0:05:58
+epoch [32/50] batch [20/40] time 0.427 (0.483) data 0.000 (0.025) loss 1.0579 (0.7934) acc 75.0000 (77.9688) lr 6.3188e-04 eta 0:05:57
+epoch [32/50] batch [25/40] time 0.427 (0.472) data 0.000 (0.020) loss 0.6541 (0.7684) acc 78.1250 (78.3750) lr 6.3188e-04 eta 0:05:46
+epoch [32/50] batch [30/40] time 0.427 (0.475) data 0.000 (0.017) loss 0.7568 (0.7539) acc 84.3750 (79.2708) lr 6.3188e-04 eta 0:05:46
+epoch [32/50] batch [35/40] time 0.426 (0.468) data 0.000 (0.014) loss 0.8376 (0.7493) acc 78.1250 (79.9107) lr 6.3188e-04 eta 0:05:39
+epoch [32/50] batch [40/40] time 0.427 (0.470) data 0.000 (0.013) loss 1.4114 (0.7758) acc 68.7500 (79.4531) lr 6.3188e-04 eta 0:05:38
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [33/50] batch [5/40] time 0.427 (0.529) data 0.000 (0.103) loss 1.0435 (0.6869) acc 75.0000 (85.0000) lr 6.3188e-04 eta 0:06:18
+epoch [33/50] batch [10/40] time 0.795 (0.514) data 0.000 (0.052) loss 0.6042 (0.6835) acc 78.1250 (83.4375) lr 6.3188e-04 eta 0:06:05
+epoch [33/50] batch [15/40] time 0.427 (0.485) data 0.000 (0.034) loss 0.5982 (0.7005) acc 81.2500 (82.2917) lr 6.3188e-04 eta 0:05:41
+epoch [33/50] batch [20/40] time 0.426 (0.487) data 0.000 (0.026) loss 0.9961 (0.7441) acc 71.8750 (81.4062) lr 6.3188e-04 eta 0:05:40
+epoch [33/50] batch [25/40] time 0.426 (0.475) data 0.000 (0.021) loss 1.1182 (0.7361) acc 75.0000 (82.2500) lr 6.3188e-04 eta 0:05:29
+epoch [33/50] batch [30/40] time 0.427 (0.477) data 0.000 (0.017) loss 0.6693 (0.7423) acc 81.2500 (81.5625) lr 6.3188e-04 eta 0:05:29
+epoch [33/50] batch [35/40] time 0.426 (0.470) data 0.000 (0.015) loss 0.7632 (0.7210) acc 81.2500 (82.0536) lr 6.3188e-04 eta 0:05:21
+epoch [33/50] batch [40/40] time 0.427 (0.473) data 0.000 (0.013) loss 1.1013 (0.7394) acc 68.7500 (81.3281) lr 5.7422e-04 eta 0:05:21
+Train CLIP2
+Creating a 16-shot dataset
+epoch [33/50] batch [5/40] time 0.427 (0.530) data 0.000 (0.102) loss 0.8088 (1.0733) acc 84.3750 (78.1250) lr 5.7422e-04 eta 0:06:18
+epoch [33/50] batch [10/40] time 0.428 (0.478) data 0.000 (0.051) loss 0.5357 (0.9687) acc 93.7500 (77.8125) lr 5.7422e-04 eta 0:05:39
+epoch [33/50] batch [15/40] time 0.427 (0.483) data 0.000 (0.034) loss 0.6843 (0.8889) acc 81.2500 (78.9583) lr 5.7422e-04 eta 0:05:40
+epoch [33/50] batch [20/40] time 0.428 (0.469) data 0.000 (0.026) loss 0.7169 (0.8193) acc 78.1250 (80.3125) lr 5.7422e-04 eta 0:05:28
+epoch [33/50] batch [25/40] time 0.427 (0.474) data 0.000 (0.021) loss 0.4437 (0.7855) acc 84.3750 (80.5000) lr 5.7422e-04 eta 0:05:29
+epoch [33/50] batch [30/40] time 0.427 (0.466) data 0.000 (0.017) loss 0.6554 (0.7839) acc 87.5000 (80.7292) lr 5.7422e-04 eta 0:05:21
+epoch [33/50] batch [35/40] time 0.427 (0.469) data 0.000 (0.015) loss 0.4346 (0.7726) acc 87.5000 (80.8036) lr 5.7422e-04 eta 0:05:21
+epoch [33/50] batch [40/40] time 0.427 (0.464) data 0.000 (0.013) loss 0.8182 (0.7722) acc 78.1250 (80.3906) lr 5.7422e-04 eta 0:05:15
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [34/50] batch [5/40] time 0.426 (0.515) data 0.000 (0.088) loss 0.3986 (0.7642) acc 93.7500 (80.6250) lr 5.7422e-04 eta 0:05:47
+epoch [34/50] batch [10/40] time 0.426 (0.471) data 0.000 (0.044) loss 1.1421 (0.7779) acc 71.8750 (79.0625) lr 5.7422e-04 eta 0:05:15
+epoch [34/50] batch [15/40] time 0.427 (0.478) data 0.000 (0.030) loss 0.7392 (0.8215) acc 75.0000 (78.3333) lr 5.7422e-04 eta 0:05:17
+epoch [34/50] batch [20/40] time 0.427 (0.465) data 0.000 (0.022) loss 0.8082 (0.7946) acc 81.2500 (79.5312) lr 5.7422e-04 eta 0:05:06
+epoch [34/50] batch [25/40] time 0.426 (0.471) data 0.000 (0.018) loss 0.7169 (0.7727) acc 81.2500 (80.0000) lr 5.7422e-04 eta 0:05:08
+epoch [34/50] batch [30/40] time 0.426 (0.464) data 0.000 (0.015) loss 0.5065 (0.7660) acc 87.5000 (80.4167) lr 5.7422e-04 eta 0:05:01
+epoch [34/50] batch [35/40] time 0.426 (0.467) data 0.000 (0.013) loss 0.5375 (0.7604) acc 84.3750 (80.5357) lr 5.7422e-04 eta 0:05:01
+epoch [34/50] batch [40/40] time 0.427 (0.462) data 0.000 (0.011) loss 0.7938 (0.7667) acc 78.1250 (80.7031) lr 5.1825e-04 eta 0:04:55
+Train CLIP2
+Creating a 16-shot dataset
+epoch [34/50] batch [5/40] time 0.426 (0.523) data 0.000 (0.095) loss 0.6336 (0.5909) acc 87.5000 (85.6250) lr 5.1825e-04 eta 0:05:53
+epoch [34/50] batch [10/40] time 0.786 (0.511) data 0.000 (0.048) loss 1.0614 (0.7227) acc 75.0000 (82.8125) lr 5.1825e-04 eta 0:05:42
+epoch [34/50] batch [15/40] time 0.427 (0.483) data 0.000 (0.032) loss 0.7087 (0.7565) acc 81.2500 (79.5833) lr 5.1825e-04 eta 0:05:21
+epoch [34/50] batch [20/40] time 0.428 (0.485) data 0.000 (0.024) loss 0.5689 (0.7299) acc 78.1250 (80.0000) lr 5.1825e-04 eta 0:05:19
+epoch [34/50] batch [25/40] time 0.427 (0.473) data 0.000 (0.019) loss 0.5872 (0.7188) acc 84.3750 (80.1250) lr 5.1825e-04 eta 0:05:09
+epoch [34/50] batch [30/40] time 0.427 (0.476) data 0.000 (0.016) loss 1.0089 (0.7129) acc 75.0000 (80.7292) lr 5.1825e-04 eta 0:05:09
+epoch [34/50] batch [35/40] time 0.428 (0.469) data 0.000 (0.014) loss 0.7694 (0.7414) acc 78.1250 (80.1786) lr 5.1825e-04 eta 0:05:02
+epoch [34/50] batch [40/40] time 0.426 (0.473) data 0.000 (0.012) loss 0.5945 (0.7410) acc 84.3750 (80.1562) lr 5.1825e-04 eta 0:05:02
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [35/50] batch [5/40] time 0.425 (0.531) data 0.000 (0.106) loss 0.6705 (0.6485) acc 87.5000 (85.6250) lr 5.1825e-04 eta 0:05:37
+epoch [35/50] batch [10/40] time 0.686 (0.504) data 0.000 (0.053) loss 0.5596 (0.7436) acc 87.5000 (80.9375) lr 5.1825e-04 eta 0:05:17
+epoch [35/50] batch [15/40] time 0.426 (0.478) data 0.000 (0.035) loss 0.9391 (0.7292) acc 65.6250 (79.1667) lr 5.1825e-04 eta 0:04:58
+epoch [35/50] batch [20/40] time 0.426 (0.481) data 0.000 (0.027) loss 0.9122 (0.7514) acc 78.1250 (78.4375) lr 5.1825e-04 eta 0:04:58
+epoch [35/50] batch [25/40] time 0.426 (0.470) data 0.000 (0.021) loss 1.7501 (0.8080) acc 62.5000 (77.5000) lr 5.1825e-04 eta 0:04:48
+epoch [35/50] batch [30/40] time 0.427 (0.473) data 0.000 (0.018) loss 0.7600 (0.7782) acc 75.0000 (78.2292) lr 5.1825e-04 eta 0:04:48
+epoch [35/50] batch [35/40] time 0.428 (0.467) data 0.000 (0.015) loss 0.5047 (0.7678) acc 84.3750 (78.6607) lr 5.1825e-04 eta 0:04:42
+epoch [35/50] batch [40/40] time 0.427 (0.470) data 0.000 (0.013) loss 0.5188 (0.7505) acc 84.3750 (78.9062) lr 4.6417e-04 eta 0:04:41
+Train CLIP2
+Creating a 16-shot dataset
+epoch [35/50] batch [5/40] time 0.425 (0.524) data 0.000 (0.098) loss 0.1808 (0.5105) acc 100.0000 (88.1250) lr 4.6417e-04 eta 0:05:32
+epoch [35/50] batch [10/40] time 0.768 (0.509) data 0.000 (0.049) loss 0.6123 (0.5915) acc 81.2500 (84.0625) lr 4.6417e-04 eta 0:05:20
+epoch [35/50] batch [15/40] time 0.427 (0.482) data 0.000 (0.033) loss 0.6104 (0.5884) acc 84.3750 (84.5833) lr 4.6417e-04 eta 0:05:01
+epoch [35/50] batch [20/40] time 0.427 (0.485) data 0.000 (0.025) loss 0.8489 (0.6150) acc 81.2500 (83.5938) lr 4.6417e-04 eta 0:05:01
+epoch [35/50] batch [25/40] time 0.428 (0.474) data 0.000 (0.020) loss 0.6353 (0.6356) acc 84.3750 (83.3750) lr 4.6417e-04 eta 0:04:51
+epoch [35/50] batch [30/40] time 0.425 (0.477) data 0.000 (0.016) loss 0.6408 (0.6746) acc 81.2500 (82.5000) lr 4.6417e-04 eta 0:04:50
+epoch [35/50] batch [35/40] time 0.425 (0.469) data 0.000 (0.014) loss 0.6397 (0.6848) acc 87.5000 (82.3214) lr 4.6417e-04 eta 0:04:43
+epoch [35/50] batch [40/40] time 0.427 (0.472) data 0.000 (0.012) loss 0.5673 (0.6965) acc 84.3750 (82.2656) lr 4.6417e-04 eta 0:04:43
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [36/50] batch [5/40] time 0.427 (0.526) data 0.000 (0.100) loss 0.4731 (0.8098) acc 93.7500 (80.6250) lr 4.6417e-04 eta 0:05:13
+epoch [36/50] batch [10/40] time 0.788 (0.513) data 0.000 (0.050) loss 0.6607 (0.6907) acc 84.3750 (82.5000) lr 4.6417e-04 eta 0:05:02
+epoch [36/50] batch [15/40] time 0.427 (0.484) data 0.000 (0.033) loss 0.6052 (0.7415) acc 84.3750 (82.2917) lr 4.6417e-04 eta 0:04:43
+epoch [36/50] batch [20/40] time 0.428 (0.486) data 0.000 (0.025) loss 0.6636 (0.7714) acc 84.3750 (81.0938) lr 4.6417e-04 eta 0:04:41
+epoch [36/50] batch [25/40] time 0.428 (0.474) data 0.000 (0.020) loss 1.0287 (0.8041) acc 78.1250 (80.3750) lr 4.6417e-04 eta 0:04:32
+epoch [36/50] batch [30/40] time 0.426 (0.479) data 0.000 (0.017) loss 0.6789 (0.7933) acc 75.0000 (79.8958) lr 4.6417e-04 eta 0:04:32
+epoch [36/50] batch [35/40] time 0.427 (0.472) data 0.000 (0.014) loss 0.6348 (0.7732) acc 87.5000 (80.4464) lr 4.6417e-04 eta 0:04:26
+epoch [36/50] batch [40/40] time 0.427 (0.474) data 0.000 (0.013) loss 0.6877 (0.7612) acc 78.1250 (81.0156) lr 4.1221e-04 eta 0:04:25
+Train CLIP2
+Creating a 16-shot dataset
+epoch [36/50] batch [5/40] time 0.427 (0.530) data 0.000 (0.102) loss 0.4308 (0.6723) acc 93.7500 (83.7500) lr 4.1221e-04 eta 0:05:15
+epoch [36/50] batch [10/40] time 0.744 (0.510) data 0.000 (0.051) loss 0.4465 (0.5975) acc 90.6250 (85.6250) lr 4.1221e-04 eta 0:05:01
+epoch [36/50] batch [15/40] time 0.428 (0.483) data 0.000 (0.034) loss 0.5550 (0.6389) acc 81.2500 (83.1250) lr 4.1221e-04 eta 0:04:42
+epoch [36/50] batch [20/40] time 0.427 (0.484) data 0.000 (0.026) loss 0.7749 (0.6717) acc 78.1250 (81.5625) lr 4.1221e-04 eta 0:04:40
+epoch [36/50] batch [25/40] time 0.426 (0.473) data 0.000 (0.021) loss 0.8416 (0.7118) acc 81.2500 (81.2500) lr 4.1221e-04 eta 0:04:31
+epoch [36/50] batch [30/40] time 0.426 (0.478) data 0.000 (0.017) loss 0.9215 (0.7079) acc 78.1250 (81.1458) lr 4.1221e-04 eta 0:04:32
+epoch [36/50] batch [35/40] time 0.427 (0.470) data 0.000 (0.015) loss 0.5965 (0.7188) acc 90.6250 (80.7143) lr 4.1221e-04 eta 0:04:25
+epoch [36/50] batch [40/40] time 0.427 (0.473) data 0.000 (0.013) loss 0.7879 (0.7484) acc 81.2500 (80.5469) lr 4.1221e-04 eta 0:04:24
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [37/50] batch [5/40] time 0.426 (0.531) data 0.000 (0.105) loss 0.8796 (0.6822) acc 84.3750 (84.3750) lr 4.1221e-04 eta 0:04:54
+epoch [37/50] batch [10/40] time 0.775 (0.513) data 0.000 (0.053) loss 0.8770 (0.7814) acc 81.2500 (82.5000) lr 4.1221e-04 eta 0:04:42
+epoch [37/50] batch [15/40] time 0.424 (0.484) data 0.000 (0.035) loss 0.8248 (0.8184) acc 90.6250 (81.0417) lr 4.1221e-04 eta 0:04:23
+epoch [37/50] batch [20/40] time 0.427 (0.483) data 0.000 (0.026) loss 0.4906 (0.7690) acc 84.3750 (81.5625) lr 4.1221e-04 eta 0:04:20
+epoch [37/50] batch [25/40] time 0.426 (0.472) data 0.000 (0.021) loss 0.7796 (0.7643) acc 71.8750 (80.6250) lr 4.1221e-04 eta 0:04:12
+epoch [37/50] batch [30/40] time 0.426 (0.473) data 0.000 (0.018) loss 0.2783 (0.7200) acc 90.6250 (81.2500) lr 4.1221e-04 eta 0:04:10
+epoch [37/50] batch [35/40] time 0.427 (0.466) data 0.000 (0.015) loss 0.9015 (0.7181) acc 75.0000 (81.1607) lr 4.1221e-04 eta 0:04:04
+epoch [37/50] batch [40/40] time 0.426 (0.469) data 0.000 (0.013) loss 0.3513 (0.6956) acc 90.6250 (82.1094) lr 3.6258e-04 eta 0:04:04
+Train CLIP2
+Creating a 16-shot dataset
+epoch [37/50] batch [5/40] time 0.426 (0.506) data 0.000 (0.080) loss 0.4500 (0.5556) acc 84.3750 (85.6250) lr 3.6258e-04 eta 0:04:41
+epoch [37/50] batch [10/40] time 0.727 (0.496) data 0.000 (0.040) loss 0.7071 (0.5827) acc 78.1250 (85.3125) lr 3.6258e-04 eta 0:04:32
+epoch [37/50] batch [15/40] time 0.426 (0.473) data 0.000 (0.027) loss 1.1764 (0.6544) acc 75.0000 (82.9167) lr 3.6258e-04 eta 0:04:17
+epoch [37/50] batch [20/40] time 0.428 (0.479) data 0.000 (0.020) loss 0.8175 (0.6972) acc 75.0000 (82.3438) lr 3.6258e-04 eta 0:04:18
+epoch [37/50] batch [25/40] time 0.428 (0.469) data 0.000 (0.016) loss 0.6061 (0.6954) acc 84.3750 (82.3750) lr 3.6258e-04 eta 0:04:10
+epoch [37/50] batch [30/40] time 0.426 (0.473) data 0.000 (0.014) loss 0.4617 (0.7251) acc 87.5000 (81.3542) lr 3.6258e-04 eta 0:04:10
+epoch [37/50] batch [35/40] time 0.427 (0.466) data 0.000 (0.012) loss 0.7672 (0.7391) acc 78.1250 (80.8036) lr 3.6258e-04 eta 0:04:04
+epoch [37/50] batch [40/40] time 0.427 (0.470) data 0.000 (0.010) loss 1.0395 (0.7504) acc 81.2500 (81.0938) lr 3.6258e-04 eta 0:04:04
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [38/50] batch [5/40] time 0.426 (0.529) data 0.000 (0.102) loss 0.4637 (0.4808) acc 87.5000 (87.5000) lr 3.6258e-04 eta 0:04:32
+epoch [38/50] batch [10/40] time 0.426 (0.478) data 0.000 (0.051) loss 0.4320 (0.5655) acc 93.7500 (86.5625) lr 3.6258e-04 eta 0:04:03
+epoch [38/50] batch [15/40] time 0.426 (0.481) data 0.000 (0.034) loss 0.7750 (0.6362) acc 81.2500 (84.5833) lr 3.6258e-04 eta 0:04:03
+epoch [38/50] batch [20/40] time 0.426 (0.468) data 0.000 (0.026) loss 1.1940 (0.7169) acc 65.6250 (81.4062) lr 3.6258e-04 eta 0:03:53
+epoch [38/50] batch [25/40] time 0.426 (0.473) data 0.000 (0.021) loss 0.8295 (0.7037) acc 75.0000 (82.0000) lr 3.6258e-04 eta 0:03:54
+epoch [38/50] batch [30/40] time 0.427 (0.465) data 0.000 (0.017) loss 0.5212 (0.7031) acc 78.1250 (81.6667) lr 3.6258e-04 eta 0:03:47
+epoch [38/50] batch [35/40] time 0.427 (0.469) data 0.000 (0.015) loss 1.1989 (0.7319) acc 71.8750 (80.8929) lr 3.6258e-04 eta 0:03:47
+epoch [38/50] batch [40/40] time 0.427 (0.464) data 0.000 (0.013) loss 0.9009 (0.7435) acc 81.2500 (80.6250) lr 3.1545e-04 eta 0:03:42
+Train CLIP2
+Creating a 16-shot dataset
+epoch [38/50] batch [5/40] time 0.427 (0.536) data 0.000 (0.109) loss 0.9020 (0.8155) acc 84.3750 (79.3750) lr 3.1545e-04 eta 0:04:36
+epoch [38/50] batch [10/40] time 0.755 (0.514) data 0.000 (0.055) loss 0.5777 (0.7341) acc 90.6250 (82.1875) lr 3.1545e-04 eta 0:04:22
+epoch [38/50] batch [15/40] time 0.427 (0.485) data 0.000 (0.036) loss 0.7571 (0.7614) acc 84.3750 (80.6250) lr 3.1545e-04 eta 0:04:05
+epoch [38/50] batch [20/40] time 0.427 (0.488) data 0.000 (0.027) loss 0.5619 (0.7583) acc 87.5000 (80.6250) lr 3.1545e-04 eta 0:04:04
+epoch [38/50] batch [25/40] time 0.427 (0.476) data 0.000 (0.022) loss 0.9306 (0.7564) acc 71.8750 (80.1250) lr 3.1545e-04 eta 0:03:55
+epoch [38/50] batch [30/40] time 0.427 (0.478) data 0.000 (0.018) loss 0.5620 (0.7331) acc 84.3750 (80.7292) lr 3.1545e-04 eta 0:03:54
+epoch [38/50] batch [35/40] time 0.427 (0.471) data 0.000 (0.016) loss 0.5863 (0.7451) acc 87.5000 (80.2679) lr 3.1545e-04 eta 0:03:48
+epoch [38/50] batch [40/40] time 0.427 (0.474) data 0.000 (0.014) loss 0.5313 (0.7338) acc 84.3750 (80.7031) lr 3.1545e-04 eta 0:03:47
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [39/50] batch [5/40] time 0.428 (0.535) data 0.000 (0.107) loss 0.6629 (0.6386) acc 81.2500 (82.5000) lr 3.1545e-04 eta 0:04:14
+epoch [39/50] batch [10/40] time 0.767 (0.515) data 0.000 (0.054) loss 0.5648 (0.6496) acc 87.5000 (82.5000) lr 3.1545e-04 eta 0:04:02
+epoch [39/50] batch [15/40] time 0.428 (0.486) data 0.000 (0.036) loss 0.8588 (0.6813) acc 71.8750 (82.0833) lr 3.1545e-04 eta 0:03:45
+epoch [39/50] batch [20/40] time 0.427 (0.487) data 0.000 (0.027) loss 0.5108 (0.6542) acc 84.3750 (82.3438) lr 3.1545e-04 eta 0:03:44
+epoch [39/50] batch [25/40] time 0.428 (0.475) data 0.000 (0.022) loss 0.8460 (0.6807) acc 78.1250 (81.2500) lr 3.1545e-04 eta 0:03:36
+epoch [39/50] batch [30/40] time 0.428 (0.478) data 0.000 (0.018) loss 1.2212 (0.7023) acc 65.6250 (80.9375) lr 3.1545e-04 eta 0:03:34
+epoch [39/50] batch [35/40] time 0.426 (0.470) data 0.000 (0.015) loss 0.8995 (0.7083) acc 78.1250 (81.0714) lr 3.1545e-04 eta 0:03:29
+epoch [39/50] batch [40/40] time 0.427 (0.473) data 0.000 (0.014) loss 0.6222 (0.7277) acc 78.1250 (80.7031) lr 2.7103e-04 eta 0:03:28
+Train CLIP2
+Creating a 16-shot dataset
+epoch [39/50] batch [5/40] time 0.427 (0.535) data 0.000 (0.108) loss 0.6004 (0.7187) acc 87.5000 (81.8750) lr 2.7103e-04 eta 0:04:14
+epoch [39/50] batch [10/40] time 0.743 (0.513) data 0.000 (0.054) loss 0.9290 (0.7391) acc 78.1250 (82.1875) lr 2.7103e-04 eta 0:04:01
+epoch [39/50] batch [15/40] time 0.427 (0.484) data 0.000 (0.036) loss 1.0425 (0.7575) acc 75.0000 (81.4583) lr 2.7103e-04 eta 0:03:45
+epoch [39/50] batch [20/40] time 0.427 (0.488) data 0.000 (0.027) loss 1.0510 (0.7667) acc 68.7500 (80.7812) lr 2.7103e-04 eta 0:03:44
+epoch [39/50] batch [25/40] time 0.427 (0.476) data 0.000 (0.022) loss 0.7824 (0.7693) acc 81.2500 (80.2500) lr 2.7103e-04 eta 0:03:36
+epoch [39/50] batch [30/40] time 0.426 (0.479) data 0.000 (0.018) loss 0.4689 (0.7403) acc 90.6250 (81.0417) lr 2.7103e-04 eta 0:03:35
+epoch [39/50] batch [35/40] time 0.427 (0.472) data 0.000 (0.016) loss 0.5725 (0.7116) acc 84.3750 (81.7857) lr 2.7103e-04 eta 0:03:29
+epoch [39/50] batch [40/40] time 0.427 (0.475) data 0.000 (0.014) loss 0.6716 (0.7064) acc 84.3750 (81.7969) lr 2.7103e-04 eta 0:03:28
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [40/50] batch [5/40] time 0.427 (0.523) data 0.000 (0.096) loss 0.6994 (0.7968) acc 75.0000 (78.7500) lr 2.7103e-04 eta 0:03:47
+epoch [40/50] batch [10/40] time 0.754 (0.508) data 0.000 (0.048) loss 0.6461 (0.6973) acc 84.3750 (81.5625) lr 2.7103e-04 eta 0:03:38
+epoch [40/50] batch [15/40] time 0.428 (0.481) data 0.000 (0.032) loss 0.4887 (0.7314) acc 93.7500 (80.6250) lr 2.7103e-04 eta 0:03:24
+epoch [40/50] batch [20/40] time 0.427 (0.483) data 0.000 (0.024) loss 0.5154 (0.7249) acc 84.3750 (80.6250) lr 2.7103e-04 eta 0:03:22
+epoch [40/50] batch [25/40] time 0.427 (0.472) data 0.000 (0.019) loss 0.3507 (0.7154) acc 87.5000 (81.2500) lr 2.7103e-04 eta 0:03:15
+epoch [40/50] batch [30/40] time 0.427 (0.475) data 0.000 (0.016) loss 0.6027 (0.6988) acc 84.3750 (81.3542) lr 2.7103e-04 eta 0:03:14
+epoch [40/50] batch [35/40] time 0.427 (0.468) data 0.000 (0.014) loss 0.6515 (0.6899) acc 78.1250 (81.2500) lr 2.7103e-04 eta 0:03:09
+epoch [40/50] batch [40/40] time 0.429 (0.472) data 0.000 (0.012) loss 0.4922 (0.6643) acc 93.7500 (82.0312) lr 2.2949e-04 eta 0:03:08
+Train CLIP2
+Creating a 16-shot dataset
+epoch [40/50] batch [5/40] time 0.426 (0.525) data 0.000 (0.098) loss 0.4703 (0.6164) acc 87.5000 (86.2500) lr 2.2949e-04 eta 0:03:48
+epoch [40/50] batch [10/40] time 0.693 (0.503) data 0.000 (0.049) loss 0.5626 (0.6437) acc 84.3750 (84.6875) lr 2.2949e-04 eta 0:03:36
+epoch [40/50] batch [15/40] time 0.428 (0.478) data 0.000 (0.033) loss 0.4434 (0.6933) acc 90.6250 (82.7083) lr 2.2949e-04 eta 0:03:23
+epoch [40/50] batch [20/40] time 0.426 (0.483) data 0.000 (0.025) loss 0.9812 (0.7390) acc 68.7500 (81.2500) lr 2.2949e-04 eta 0:03:22
+epoch [40/50] batch [25/40] time 0.426 (0.471) data 0.000 (0.020) loss 0.6709 (0.7277) acc 81.2500 (81.1250) lr 2.2949e-04 eta 0:03:15
+epoch [40/50] batch [30/40] time 0.425 (0.472) data 0.000 (0.016) loss 0.5758 (0.7249) acc 84.3750 (80.8333) lr 2.2949e-04 eta 0:03:13
+epoch [40/50] batch [35/40] time 0.426 (0.466) data 0.000 (0.014) loss 0.7591 (0.7410) acc 78.1250 (80.0893) lr 2.2949e-04 eta 0:03:08
+epoch [40/50] batch [40/40] time 0.426 (0.467) data 0.000 (0.012) loss 0.5218 (0.7426) acc 81.2500 (80.3125) lr 2.2949e-04 eta 0:03:06
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [41/50] batch [5/40] time 0.427 (0.533) data 0.000 (0.106) loss 0.6852 (0.6711) acc 84.3750 (83.1250) lr 2.2949e-04 eta 0:03:30
+epoch [41/50] batch [10/40] time 0.812 (0.519) data 0.000 (0.053) loss 0.8231 (0.7007) acc 75.0000 (80.9375) lr 2.2949e-04 eta 0:03:22
+epoch [41/50] batch [15/40] time 0.427 (0.488) data 0.000 (0.035) loss 0.8691 (0.7163) acc 75.0000 (81.6667) lr 2.2949e-04 eta 0:03:07
+epoch [41/50] batch [20/40] time 0.427 (0.490) data 0.000 (0.027) loss 0.6406 (0.6861) acc 84.3750 (82.3438) lr 2.2949e-04 eta 0:03:06
+epoch [41/50] batch [25/40] time 0.426 (0.478) data 0.000 (0.021) loss 0.8971 (0.6899) acc 71.8750 (82.2500) lr 2.2949e-04 eta 0:02:59
+epoch [41/50] batch [30/40] time 0.427 (0.481) data 0.000 (0.018) loss 0.8712 (0.7185) acc 78.1250 (81.7708) lr 2.2949e-04 eta 0:02:57
+epoch [41/50] batch [35/40] time 0.427 (0.473) data 0.000 (0.015) loss 0.5113 (0.7034) acc 93.7500 (82.5000) lr 2.2949e-04 eta 0:02:52
+epoch [41/50] batch [40/40] time 0.427 (0.476) data 0.000 (0.013) loss 0.5302 (0.7129) acc 93.7500 (82.5000) lr 1.9098e-04 eta 0:02:51
+Train CLIP2
+Creating a 16-shot dataset
+epoch [41/50] batch [5/40] time 0.427 (0.526) data 0.000 (0.099) loss 0.5293 (0.6590) acc 90.6250 (84.3750) lr 1.9098e-04 eta 0:03:27
+epoch [41/50] batch [10/40] time 0.772 (0.511) data 0.000 (0.049) loss 0.5615 (0.7382) acc 87.5000 (80.3125) lr 1.9098e-04 eta 0:03:19
+epoch [41/50] batch [15/40] time 0.426 (0.483) data 0.000 (0.033) loss 0.4777 (0.7286) acc 93.7500 (80.8333) lr 1.9098e-04 eta 0:03:05
+epoch [41/50] batch [20/40] time 0.428 (0.485) data 0.000 (0.025) loss 0.4714 (0.6885) acc 87.5000 (81.7188) lr 1.9098e-04 eta 0:03:04
+epoch [41/50] batch [25/40] time 0.428 (0.473) data 0.000 (0.020) loss 0.8380 (0.7463) acc 75.0000 (80.0000) lr 1.9098e-04 eta 0:02:57
+epoch [41/50] batch [30/40] time 0.428 (0.477) data 0.000 (0.017) loss 0.7040 (0.7441) acc 87.5000 (80.5208) lr 1.9098e-04 eta 0:02:56
+epoch [41/50] batch [35/40] time 0.427 (0.470) data 0.000 (0.014) loss 1.1206 (0.7596) acc 68.7500 (80.0893) lr 1.9098e-04 eta 0:02:51
+epoch [41/50] batch [40/40] time 0.426 (0.471) data 0.000 (0.012) loss 0.9751 (0.7662) acc 65.6250 (79.6875) lr 1.9098e-04 eta 0:02:49
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [42/50] batch [5/40] time 0.426 (0.512) data 0.000 (0.087) loss 0.5173 (0.7777) acc 84.3750 (81.2500) lr 1.9098e-04 eta 0:03:01
+epoch [42/50] batch [10/40] time 0.726 (0.499) data 0.000 (0.043) loss 0.5400 (0.7090) acc 84.3750 (81.8750) lr 1.9098e-04 eta 0:02:54
+epoch [42/50] batch [15/40] time 0.426 (0.475) data 0.000 (0.029) loss 0.9244 (0.7069) acc 65.6250 (80.6250) lr 1.9098e-04 eta 0:02:43
+epoch [42/50] batch [20/40] time 0.428 (0.478) data 0.000 (0.022) loss 1.0495 (0.7130) acc 71.8750 (80.7812) lr 1.9098e-04 eta 0:02:42
+epoch [42/50] batch [25/40] time 0.427 (0.468) data 0.000 (0.017) loss 0.7804 (0.7305) acc 81.2500 (80.5000) lr 1.9098e-04 eta 0:02:36
+epoch [42/50] batch [30/40] time 0.428 (0.472) data 0.000 (0.015) loss 0.7706 (0.7136) acc 81.2500 (80.8333) lr 1.9098e-04 eta 0:02:35
+epoch [42/50] batch [35/40] time 0.428 (0.465) data 0.000 (0.012) loss 0.8524 (0.7102) acc 78.1250 (81.0714) lr 1.9098e-04 eta 0:02:31
+epoch [42/50] batch [40/40] time 0.427 (0.468) data 0.000 (0.011) loss 1.0366 (0.7221) acc 78.1250 (81.4844) lr 1.5567e-04 eta 0:02:29
+Train CLIP2
+Creating a 16-shot dataset
+epoch [42/50] batch [5/40] time 0.427 (0.533) data 0.000 (0.106) loss 0.9588 (0.6288) acc 81.2500 (81.8750) lr 1.5567e-04 eta 0:03:09
+epoch [42/50] batch [10/40] time 0.743 (0.512) data 0.000 (0.053) loss 0.8162 (0.7515) acc 81.2500 (80.0000) lr 1.5567e-04 eta 0:02:59
+epoch [42/50] batch [15/40] time 0.427 (0.484) data 0.000 (0.035) loss 0.3820 (0.7035) acc 84.3750 (81.2500) lr 1.5567e-04 eta 0:02:46
+epoch [42/50] batch [20/40] time 0.427 (0.486) data 0.000 (0.027) loss 0.5699 (0.7345) acc 87.5000 (80.6250) lr 1.5567e-04 eta 0:02:45
+epoch [42/50] batch [25/40] time 0.428 (0.474) data 0.000 (0.021) loss 0.2949 (0.7145) acc 90.6250 (80.7500) lr 1.5567e-04 eta 0:02:38
+epoch [42/50] batch [30/40] time 0.427 (0.477) data 0.000 (0.018) loss 0.8196 (0.7063) acc 81.2500 (81.3542) lr 1.5567e-04 eta 0:02:37
+epoch [42/50] batch [35/40] time 0.427 (0.470) data 0.000 (0.015) loss 0.4984 (0.6918) acc 93.7500 (81.8750) lr 1.5567e-04 eta 0:02:32
+epoch [42/50] batch [40/40] time 0.428 (0.472) data 0.000 (0.013) loss 0.5403 (0.6913) acc 87.5000 (81.8750) lr 1.5567e-04 eta 0:02:31
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [43/50] batch [5/40] time 0.427 (0.530) data 0.000 (0.102) loss 0.4806 (0.5670) acc 84.3750 (85.6250) lr 1.5567e-04 eta 0:02:46
+epoch [43/50] batch [10/40] time 0.742 (0.510) data 0.000 (0.051) loss 0.2137 (0.6471) acc 100.0000 (84.0625) lr 1.5567e-04 eta 0:02:38
+epoch [43/50] batch [15/40] time 0.427 (0.482) data 0.000 (0.034) loss 0.7644 (0.7086) acc 87.5000 (82.5000) lr 1.5567e-04 eta 0:02:27
+epoch [43/50] batch [20/40] time 0.427 (0.486) data 0.000 (0.026) loss 0.5806 (0.6916) acc 87.5000 (82.9688) lr 1.5567e-04 eta 0:02:25
+epoch [43/50] batch [25/40] time 0.427 (0.474) data 0.000 (0.020) loss 0.8802 (0.6996) acc 75.0000 (82.3750) lr 1.5567e-04 eta 0:02:19
+epoch [43/50] batch [30/40] time 0.427 (0.477) data 0.000 (0.017) loss 0.5922 (0.6982) acc 81.2500 (82.1875) lr 1.5567e-04 eta 0:02:18
+epoch [43/50] batch [35/40] time 0.427 (0.470) data 0.000 (0.015) loss 0.5980 (0.7197) acc 84.3750 (81.7857) lr 1.5567e-04 eta 0:02:13
+epoch [43/50] batch [40/40] time 0.428 (0.472) data 0.000 (0.013) loss 0.7225 (0.7301) acc 75.0000 (81.0156) lr 1.2369e-04 eta 0:02:12
+Train CLIP2
+Creating a 16-shot dataset
+epoch [43/50] batch [5/40] time 0.428 (0.526) data 0.000 (0.099) loss 0.7831 (0.6666) acc 78.1250 (80.0000) lr 1.2369e-04 eta 0:02:45
+epoch [43/50] batch [10/40] time 0.765 (0.511) data 0.000 (0.050) loss 0.6120 (0.5862) acc 75.0000 (82.8125) lr 1.2369e-04 eta 0:02:38
+epoch [43/50] batch [15/40] time 0.428 (0.483) data 0.000 (0.033) loss 0.6805 (0.6120) acc 87.5000 (83.1250) lr 1.2369e-04 eta 0:02:27
+epoch [43/50] batch [20/40] time 0.428 (0.487) data 0.000 (0.025) loss 1.0518 (0.6808) acc 71.8750 (81.7188) lr 1.2369e-04 eta 0:02:26
+epoch [43/50] batch [25/40] time 0.427 (0.475) data 0.000 (0.020) loss 0.5878 (0.6629) acc 87.5000 (82.3750) lr 1.2369e-04 eta 0:02:20
+epoch [43/50] batch [30/40] time 0.427 (0.478) data 0.000 (0.017) loss 0.7525 (0.6884) acc 78.1250 (81.8750) lr 1.2369e-04 eta 0:02:18
+epoch [43/50] batch [35/40] time 0.427 (0.471) data 0.000 (0.014) loss 0.5629 (0.6744) acc 84.3750 (82.1429) lr 1.2369e-04 eta 0:02:14
+epoch [43/50] batch [40/40] time 0.427 (0.473) data 0.000 (0.013) loss 0.7450 (0.6906) acc 81.2500 (82.1094) lr 1.2369e-04 eta 0:02:12
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [44/50] batch [5/40] time 0.426 (0.523) data 0.000 (0.097) loss 0.6290 (0.7086) acc 84.3750 (81.8750) lr 1.2369e-04 eta 0:02:23
+epoch [44/50] batch [10/40] time 0.756 (0.507) data 0.000 (0.049) loss 0.8351 (0.6948) acc 78.1250 (82.1875) lr 1.2369e-04 eta 0:02:17
+epoch [44/50] batch [15/40] time 0.426 (0.480) data 0.000 (0.032) loss 1.0389 (0.7270) acc 75.0000 (81.2500) lr 1.2369e-04 eta 0:02:07
+epoch [44/50] batch [20/40] time 0.426 (0.482) data 0.000 (0.024) loss 0.4084 (0.7180) acc 93.7500 (82.3438) lr 1.2369e-04 eta 0:02:05
+epoch [44/50] batch [25/40] time 0.426 (0.471) data 0.000 (0.020) loss 0.7341 (0.6988) acc 75.0000 (81.5000) lr 1.2369e-04 eta 0:02:00
+epoch [44/50] batch [30/40] time 0.425 (0.475) data 0.000 (0.016) loss 0.8042 (0.7184) acc 84.3750 (81.5625) lr 1.2369e-04 eta 0:01:58
+epoch [44/50] batch [35/40] time 0.426 (0.468) data 0.000 (0.014) loss 0.6798 (0.7205) acc 84.3750 (81.6071) lr 1.2369e-04 eta 0:01:54
+epoch [44/50] batch [40/40] time 0.427 (0.471) data 0.000 (0.012) loss 1.1282 (0.7353) acc 81.2500 (81.7969) lr 9.5173e-05 eta 0:01:53
+Train CLIP2
+Creating a 16-shot dataset
+epoch [44/50] batch [5/40] time 0.428 (0.530) data 0.000 (0.103) loss 0.7643 (0.5991) acc 81.2500 (86.8750) lr 9.5173e-05 eta 0:02:25
+epoch [44/50] batch [10/40] time 0.790 (0.515) data 0.000 (0.052) loss 0.9348 (0.7441) acc 84.3750 (81.8750) lr 9.5173e-05 eta 0:02:19
+epoch [44/50] batch [15/40] time 0.428 (0.486) data 0.000 (0.034) loss 0.8671 (0.7153) acc 71.8750 (81.6667) lr 9.5173e-05 eta 0:02:08
+epoch [44/50] batch [20/40] time 0.427 (0.488) data 0.000 (0.026) loss 0.7251 (0.7029) acc 75.0000 (81.7188) lr 9.5173e-05 eta 0:02:06
+epoch [44/50] batch [25/40] time 0.427 (0.476) data 0.000 (0.021) loss 1.0817 (0.7327) acc 78.1250 (81.3750) lr 9.5173e-05 eta 0:02:01
+epoch [44/50] batch [30/40] time 0.427 (0.478) data 0.000 (0.017) loss 0.7608 (0.7174) acc 81.2500 (81.5625) lr 9.5173e-05 eta 0:01:59
+epoch [44/50] batch [35/40] time 0.426 (0.471) data 0.000 (0.015) loss 0.5162 (0.7148) acc 81.2500 (81.5179) lr 9.5173e-05 eta 0:01:55
+epoch [44/50] batch [40/40] time 0.427 (0.473) data 0.000 (0.013) loss 0.5136 (0.7178) acc 84.3750 (81.3281) lr 9.5173e-05 eta 0:01:53
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [45/50] batch [5/40] time 0.427 (0.531) data 0.000 (0.104) loss 0.6678 (0.5927) acc 81.2500 (81.8750) lr 9.5173e-05 eta 0:02:04
+epoch [45/50] batch [10/40] time 0.751 (0.511) data 0.000 (0.052) loss 0.5667 (0.6499) acc 84.3750 (81.5625) lr 9.5173e-05 eta 0:01:57
+epoch [45/50] batch [15/40] time 0.427 (0.483) data 0.000 (0.035) loss 0.4893 (0.6501) acc 81.2500 (81.2500) lr 9.5173e-05 eta 0:01:48
+epoch [45/50] batch [20/40] time 0.427 (0.486) data 0.000 (0.026) loss 0.5958 (0.6745) acc 84.3750 (80.9375) lr 9.5173e-05 eta 0:01:46
+epoch [45/50] batch [25/40] time 0.427 (0.474) data 0.000 (0.021) loss 1.0168 (0.7155) acc 78.1250 (80.3750) lr 9.5173e-05 eta 0:01:41
+epoch [45/50] batch [30/40] time 0.426 (0.477) data 0.000 (0.017) loss 0.7676 (0.7090) acc 81.2500 (81.0417) lr 9.5173e-05 eta 0:01:40
+epoch [45/50] batch [35/40] time 0.426 (0.469) data 0.000 (0.015) loss 0.3085 (0.6823) acc 96.8750 (81.6964) lr 9.5173e-05 eta 0:01:36
+epoch [45/50] batch [40/40] time 0.426 (0.473) data 0.000 (0.013) loss 0.8735 (0.6810) acc 71.8750 (81.7188) lr 7.0224e-05 eta 0:01:34
+Train CLIP2
+Creating a 16-shot dataset
+epoch [45/50] batch [5/40] time 0.426 (0.531) data 0.000 (0.105) loss 1.2454 (0.8679) acc 68.7500 (78.1250) lr 7.0224e-05 eta 0:02:04
+epoch [45/50] batch [10/40] time 0.672 (0.503) data 0.000 (0.053) loss 0.2700 (0.7145) acc 90.6250 (81.2500) lr 7.0224e-05 eta 0:01:55
+epoch [45/50] batch [15/40] time 0.426 (0.477) data 0.000 (0.035) loss 0.5136 (0.7224) acc 87.5000 (81.0417) lr 7.0224e-05 eta 0:01:47
+epoch [45/50] batch [20/40] time 0.426 (0.477) data 0.000 (0.026) loss 0.5897 (0.7293) acc 81.2500 (80.3125) lr 7.0224e-05 eta 0:01:44
+epoch [45/50] batch [25/40] time 0.425 (0.467) data 0.000 (0.021) loss 0.7102 (0.7155) acc 81.2500 (80.7500) lr 7.0224e-05 eta 0:01:40
+epoch [45/50] batch [30/40] time 0.428 (0.470) data 0.000 (0.018) loss 0.5417 (0.7005) acc 87.5000 (81.1458) lr 7.0224e-05 eta 0:01:38
+epoch [45/50] batch [35/40] time 0.427 (0.464) data 0.000 (0.015) loss 0.8357 (0.7150) acc 84.3750 (80.8929) lr 7.0224e-05 eta 0:01:35
+epoch [45/50] batch [40/40] time 0.426 (0.467) data 0.000 (0.013) loss 0.7995 (0.7221) acc 78.1250 (80.7812) lr 7.0224e-05 eta 0:01:33
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [46/50] batch [5/40] time 0.428 (0.531) data 0.000 (0.103) loss 0.5220 (0.5278) acc 87.5000 (84.3750) lr 7.0224e-05 eta 0:01:43
+epoch [46/50] batch [10/40] time 0.772 (0.514) data 0.000 (0.052) loss 0.4047 (0.5043) acc 84.3750 (85.0000) lr 7.0224e-05 eta 0:01:37
+epoch [46/50] batch [15/40] time 0.427 (0.485) data 0.000 (0.034) loss 1.1040 (0.5884) acc 65.6250 (83.5417) lr 7.0224e-05 eta 0:01:29
+epoch [46/50] batch [20/40] time 0.428 (0.488) data 0.000 (0.026) loss 0.7270 (0.6592) acc 84.3750 (82.6562) lr 7.0224e-05 eta 0:01:27
+epoch [46/50] batch [25/40] time 0.427 (0.476) data 0.000 (0.021) loss 0.6063 (0.6889) acc 84.3750 (82.3750) lr 7.0224e-05 eta 0:01:23
+epoch [46/50] batch [30/40] time 0.427 (0.479) data 0.000 (0.017) loss 0.6094 (0.6786) acc 87.5000 (82.9167) lr 7.0224e-05 eta 0:01:21
+epoch [46/50] batch [35/40] time 0.427 (0.472) data 0.000 (0.015) loss 1.0609 (0.6953) acc 68.7500 (82.4107) lr 7.0224e-05 eta 0:01:17
+epoch [46/50] batch [40/40] time 0.427 (0.474) data 0.000 (0.013) loss 0.7077 (0.7057) acc 75.0000 (82.1094) lr 4.8943e-05 eta 0:01:15
+Train CLIP2
+Creating a 16-shot dataset
+epoch [46/50] batch [5/40] time 0.427 (0.527) data 0.000 (0.100) loss 0.6233 (0.8387) acc 84.3750 (79.3750) lr 4.8943e-05 eta 0:01:42
+epoch [46/50] batch [10/40] time 0.738 (0.508) data 0.000 (0.050) loss 1.0933 (0.7860) acc 68.7500 (80.0000) lr 4.8943e-05 eta 0:01:36
+epoch [46/50] batch [15/40] time 0.428 (0.481) data 0.000 (0.033) loss 1.2859 (0.7400) acc 75.0000 (81.4583) lr 4.8943e-05 eta 0:01:29
+epoch [46/50] batch [20/40] time 0.428 (0.483) data 0.000 (0.025) loss 0.3475 (0.6962) acc 87.5000 (82.3438) lr 4.8943e-05 eta 0:01:26
+epoch [46/50] batch [25/40] time 0.428 (0.472) data 0.000 (0.020) loss 0.5798 (0.7114) acc 81.2500 (82.2500) lr 4.8943e-05 eta 0:01:22
+epoch [46/50] batch [30/40] time 0.428 (0.475) data 0.000 (0.017) loss 0.6072 (0.6987) acc 81.2500 (82.0833) lr 4.8943e-05 eta 0:01:20
+epoch [46/50] batch [35/40] time 0.427 (0.468) data 0.000 (0.014) loss 0.9624 (0.7213) acc 68.7500 (81.6071) lr 4.8943e-05 eta 0:01:17
+epoch [46/50] batch [40/40] time 0.427 (0.471) data 0.000 (0.013) loss 0.6959 (0.7195) acc 75.0000 (81.4062) lr 4.8943e-05 eta 0:01:15
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [47/50] batch [5/40] time 0.426 (0.533) data 0.000 (0.108) loss 0.8546 (0.7740) acc 75.0000 (82.5000) lr 4.8943e-05 eta 0:01:22
+epoch [47/50] batch [10/40] time 0.687 (0.506) data 0.000 (0.054) loss 0.4697 (0.7195) acc 81.2500 (83.1250) lr 4.8943e-05 eta 0:01:15
+epoch [47/50] batch [15/40] time 0.428 (0.480) data 0.000 (0.036) loss 0.6028 (0.6638) acc 87.5000 (84.1667) lr 4.8943e-05 eta 0:01:09
+epoch [47/50] batch [20/40] time 0.428 (0.479) data 0.000 (0.027) loss 0.2998 (0.6714) acc 96.8750 (83.7500) lr 4.8943e-05 eta 0:01:07
+epoch [47/50] batch [25/40] time 0.427 (0.469) data 0.000 (0.022) loss 0.5971 (0.6629) acc 81.2500 (83.3750) lr 4.8943e-05 eta 0:01:03
+epoch [47/50] batch [30/40] time 0.426 (0.472) data 0.000 (0.018) loss 0.5113 (0.6490) acc 84.3750 (83.5417) lr 4.8943e-05 eta 0:01:01
+epoch [47/50] batch [35/40] time 0.426 (0.466) data 0.000 (0.016) loss 1.0026 (0.6542) acc 78.1250 (83.9286) lr 4.8943e-05 eta 0:00:58
+epoch [47/50] batch [40/40] time 0.427 (0.467) data 0.000 (0.014) loss 0.4629 (0.6612) acc 87.5000 (83.5156) lr 3.1417e-05 eta 0:00:56
+Train CLIP2
+Creating a 16-shot dataset
+epoch [47/50] batch [5/40] time 0.428 (0.526) data 0.000 (0.098) loss 0.5027 (0.6615) acc 81.2500 (80.0000) lr 3.1417e-05 eta 0:01:21
+epoch [47/50] batch [10/40] time 0.768 (0.511) data 0.000 (0.049) loss 0.7732 (0.7279) acc 71.8750 (79.3750) lr 3.1417e-05 eta 0:01:16
+epoch [47/50] batch [15/40] time 0.427 (0.483) data 0.000 (0.033) loss 0.6934 (0.7935) acc 84.3750 (77.9167) lr 3.1417e-05 eta 0:01:10
+epoch [47/50] batch [20/40] time 0.428 (0.487) data 0.000 (0.025) loss 0.8597 (0.7654) acc 81.2500 (79.2188) lr 3.1417e-05 eta 0:01:08
+epoch [47/50] batch [25/40] time 0.427 (0.475) data 0.000 (0.020) loss 0.6642 (0.7665) acc 87.5000 (79.7500) lr 3.1417e-05 eta 0:01:04
+epoch [47/50] batch [30/40] time 0.426 (0.478) data 0.000 (0.016) loss 0.5822 (0.7476) acc 81.2500 (80.1042) lr 3.1417e-05 eta 0:01:02
+epoch [47/50] batch [35/40] time 0.427 (0.471) data 0.000 (0.014) loss 0.9210 (0.7471) acc 68.7500 (79.7321) lr 3.1417e-05 eta 0:00:58
+epoch [47/50] batch [40/40] time 0.427 (0.473) data 0.000 (0.012) loss 0.6486 (0.7335) acc 87.5000 (80.3125) lr 3.1417e-05 eta 0:00:56
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [48/50] batch [5/40] time 0.426 (0.534) data 0.000 (0.108) loss 1.0943 (0.6906) acc 75.0000 (85.6250) lr 3.1417e-05 eta 0:01:01
+epoch [48/50] batch [10/40] time 0.757 (0.513) data 0.000 (0.054) loss 0.7824 (0.7142) acc 71.8750 (82.8125) lr 3.1417e-05 eta 0:00:56
+epoch [48/50] batch [15/40] time 0.427 (0.484) data 0.000 (0.036) loss 0.5504 (0.6723) acc 90.6250 (85.2083) lr 3.1417e-05 eta 0:00:50
+epoch [48/50] batch [20/40] time 0.426 (0.487) data 0.000 (0.027) loss 0.9140 (0.7262) acc 81.2500 (83.7500) lr 3.1417e-05 eta 0:00:48
+epoch [48/50] batch [25/40] time 0.426 (0.475) data 0.000 (0.022) loss 0.7326 (0.7035) acc 81.2500 (83.8750) lr 3.1417e-05 eta 0:00:45
+epoch [48/50] batch [30/40] time 0.427 (0.478) data 0.000 (0.018) loss 0.5716 (0.6975) acc 87.5000 (84.0625) lr 3.1417e-05 eta 0:00:43
+epoch [48/50] batch [35/40] time 0.426 (0.471) data 0.000 (0.016) loss 0.4460 (0.6775) acc 90.6250 (84.1071) lr 3.1417e-05 eta 0:00:40
+epoch [48/50] batch [40/40] time 0.427 (0.473) data 0.000 (0.014) loss 1.1236 (0.6804) acc 68.7500 (83.9844) lr 1.7713e-05 eta 0:00:37
+Train CLIP2
+Creating a 16-shot dataset
+epoch [48/50] batch [5/40] time 0.427 (0.533) data 0.000 (0.106) loss 0.4320 (0.5829) acc 84.3750 (85.6250) lr 1.7713e-05 eta 0:01:01
+epoch [48/50] batch [10/40] time 0.758 (0.513) data 0.000 (0.053) loss 1.0077 (0.6478) acc 71.8750 (84.0625) lr 1.7713e-05 eta 0:00:56
+epoch [48/50] batch [15/40] time 0.428 (0.485) data 0.000 (0.035) loss 0.4758 (0.6427) acc 90.6250 (84.1667) lr 1.7713e-05 eta 0:00:50
+epoch [48/50] batch [20/40] time 0.427 (0.486) data 0.000 (0.027) loss 0.8189 (0.6505) acc 75.0000 (83.4375) lr 1.7713e-05 eta 0:00:48
+epoch [48/50] batch [25/40] time 0.427 (0.474) data 0.000 (0.021) loss 0.6056 (0.6665) acc 84.3750 (83.0000) lr 1.7713e-05 eta 0:00:45
+epoch [48/50] batch [30/40] time 0.425 (0.476) data 0.000 (0.018) loss 0.3286 (0.6524) acc 90.6250 (83.1250) lr 1.7713e-05 eta 0:00:42
+epoch [48/50] batch [35/40] time 0.427 (0.469) data 0.000 (0.015) loss 0.7751 (0.6575) acc 81.2500 (82.5000) lr 1.7713e-05 eta 0:00:39
+epoch [48/50] batch [40/40] time 0.427 (0.472) data 0.000 (0.013) loss 0.7531 (0.6730) acc 78.1250 (82.1094) lr 1.7713e-05 eta 0:00:37
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [49/50] batch [5/40] time 0.427 (0.534) data 0.000 (0.106) loss 0.7681 (0.7737) acc 75.0000 (78.1250) lr 1.7713e-05 eta 0:00:40
+epoch [49/50] batch [10/40] time 0.772 (0.515) data 0.000 (0.053) loss 0.6707 (0.8056) acc 84.3750 (79.3750) lr 1.7713e-05 eta 0:00:36
+epoch [49/50] batch [15/40] time 0.427 (0.486) data 0.000 (0.036) loss 0.5029 (0.7896) acc 87.5000 (81.0417) lr 1.7713e-05 eta 0:00:31
+epoch [49/50] batch [20/40] time 0.426 (0.485) data 0.000 (0.027) loss 0.9002 (0.7671) acc 81.2500 (81.0938) lr 1.7713e-05 eta 0:00:29
+epoch [49/50] batch [25/40] time 0.427 (0.474) data 0.000 (0.021) loss 0.3217 (0.7509) acc 93.7500 (81.5000) lr 1.7713e-05 eta 0:00:26
+epoch [49/50] batch [30/40] time 0.426 (0.478) data 0.000 (0.018) loss 0.2801 (0.7273) acc 93.7500 (81.7708) lr 1.7713e-05 eta 0:00:23
+epoch [49/50] batch [35/40] time 0.427 (0.470) data 0.000 (0.015) loss 0.9221 (0.7203) acc 71.8750 (81.6071) lr 1.7713e-05 eta 0:00:21
+epoch [49/50] batch [40/40] time 0.427 (0.473) data 0.000 (0.013) loss 0.6563 (0.7076) acc 81.2500 (82.0312) lr 7.8853e-06 eta 0:00:18
+Train CLIP2
+Creating a 16-shot dataset
+epoch [49/50] batch [5/40] time 0.426 (0.532) data 0.000 (0.106) loss 0.7460 (0.6531) acc 81.2500 (85.0000) lr 7.8853e-06 eta 0:00:39
+epoch [49/50] batch [10/40] time 0.685 (0.505) data 0.000 (0.053) loss 1.0703 (0.7287) acc 75.0000 (82.8125) lr 7.8853e-06 eta 0:00:35
+epoch [49/50] batch [15/40] time 0.428 (0.479) data 0.000 (0.035) loss 0.3445 (0.7023) acc 93.7500 (82.2917) lr 7.8853e-06 eta 0:00:31
+epoch [49/50] batch [20/40] time 0.425 (0.482) data 0.000 (0.026) loss 0.3881 (0.6900) acc 90.6250 (82.0312) lr 7.8853e-06 eta 0:00:28
+epoch [49/50] batch [25/40] time 0.425 (0.470) data 0.000 (0.021) loss 0.4546 (0.7005) acc 84.3750 (80.7500) lr 7.8853e-06 eta 0:00:25
+epoch [49/50] batch [30/40] time 0.426 (0.474) data 0.000 (0.018) loss 0.7076 (0.7013) acc 81.2500 (80.7292) lr 7.8853e-06 eta 0:00:23
+epoch [49/50] batch [35/40] time 0.426 (0.467) data 0.000 (0.015) loss 0.8274 (0.7037) acc 81.2500 (80.8929) lr 7.8853e-06 eta 0:00:21
+epoch [49/50] batch [40/40] time 0.426 (0.470) data 0.000 (0.013) loss 0.3063 (0.6928) acc 90.6250 (81.0938) lr 7.8853e-06 eta 0:00:18
+Do warmup evaluation on the few_shots_data set
+Do warmup evaluation on the few_shots_data set
+Train CLIP1
+Creating a 16-shot dataset
+epoch [50/50] batch [5/40] time 0.427 (0.518) data 0.000 (0.090) loss 0.7214 (0.7306) acc 81.2500 (82.5000) lr 7.8853e-06 eta 0:00:18
+epoch [50/50] batch [10/40] time 0.734 (0.503) data 0.000 (0.045) loss 1.4740 (0.7491) acc 53.1250 (79.3750) lr 7.8853e-06 eta 0:00:15
+epoch [50/50] batch [15/40] time 0.428 (0.478) data 0.000 (0.030) loss 0.6237 (0.7198) acc 81.2500 (81.0417) lr 7.8853e-06 eta 0:00:11
+epoch [50/50] batch [20/40] time 0.428 (0.481) data 0.000 (0.023) loss 0.5872 (0.6939) acc 84.3750 (82.1875) lr 7.8853e-06 eta 0:00:09
+epoch [50/50] batch [25/40] time 0.427 (0.470) data 0.000 (0.018) loss 0.6478 (0.6819) acc 84.3750 (82.7500) lr 7.8853e-06 eta 0:00:07
+epoch [50/50] batch [30/40] time 0.427 (0.474) data 0.000 (0.015) loss 0.7368 (0.6600) acc 84.3750 (83.6458) lr 7.8853e-06 eta 0:00:04
+epoch [50/50] batch [35/40] time 0.427 (0.467) data 0.000 (0.013) loss 0.9905 (0.6732) acc 78.1250 (83.3036) lr 7.8853e-06 eta 0:00:02
+epoch [50/50] batch [40/40] time 0.426 (0.470) data 0.000 (0.011) loss 0.5772 (0.6649) acc 81.2500 (83.7500) lr 1.9733e-06 eta 0:00:00
+Train CLIP2
+Creating a 16-shot dataset
+epoch [50/50] batch [5/40] time 0.433 (0.536) data 0.005 (0.109) loss 0.5822 (0.5611) acc 81.2500 (83.7500) lr 1.9733e-06 eta 0:00:18
+epoch [50/50] batch [10/40] time 0.790 (0.518) data 0.000 (0.054) loss 0.4433 (0.6439) acc 90.6250 (81.8750) lr 1.9733e-06 eta 0:00:15
+epoch [50/50] batch [15/40] time 0.427 (0.488) data 0.000 (0.036) loss 0.5651 (0.6556) acc 84.3750 (81.4583) lr 1.9733e-06 eta 0:00:12
+epoch [50/50] batch [20/40] time 0.427 (0.490) data 0.000 (0.027) loss 1.0095 (0.6703) acc 75.0000 (80.9375) lr 1.9733e-06 eta 0:00:09
+epoch [50/50] batch [25/40] time 0.428 (0.477) data 0.000 (0.022) loss 0.5821 (0.6783) acc 81.2500 (81.3750) lr 1.9733e-06 eta 0:00:07
+epoch [50/50] batch [30/40] time 0.427 (0.479) data 0.000 (0.018) loss 0.9521 (0.6791) acc 68.7500 (81.3542) lr 1.9733e-06 eta 0:00:04
+epoch [50/50] batch [35/40] time 0.427 (0.472) data 0.000 (0.016) loss 0.5710 (0.7263) acc 87.5000 (80.2679) lr 1.9733e-06 eta 0:00:02
+epoch [50/50] batch [40/40] time 0.427 (0.475) data 0.000 (0.014) loss 0.9832 (0.7317) acc 81.2500 (80.8594) lr 1.9733e-06 eta 0:00:00
+Checkpoint saved to output/ucf101/RCoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCEFalse_FactorBiLoss/16shots_0noise/seed1/prompt_learner1/model.pth.tar-50
+Checkpoint saved to output/ucf101/RCoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCEFalse_FactorBiLoss/16shots_0noise/seed1/prompt_learner2/model.pth.tar-50
+Finish training
+Deploy the last-epoch model
+Evaluate on the *test* set
+=> result
+* total: 3,783
+* correct: 2,830
+* accuracy: 74.8%
+* error: 25.2%
+* macro_f1: 72.5%
+Elapsed: 0:30:02

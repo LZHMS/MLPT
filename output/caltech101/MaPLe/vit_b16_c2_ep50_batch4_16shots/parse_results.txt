@@ -1,0 +1,64 @@
+Parsing files in output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_0noise/
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_0noise/seed1/log.txt. accuracy: 96.10%. 
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_0noise/seed2/log.txt. accuracy: 96.30%. 
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_0noise/seed3/log.txt. accuracy: 96.10%. 
+===
+Summary of directory: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_0noise/
+* accuracy: 96.17% +- 0.09%
+===
+Parsing files in output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_2noise/
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_2noise/seed1/log.txt. accuracy: 89.00%. 
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_2noise/seed2/log.txt. accuracy: 88.40%. 
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_2noise/seed3/log.txt. accuracy: 89.30%. 
+===
+Summary of directory: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_2noise/
+* accuracy: 88.90% +- 0.37%
+===
+Parsing files in output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_4noise/
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_4noise/seed1/log.txt. accuracy: 84.70%. 
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_4noise/seed2/log.txt. accuracy: 89.40%. 
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_4noise/seed3/log.txt. accuracy: 86.70%. 
+===
+Summary of directory: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_4noise/
+* accuracy: 86.93% +- 1.93%
+===
+Parsing files in output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_8noise/
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_8noise/seed1/log.txt. accuracy: 69.50%. 
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_8noise/seed2/log.txt. accuracy: 72.60%. 
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_8noise/seed3/log.txt. accuracy: 73.90%. 
+===
+Summary of directory: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_8noise/
+* accuracy: 72.00% +- 1.85%
+===
+Parsing files in output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_0noise/
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_0noise/seed1/log.txt. accuracy: 96.30%. 
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_0noise/seed2/log.txt. accuracy: 96.10%. 
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_0noise/seed3/log.txt. accuracy: 96.20%. 
+===
+Summary of directory: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_0noise/
+* accuracy: 96.20% +- 0.08%
+===
+Parsing files in output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_2noise/
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_2noise/seed1/log.txt. accuracy: 96.40%. 
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_2noise/seed2/log.txt. accuracy: 96.80%. 
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_2noise/seed3/log.txt. accuracy: 96.10%. 
+===
+Summary of directory: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_2noise/
+* accuracy: 96.43% +- 0.29%
+===
+Parsing files in output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_4noise/
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_4noise/seed1/log.txt. accuracy: 95.90%. 
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_4noise/seed2/log.txt. accuracy: 95.50%. 
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_4noise/seed3/log.txt. accuracy: 96.20%. 
+===
+Summary of directory: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_4noise/
+* accuracy: 95.87% +- 0.29%
+===
+Parsing files in output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_8noise/
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_8noise/seed1/log.txt. accuracy: 86.30%. 
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_8noise/seed2/log.txt. accuracy: 86.10%. 
+file: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_8noise/seed3/log.txt. accuracy: 86.70%. 
+===
+Summary of directory: output/caltech101/MaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_8noise/
+* accuracy: 86.37% +- 0.25%
+===

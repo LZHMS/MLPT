@@ -1,0 +1,128 @@
+Parsing files in output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/seed1/log.txt. accuracy: 28.70%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/seed2/log.txt. accuracy: 29.30%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/seed3/log.txt. accuracy: 29.60%. 
+===
+Summary of directory: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/
+* accuracy: 29.20% +- 0.37%
+===
+Parsing files in output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/seed1/log.txt. accuracy: 25.70%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/seed2/log.txt. accuracy: 27.20%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/seed3/log.txt. accuracy: 25.70%. 
+===
+Summary of directory: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/
+* accuracy: 26.20% +- 0.71%
+===
+Parsing files in output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/seed1/log.txt. accuracy: 22.80%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/seed2/log.txt. accuracy: 25.30%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/seed3/log.txt. accuracy: 24.10%. 
+===
+Summary of directory: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/
+* accuracy: 24.07% +- 1.02%
+===
+Parsing files in output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/seed1/log.txt. accuracy: 19.50%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/seed2/log.txt. accuracy: 19.60%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/seed3/log.txt. accuracy: 19.30%. 
+===
+Summary of directory: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/
+* accuracy: 19.47% +- 0.12%
+===
+Parsing files in output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/seed1/log.txt. accuracy: 35.90%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/seed2/log.txt. accuracy: 35.40%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/seed3/log.txt. accuracy: 35.60%. 
+===
+Summary of directory: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/
+* accuracy: 35.63% +- 0.21%
+===
+Parsing files in output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/seed1/log.txt. accuracy: 30.90%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/seed2/log.txt. accuracy: 30.90%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/seed3/log.txt. accuracy: 29.80%. 
+===
+Summary of directory: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/
+* accuracy: 30.53% +- 0.52%
+===
+Parsing files in output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/seed1/log.txt. accuracy: 27.30%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/seed2/log.txt. accuracy: 26.50%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/seed3/log.txt. accuracy: 26.70%. 
+===
+Summary of directory: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/
+* accuracy: 26.83% +- 0.34%
+===
+Parsing files in output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/seed1/log.txt. accuracy: 19.50%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/seed2/log.txt. accuracy: 18.30%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/seed3/log.txt. accuracy: 17.90%. 
+===
+Summary of directory: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/
+* accuracy: 18.57% +- 0.68%
+===
+Parsing files in output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/seed1/log.txt. accuracy: 28.30%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/seed2/log.txt. accuracy: 29.10%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/seed3/log.txt. accuracy: 27.30%. 
+===
+Summary of directory: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/
+* accuracy: 28.23% +- 0.74%
+===
+Parsing files in output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/seed1/log.txt. accuracy: 28.40%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/seed2/log.txt. accuracy: 26.70%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/seed3/log.txt. accuracy: 27.20%. 
+===
+Summary of directory: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/
+* accuracy: 27.43% +- 0.71%
+===
+Parsing files in output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/seed1/log.txt. accuracy: 27.50%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/seed2/log.txt. accuracy: 27.10%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/seed3/log.txt. accuracy: 27.00%. 
+===
+Summary of directory: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/
+* accuracy: 27.20% +- 0.22%
+===
+Parsing files in output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/seed1/log.txt. accuracy: 25.20%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/seed2/log.txt. accuracy: 24.90%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/seed3/log.txt. accuracy: 23.60%. 
+===
+Summary of directory: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/
+* accuracy: 24.57% +- 0.69%
+===
+Parsing files in output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/seed1/log.txt. accuracy: 33.80%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/seed2/log.txt. accuracy: 33.20%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/seed3/log.txt. accuracy: 31.40%. 
+===
+Summary of directory: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/
+* accuracy: 32.80% +- 1.02%
+===
+Parsing files in output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/seed1/log.txt. accuracy: 32.30%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/seed2/log.txt. accuracy: 32.00%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/seed3/log.txt. accuracy: 31.60%. 
+===
+Summary of directory: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/
+* accuracy: 31.97% +- 0.29%
+===
+Parsing files in output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/seed1/log.txt. accuracy: 30.10%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/seed2/log.txt. accuracy: 27.50%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/seed3/log.txt. accuracy: 30.20%. 
+===
+Summary of directory: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/
+* accuracy: 29.27% +- 1.25%
+===
+Parsing files in output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/seed1/log.txt. accuracy: 26.10%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/seed2/log.txt. accuracy: 23.90%. 
+file: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/seed3/log.txt. accuracy: 24.90%. 
+===
+Summary of directory: output/fgvc_aircraft/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/
+* accuracy: 24.97% +- 0.90%
+===

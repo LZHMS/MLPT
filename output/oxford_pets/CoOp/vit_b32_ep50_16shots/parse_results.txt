@@ -1,0 +1,128 @@
+Parsing files in output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/seed1/log.txt. accuracy: 90.90%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/seed2/log.txt. accuracy: 90.20%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/seed3/log.txt. accuracy: 90.20%. 
+===
+Summary of directory: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/
+* accuracy: 90.43% +- 0.33%
+===
+Parsing files in output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/seed1/log.txt. accuracy: 90.00%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/seed2/log.txt. accuracy: 86.70%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/seed3/log.txt. accuracy: 87.50%. 
+===
+Summary of directory: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/
+* accuracy: 88.07% +- 1.41%
+===
+Parsing files in output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/seed1/log.txt. accuracy: 86.00%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/seed2/log.txt. accuracy: 83.10%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/seed3/log.txt. accuracy: 82.50%. 
+===
+Summary of directory: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/
+* accuracy: 83.87% +- 1.53%
+===
+Parsing files in output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/seed1/log.txt. accuracy: 57.20%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/seed2/log.txt. accuracy: 73.80%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/seed3/log.txt. accuracy: 69.00%. 
+===
+Summary of directory: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/
+* accuracy: 66.67% +- 6.97%
+===
+Parsing files in output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/seed1/log.txt. accuracy: 85.20%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/seed2/log.txt. accuracy: 85.10%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/seed3/log.txt. accuracy: 86.40%. 
+===
+Summary of directory: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/
+* accuracy: 85.57% +- 0.59%
+===
+Parsing files in output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/seed1/log.txt. accuracy: 71.20%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/seed2/log.txt. accuracy: 75.20%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/seed3/log.txt. accuracy: 73.70%. 
+===
+Summary of directory: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/
+* accuracy: 73.37% +- 1.65%
+===
+Parsing files in output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/seed1/log.txt. accuracy: 61.60%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/seed2/log.txt. accuracy: 65.40%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/seed3/log.txt. accuracy: 65.70%. 
+===
+Summary of directory: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/
+* accuracy: 64.23% +- 1.87%
+===
+Parsing files in output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/seed1/log.txt. accuracy: 41.80%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/seed2/log.txt. accuracy: 42.90%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/seed3/log.txt. accuracy: 39.70%. 
+===
+Summary of directory: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/
+* accuracy: 41.47% +- 1.33%
+===
+Parsing files in output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/seed1/log.txt. accuracy: 90.20%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/seed2/log.txt. accuracy: 90.60%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/seed3/log.txt. accuracy: 89.60%. 
+===
+Summary of directory: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/
+* accuracy: 90.13% +- 0.41%
+===
+Parsing files in output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/seed1/log.txt. accuracy: 90.30%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/seed2/log.txt. accuracy: 89.90%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/seed3/log.txt. accuracy: 91.90%. 
+===
+Summary of directory: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/
+* accuracy: 90.70% +- 0.86%
+===
+Parsing files in output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/seed1/log.txt. accuracy: 89.30%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/seed2/log.txt. accuracy: 90.30%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/seed3/log.txt. accuracy: 90.40%. 
+===
+Summary of directory: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/
+* accuracy: 90.00% +- 0.50%
+===
+Parsing files in output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/seed1/log.txt. accuracy: 89.90%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/seed2/log.txt. accuracy: 89.10%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/seed3/log.txt. accuracy: 86.80%. 
+===
+Summary of directory: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/
+* accuracy: 88.60% +- 1.31%
+===
+Parsing files in output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/seed1/log.txt. accuracy: 85.00%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/seed2/log.txt. accuracy: 85.90%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/seed3/log.txt. accuracy: 86.90%. 
+===
+Summary of directory: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/
+* accuracy: 85.93% +- 0.78%
+===
+Parsing files in output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/seed1/log.txt. accuracy: 84.30%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/seed2/log.txt. accuracy: 84.10%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/seed3/log.txt. accuracy: 86.70%. 
+===
+Summary of directory: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/
+* accuracy: 85.03% +- 1.18%
+===
+Parsing files in output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/seed1/log.txt. accuracy: 83.00%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/seed2/log.txt. accuracy: 83.20%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/seed3/log.txt. accuracy: 83.40%. 
+===
+Summary of directory: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/
+* accuracy: 83.20% +- 0.16%
+===
+Parsing files in output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/seed1/log.txt. accuracy: 74.10%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/seed2/log.txt. accuracy: 74.00%. 
+file: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/seed3/log.txt. accuracy: 70.00%. 
+===
+Summary of directory: output/oxford_pets/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/
+* accuracy: 72.70% +- 1.91%
+===

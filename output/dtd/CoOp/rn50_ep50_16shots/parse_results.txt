@@ -1,0 +1,128 @@
+Parsing files in output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/seed1/log.txt. accuracy: 63.00%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/seed2/log.txt. accuracy: 62.40%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/seed3/log.txt. accuracy: 64.00%. 
+===
+Summary of directory: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/
+* accuracy: 63.13% +- 0.66%
+===
+Parsing files in output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/seed1/log.txt. accuracy: 58.70%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/seed2/log.txt. accuracy: 58.40%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/seed3/log.txt. accuracy: 60.60%. 
+===
+Summary of directory: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/
+* accuracy: 59.23% +- 0.97%
+===
+Parsing files in output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/seed1/log.txt. accuracy: 56.30%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/seed2/log.txt. accuracy: 54.70%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/seed3/log.txt. accuracy: 53.40%. 
+===
+Summary of directory: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/
+* accuracy: 54.80% +- 1.19%
+===
+Parsing files in output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/seed1/log.txt. accuracy: 44.70%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/seed2/log.txt. accuracy: 45.60%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/seed3/log.txt. accuracy: 46.70%. 
+===
+Summary of directory: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/
+* accuracy: 45.67% +- 0.82%
+===
+Parsing files in output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/seed1/log.txt. accuracy: 63.80%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/seed2/log.txt. accuracy: 63.40%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/seed3/log.txt. accuracy: 62.60%. 
+===
+Summary of directory: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/
+* accuracy: 63.27% +- 0.50%
+===
+Parsing files in output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/seed1/log.txt. accuracy: 57.20%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/seed2/log.txt. accuracy: 56.70%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/seed3/log.txt. accuracy: 58.70%. 
+===
+Summary of directory: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/
+* accuracy: 57.53% +- 0.85%
+===
+Parsing files in output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/seed1/log.txt. accuracy: 49.60%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/seed2/log.txt. accuracy: 50.40%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/seed3/log.txt. accuracy: 49.00%. 
+===
+Summary of directory: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/
+* accuracy: 49.67% +- 0.57%
+===
+Parsing files in output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/seed1/log.txt. accuracy: 31.80%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/seed2/log.txt. accuracy: 34.30%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/seed3/log.txt. accuracy: 35.30%. 
+===
+Summary of directory: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/
+* accuracy: 33.80% +- 1.47%
+===
+Parsing files in output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/seed1/log.txt. accuracy: 63.40%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/seed2/log.txt. accuracy: 62.20%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/seed3/log.txt. accuracy: 63.70%. 
+===
+Summary of directory: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/
+* accuracy: 63.10% +- 0.65%
+===
+Parsing files in output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/seed1/log.txt. accuracy: 61.40%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/seed2/log.txt. accuracy: 61.10%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/seed3/log.txt. accuracy: 60.60%. 
+===
+Summary of directory: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/
+* accuracy: 61.03% +- 0.33%
+===
+Parsing files in output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/seed1/log.txt. accuracy: 61.50%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/seed2/log.txt. accuracy: 61.60%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/seed3/log.txt. accuracy: 62.20%. 
+===
+Summary of directory: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/
+* accuracy: 61.77% +- 0.31%
+===
+Parsing files in output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/seed1/log.txt. accuracy: 55.20%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/seed2/log.txt. accuracy: 55.60%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/seed3/log.txt. accuracy: 57.50%. 
+===
+Summary of directory: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/
+* accuracy: 56.10% +- 1.00%
+===
+Parsing files in output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/seed1/log.txt. accuracy: 64.10%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/seed2/log.txt. accuracy: 63.40%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/seed3/log.txt. accuracy: 63.30%. 
+===
+Summary of directory: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/
+* accuracy: 63.60% +- 0.36%
+===
+Parsing files in output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/seed1/log.txt. accuracy: 63.10%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/seed2/log.txt. accuracy: 61.60%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/seed3/log.txt. accuracy: 62.40%. 
+===
+Summary of directory: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/
+* accuracy: 62.37% +- 0.61%
+===
+Parsing files in output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/seed1/log.txt. accuracy: 59.70%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/seed2/log.txt. accuracy: 57.00%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/seed3/log.txt. accuracy: 57.50%. 
+===
+Summary of directory: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/
+* accuracy: 58.07% +- 1.17%
+===
+Parsing files in output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/seed1/log.txt. accuracy: 45.60%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/seed2/log.txt. accuracy: 45.20%. 
+file: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/seed3/log.txt. accuracy: 48.30%. 
+===
+Summary of directory: output/dtd/CoOp/rn50_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/
+* accuracy: 46.37% +- 1.38%
+===

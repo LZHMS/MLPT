@@ -1,0 +1,64 @@
+Parsing files in output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_0noise/
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_0noise/seed1/log.txt. accuracy: 70.50%. 
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_0noise/seed2/log.txt. accuracy: 67.40%. 
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_0noise/seed3/log.txt. accuracy: 69.70%. 
+===
+Summary of directory: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_0noise/
+* accuracy: 69.20% +- 1.31%
+===
+Parsing files in output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_2noise/
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_2noise/seed1/log.txt. accuracy: 68.30%. 
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_2noise/seed2/log.txt. accuracy: 64.70%. 
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_2noise/seed3/log.txt. accuracy: 67.80%. 
+===
+Summary of directory: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_2noise/
+* accuracy: 66.93% +- 1.59%
+===
+Parsing files in output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_4noise/
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_4noise/seed1/log.txt. accuracy: 64.50%. 
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_4noise/seed2/log.txt. accuracy: 64.30%. 
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_4noise/seed3/log.txt. accuracy: 65.80%. 
+===
+Summary of directory: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_4noise/
+* accuracy: 64.87% +- 0.66%
+===
+Parsing files in output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_8noise/
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_8noise/seed1/log.txt. accuracy: 52.60%. 
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_8noise/seed2/log.txt. accuracy: 56.90%. 
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_8noise/seed3/log.txt. accuracy: 58.20%. 
+===
+Summary of directory: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_False/16shots_8noise/
+* accuracy: 55.90% +- 2.39%
+===
+Parsing files in output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_0noise/
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_0noise/seed1/log.txt. accuracy: 69.40%. 
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_0noise/seed2/log.txt. accuracy: 67.60%. 
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_0noise/seed3/log.txt. accuracy: 68.40%. 
+===
+Summary of directory: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_0noise/
+* accuracy: 68.47% +- 0.74%
+===
+Parsing files in output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_2noise/
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_2noise/seed1/log.txt. accuracy: 69.30%. 
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_2noise/seed2/log.txt. accuracy: 68.10%. 
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_2noise/seed3/log.txt. accuracy: 69.10%. 
+===
+Summary of directory: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_2noise/
+* accuracy: 68.83% +- 0.52%
+===
+Parsing files in output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_4noise/
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_4noise/seed1/log.txt. accuracy: 66.80%. 
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_4noise/seed2/log.txt. accuracy: 66.30%. 
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_4noise/seed3/log.txt. accuracy: 67.60%. 
+===
+Summary of directory: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_4noise/
+* accuracy: 66.90% +- 0.54%
+===
+Parsing files in output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_8noise/
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_8noise/seed1/log.txt. accuracy: 59.90%. 
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_8noise/seed2/log.txt. accuracy: 61.40%. 
+file: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_8noise/seed3/log.txt. accuracy: 62.00%. 
+===
+Summary of directory: output/dtd/RMaPLe/vit_b16_c2_ep50_batch4_16shots/nctx2_depth9/GCE_True/16shots_8noise/
+* accuracy: 61.10% +- 0.88%
+===

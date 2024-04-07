@@ -1,0 +1,128 @@
+Parsing files in output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/seed1/log.txt. accuracy: 93.60%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/seed2/log.txt. accuracy: 94.40%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/seed3/log.txt. accuracy: 93.70%. 
+===
+Summary of directory: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_0noise/
+* accuracy: 93.90% +- 0.36%
+===
+Parsing files in output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/seed1/log.txt. accuracy: 88.00%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/seed2/log.txt. accuracy: 89.10%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/seed3/log.txt. accuracy: 88.30%. 
+===
+Summary of directory: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_2noise/
+* accuracy: 88.47% +- 0.46%
+===
+Parsing files in output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/seed1/log.txt. accuracy: 86.60%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/seed2/log.txt. accuracy: 84.70%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/seed3/log.txt. accuracy: 86.80%. 
+===
+Summary of directory: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_4noise/
+* accuracy: 86.03% +- 0.95%
+===
+Parsing files in output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/seed1/log.txt. accuracy: 78.80%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/seed2/log.txt. accuracy: 77.60%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/seed3/log.txt. accuracy: 76.00%. 
+===
+Summary of directory: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_False/16shots_8noise/
+* accuracy: 77.47% +- 1.15%
+===
+Parsing files in output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/seed1/log.txt. accuracy: 95.90%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/seed2/log.txt. accuracy: 95.90%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/seed3/log.txt. accuracy: 96.20%. 
+===
+Summary of directory: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_0noise/
+* accuracy: 96.00% +- 0.14%
+===
+Parsing files in output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/seed1/log.txt. accuracy: 87.60%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/seed2/log.txt. accuracy: 87.30%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/seed3/log.txt. accuracy: 87.50%. 
+===
+Summary of directory: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_2noise/
+* accuracy: 87.47% +- 0.12%
+===
+Parsing files in output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/seed1/log.txt. accuracy: 78.30%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/seed2/log.txt. accuracy: 78.50%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/seed3/log.txt. accuracy: 80.20%. 
+===
+Summary of directory: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_4noise/
+* accuracy: 79.00% +- 0.85%
+===
+Parsing files in output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/seed1/log.txt. accuracy: 65.00%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/seed2/log.txt. accuracy: 63.90%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/seed3/log.txt. accuracy: 64.60%. 
+===
+Summary of directory: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_False/16shots_8noise/
+* accuracy: 64.50% +- 0.45%
+===
+Parsing files in output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/seed1/log.txt. accuracy: 91.10%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/seed2/log.txt. accuracy: 91.50%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/seed3/log.txt. accuracy: 91.90%. 
+===
+Summary of directory: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_0noise/
+* accuracy: 91.50% +- 0.33%
+===
+Parsing files in output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/seed1/log.txt. accuracy: 90.30%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/seed2/log.txt. accuracy: 91.20%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/seed3/log.txt. accuracy: 89.00%. 
+===
+Summary of directory: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_2noise/
+* accuracy: 90.17% +- 0.90%
+===
+Parsing files in output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/seed1/log.txt. accuracy: 91.60%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/seed2/log.txt. accuracy: 91.10%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/seed3/log.txt. accuracy: 90.80%. 
+===
+Summary of directory: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_4noise/
+* accuracy: 91.17% +- 0.33%
+===
+Parsing files in output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/seed1/log.txt. accuracy: 88.10%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/seed2/log.txt. accuracy: 88.40%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/seed3/log.txt. accuracy: 87.70%. 
+===
+Summary of directory: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscFalse_ctpend/GCE_True/16shots_8noise/
+* accuracy: 88.07% +- 0.29%
+===
+Parsing files in output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/seed1/log.txt. accuracy: 95.00%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/seed2/log.txt. accuracy: 96.30%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/seed3/log.txt. accuracy: 96.10%. 
+===
+Summary of directory: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_0noise/
+* accuracy: 95.80% +- 0.57%
+===
+Parsing files in output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/seed1/log.txt. accuracy: 92.90%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/seed2/log.txt. accuracy: 95.80%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/seed3/log.txt. accuracy: 95.30%. 
+===
+Summary of directory: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_2noise/
+* accuracy: 94.67% +- 1.27%
+===
+Parsing files in output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/seed1/log.txt. accuracy: 93.30%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/seed2/log.txt. accuracy: 94.10%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/seed3/log.txt. accuracy: 92.60%. 
+===
+Summary of directory: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_4noise/
+* accuracy: 93.33% +- 0.61%
+===
+Parsing files in output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/seed1/log.txt. accuracy: 86.90%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/seed2/log.txt. accuracy: 88.00%. 
+file: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/seed3/log.txt. accuracy: 87.30%. 
+===
+Summary of directory: output/oxford_flowers/CoOp/vit_b32_ep50_16shots/nctx16_cscTrue_ctpend/GCE_True/16shots_8noise/
+* accuracy: 87.40% +- 0.45%
+===
